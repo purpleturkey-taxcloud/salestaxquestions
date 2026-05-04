@@ -24,12 +24,14 @@ const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : A
   <meta property="og:title" content={siteTitle} />
   {description && <meta property="og:description" content={description} />}
   <meta property="og:type" content="article" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
+  <slot name="head" />
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
   <header class="border-b border-gray-100 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
