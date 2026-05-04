@@ -1,0 +1,88 @@
+---
+title: "How do I find out which states Amazon stores my FBA inventory in?"
+slug: "how-to-find-which-states-amazon-stores-fba-inventory"
+topic: "Physical Nexus & Inventory"
+topicSlug: "physical-nexus"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-02"
+updatedAt: "2026-05-02"
+related:
+  - "does-amazon-fba-create-nexus"
+  - "does-storing-inventory-in-3pl-create-nexus"
+  - "do-marketplace-sales-count-toward-nexus-threshold"
+  - "how-to-manage-fba-nexus-when-amazon-moves-inventory"
+  - "when-do-i-have-to-start-collecting-sales-tax-in-another-state"
+metaDescription: "Pull the FBA Inventory Ledger report in Seller Central, map facility codes to states, compare against your registrations. Step-by-step guide with common gap states."
+---
+
+**What you'll need:** Seller Central access · Approximately 10 minutes · Optional: a spreadsheet to track states over time
+
+Amazon stores FBA inventory across a network of fulfillment centers in roughly 20–25 states. They redistribute your inventory between facilities without asking, which means your nexus footprint can change month to month without you doing anything. The inventory location reports in Seller Central tell you exactly where your stock sits right now and where it has been.
+
+## Step 1: Pull the FBA Inventory by State report
+
+1. Log in to **Seller Central**
+2. Go to **Reports → Fulfillment**
+3. Under the *Inventory* section, select **Inventory Event Detail** or **Monthly Inventory History**
+4. For a current state-level snapshot, select **Inventory Ledger** → choose *Summary* view → set the date range to the current month
+
+This report shows inventory movement in and out of each fulfillment center, identified by facility code (e.g., PHX7, MDW2).
+
+## Step 2: Map facility codes to states
+
+Amazon doesn't label the facilities by state in the report, they use warehouse codes. Use this approach to decode them:
+
+**Option A (quick):** Search the facility code online. Amazon's facility codes are widely documented by third-party sellers. A search for "Amazon fulfillment center [code]" will return the city and state in seconds.
+
+**Option B (systematic):** Download the report to a spreadsheet. Pull the unique facility codes from the "fulfillment center ID" column, then map each code to its state using a publicly available Amazon fulfillment center directory. Several FBA seller communities maintain up-to-date lists.
+
+**Option C (automated):** If you use a sales tax platform like TaxCloud, Avalara, or TaxJar, connect your Amazon account. These tools import your FBA data and flag the states where your inventory creates nexus automatically, without manual decoding.
+
+## Step 3: Check for historical inventory placements
+
+Current inventory tells you where you have nexus today. Historical inventory tells you where you may have had nexus in prior periods, which matters for retroactive exposure.
+
+To pull historical data:
+1. In the **Inventory Ledger** report, extend the date range to cover the past 2–3 years
+2. Export the full report to CSV
+3. Filter for rows where "fulfillment center ID" shows a facility you haven't registered in
+
+Any state where Amazon stored your inventory (even briefly, even if that inventory has since moved) created physical nexus for that period.
+
+## Step 4: Compare against your current registrations
+
+Make a list of every state that appears in your inventory report. Then check it against the states where you currently hold an active sales tax permit.
+
+Any state in column A that isn't in column B is a gap.
+
+**Common gaps sellers find:**
+- Nevada (Amazon's Las Vegas area facilities service the West Coast)
+- Indiana and Ohio (Midwest fulfillment hubs)
+- Pennsylvania (serves the Northeast corridor)
+- Texas (large southern network)
+- Florida (growing fulfillment presence)
+
+## Step 5: Register in the states where you have exposure
+
+For each state where you have current inventory but no permit:
+
+1. **Register immediately**: physical nexus is immediate, not threshold-based
+2. **Assess retroactive exposure**: if your inventory has been there for months or years, consider a VDA before registering on your own
+3. **Configure collection** in your sales tax software or Shopify/WooCommerce settings for that state
+
+> **Related:** [How do I handle nexus created by a 3PL I just started using?](#) | [How do I manage FBA nexus when Amazon moves inventory without my control?](#)
+
+## How often should I check?
+
+Amazon moves inventory without notice. A fulfillment center in a new state can appear in your report at any time. Check your inventory placement at least **quarterly**: or set up a sales tax platform that monitors it continuously and alerts you when new states appear.
+
+> **Already registered in all your FBA states?** TaxCloud monitors your nexus footprint and handles filing and remittance in every state where you have an obligation, including the ones Amazon created for you. [See how TaxCloud works →](#)
+
+## Related questions
+
+- [Does Amazon FBA inventory create nexus in states where it's stored?](#)
+- [Does storing inventory in a 3PL warehouse create nexus?](#)
+- [Do Amazon marketplace sales count toward my economic nexus threshold?](#)
+- [How do I manage FBA nexus when Amazon moves inventory between states without telling me?](#)
+- [When do I have to start collecting sales tax in another state?](#)

@@ -1,0 +1,168 @@
+---
+title: "What is the Avalara separation process — what exact steps are involved?"
+slug: "what-is-the-avalara-separation-process"
+topic: "Switching Providers"
+topicSlug: "switching-providers"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "how-do-i-cancel-my-avalara-contract"
+  - "how-do-i-transfer-sst-registration-between-csps"
+  - "will-there-be-a-compliance-gap-switching-providers"
+  - "avalara-vs-taxcloud"
+  - "why-wont-avalara-taxjar-tell-me-about-sst-benefits"
+metaDescription: "Leaving Avalara involves a 60-day notice window, data export before access expires, SST CSP transfer (if applicable), and state portal access revocation. Here's the exact process."
+---
+
+Leaving Avalara is more involved than leaving most other sales tax platforms, for three reasons: the 60-day notice requirement, the SST registration transfer (if you're enrolled), and the billing continuation problem that catches a lot of customers off guard.
+
+If you follow the steps in order, the separation is manageable. If you miss the 60-day window, you're locked in for another year.
+
+**Note for Shopify merchants specifically:** In early 2025, Shopify deprecated its native AvaTax integration. Shopify merchants using AvaTax were effectively forced to either migrate to the new "Avalara for Shopify" app (a separately contracted product) or switch to Shopify Tax for calculation. Many chose that moment to re-evaluate Avalara entirely. If you're in that group, this guide covers the separation process from any Avalara product — AvaTax, Avalara for Shopify, Managed Returns, or Returns for Small Business (which Avalara sunset at the end of 2024).
+
+## The 60-day rule, and how people miss it
+
+Avalara's contract requires **written notice at least 60 days before your renewal date** to terminate without being locked in for another full term. This is the single most common exit trap.
+
+Avalara does not reliably send renewal reminders. Multiple customers report discovering their contract auto-renewed with no prior notification. Once you're past the 60-day window before renewal, you owe fees through the end of the new contract period regardless of when you submit notice.
+
+**What to do right now:** Find your contract renewal date. It's in your Avalara account under billing, or in your original contract. Count back 60 calendar days and mark that as your deadline to submit written notice.
+
+If your renewal is close and you think you may have missed the window, submit notice anyway. Some customers have successfully negotiated out of the additional year; many have not. But submitting late is better than not submitting.
+
+## Step 1: Review your contract and identify your renewal date
+
+Before anything else:
+- Log in to Avalara and find your contract renewal date
+- Confirm which products are on your account (AvaTax, Returns, Managed Returns, CertCapture/ECM, SST Returns, etc.)
+- Note which products you want to cancel, you can cancel individual products without closing the entire account, or cancel everything
+
+If you're unsure of your contract terms, your Avalara Account Manager can provide them. Request in writing.
+
+## Step 2: Export all your data before the contract expires
+
+Avalara revokes account access after contract expiration, not at cancellation notice, but at the actual end of the term. You have a window. Use it.
+
+**What to export:**
+- **Transaction-level data:** All sales transactions, by state, 24–36 months back. Standard formats are CSV or XLS.
+- **Filed state returns:** PDFs or reports for every return filed. This is your proof of compliance for prior periods.
+- **Sales tax reports by jurisdiction:** Summary-level data for each state.
+- **Product tax code mappings:** Avalara uses a proprietary tax code taxonomy. Your product codes in Avalara need to be remapped to whatever taxonomy your new provider uses, document all of them now.
+- **Exemption certificates:** If you use CertCapture or Avalara's Exemption Certificate Management (ECM), download all customer certificates before expiration. Certificates are your protection in an audit.
+- **State registration list:** Every state where you're registered, permit numbers, and filing frequencies.
+- **Your SST ID:** If you're enrolled in SST through Avalara, find your SST account ID (format: starts with "S" followed by numbers). You'll need it for the CSP transfer.
+- **State portal login credentials:** Avalara may have changed or be managing portal passwords. Get these now.
+
+Store everything in at least two places. Export links and report downloads sometimes expire, download to local storage, not just bookmarks.
+
+## Step 3: Handle the SST registration transfer (Avalara-specific)
+
+This step doesn't apply when leaving TaxJar or Numeral because they're not CSPs. It applies here because both Avalara and your new CSP provider participate in the Streamlined Sales Tax program, and an SST account can only have one registered CSP at a time.
+
+You need to remove Avalara as your CSP before the new provider can be added.
+
+**The process:**
+1. Log in to the SST registration portal (streamlinedsalestax.org)
+2. Go to your account and locate the CSP update option — **select Option 3**. This removes Avalara as your CSP without closing your SST account or triggering a new registration process.
+3. Confirm your SST ID and share it with your new provider
+4. Your new CSP submits a CSP access request, which processes quickly
+5. The new CSP takes over filing in SST states
+
+**Why this matters:** If you don't do this step, your new CSP cannot be added as your SST provider. Your SST registration stays open during the transition, you don't lose it. You're just swapping who manages it.
+
+**A note on what you may be switching away from:** Multiple Avalara customers report that Avalara never disclosed SST eligibility or failed to maximize SST enrollment, resulting in years of unnecessary per-state filing fees. If Avalara was charging you $42–65/state for states where SST enrollment applies, that billing stops when your new CSP takes over.
+
+> **See:** [Why won't Avalara and TaxJar tell me about SST benefits?](#)
+
+## Step 4: Submit the cancellation request form
+
+Avalara's cancellation is submitted through their online form: **avalara.my.site.com/SurveyFormForCancellations/s/**
+
+On the form:
+- Select the specific products you want to cancel, or choose "Cancel my complete Avalara account"
+- For SST Returns specifically: select "Returns" from Product Category and "SST Returns" from Product Selection, but only if you've already done the CSP transfer in Step 3. If you cancel SST Returns before transferring the CSP, you may close the SST account rather than just removing Avalara as CSP.
+- **Get written confirmation.** The form should send a confirmation. Save it. Document the submission date and the stated effective date.
+
+Monthly cancellations must be submitted by the **15th of the month** to avoid being charged for the following month's fees.
+
+## Step 5: Specify the final filing period in writing
+
+Same coordination requirement as any provider switch. Avalara needs to know which period is their last. Use specific language:
+
+> "I would like to cancel my account at the end of [Month]. The final filings you will complete for me will be the [Month X] returns filed during [Month Y]. After that, please remove me from your filing service and do not file any future returns."
+
+The filing period lag (returns for January are filed in February) is a consistent source of double-filing when customers and new providers don't coordinate explicitly. If you tell Avalara to "stop filing in June," they may interpret that as skipping the June deadline, which is actually the May return. May sales go unremitted and you get a penalty notice.
+
+**Be explicit about both the filing period and the deadline month.** Get written confirmation from Avalara of what their final return will be. Share the same confirmed date with your new provider so there's no gap between their last filing and your new provider's first.
+
+## Step 5b: Prepare what your new provider needs
+
+Before the new provider can go live, they'll need:
+- A list of every state where you're currently registered and collecting tax
+- Your SST ID (if enrolled in SST, format starts with "S")
+- Your customer exemption certificates (exported from CertCapture/ECM)
+- Filing frequencies for each state
+- Your product tax code mappings from Avalara
+
+Avalara uses a proprietary tax code taxonomy. Your new provider will use a different system. Every product in your catalog needs to be remapped: this is not automatic. Share your product-code export early in the onboarding process, ideally 2–3 weeks before go-live, so remapping is complete before you switch over. Misconfigured product codes mean tax calculates incorrectly from the first transaction on the new platform.
+
+## Step 5c: Test before disabling Avalara in your storefront
+
+Don't turn off Avalara's tax calculation in your live store until your new provider is fully configured and validated. Disabling early (before the new provider is calculating correctly) means orders process with no sales tax at all.
+
+If you're on Shopify and switching to Shopify Tax for calculation (using a separate provider for filing), this step involves enabling Shopify Tax and verifying it calculates correctly before removing any Avalara integration. Run test transactions across product types and shipping destinations, and compare against Avalara's prior calculations for similar orders. Only switch in production once the results look right.
+
+## Step 6: Revoke Avalara's state portal access
+
+Avalara has credentials to your state tax portals for every state where it's filing. Post-cancellation, those credentials don't automatically disappear. Multiple customers have reported Avalara continuing to withdraw ACH payments or file returns after cancellation confirmation.
+
+For each state:
+- Log in to the state's taxpayer portal directly
+- Find the third-party representative or authorized filer section
+- Remove Avalara's access
+- Change your portal password
+
+If Avalara has ACH debit authority on your bank account, contact your bank as well. Avalara's platform does not allow users to remove ACH payment information from their account directly, some customers have had to work through their bank to stop debits after cancellation.
+
+## Step 7: Continue paying through end of term
+
+Fees are owed through the end of the contract period, regardless of when you submitted your cancellation notice. Withholding payment doesn't accelerate your exit, it generates interest charges (1.5% monthly) and potentially collection activity.
+
+Pay through the contract end, document all payments, and keep your cancellation confirmation dated and timestamped.
+
+## The timeline
+
+| Step | When to do it |
+|---|---|
+| Find your renewal date and 60-day deadline | As soon as you start considering leaving |
+| Export all data (transactions, certs, codes, SST ID) | 4–6 weeks before planned cutover |
+| Complete SST CSP transfer | Before submitting cancellation for SST Returns |
+| Submit Avalara cancellation form | By the 60-day deadline before renewal; monthly cancellations by the 15th |
+| Coordinate final filing period with new provider | Before cutover |
+| Revoke state portal access | Same period as submitting cancellation |
+| New provider goes live | After Avalara's final filing period is complete |
+| Pay all remaining invoices | Through contract end date |
+
+## Common mistakes to avoid
+
+**Missing the 60-day notice window.** The most expensive mistake. Mark your renewal date now and set a calendar alert 70 days before it.
+
+**Canceling SST Returns before transferring the CSP.** If you close SST Returns before executing the CSP change in the SST portal, you may close the SST account rather than just switching providers. Do the SST portal step first.
+
+**Forgetting to revoke ACH authorization.** Avalara continues billing after cancellation more often than it should, per documented complaints. Pull the ACH authorization and contact your bank if charges continue after your effective cancellation date.
+
+**Not exporting exemption certificates.** If you have years of customer certificates in CertCapture, those are your audit protection. They don't transfer to the new provider automatically, export them before access expires.
+
+**Treating product code remapping as optional.** Avalara's tax code taxonomy is proprietary. If you don't document your product-to-code mappings before leaving, you're rebuilding that mapping from scratch at your new provider, and any products that aren't correctly classified won't calculate correctly until they are.
+
+> **If you're switching to another CSP:** TaxCloud is a Certified Service Provider in the SST program and handles the CSP transfer as part of onboarding, they'll take your SST ID and request access from their side. For sellers who weren't fully enrolled in SST under Avalara, the cost difference on SST-state filings can be significant. Worth a direct comparison before you commit to the next provider. [taxcloud.com](#)
+
+## Related questions
+
+- [How do I cancel my Avalara contract?](#)
+- [How do I transfer my SST registration from one CSP to another?](#)
+- [Will there be a compliance gap when switching sales tax providers?](#)
+- [Avalara vs. TaxCloud: which is better for SST-eligible businesses?](#)
+- [Why won't Avalara and TaxJar tell me about SST benefits?](#)

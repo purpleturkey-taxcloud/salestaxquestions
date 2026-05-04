@@ -1,0 +1,91 @@
+---
+title: "How do I manage exemption certificates across multiple states?"
+slug: "how-do-i-manage-exemption-certificates-across-multiple-states"
+topic: "Exemption Certificates"
+topicSlug: "exemption-certificates"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "what-is-an-exemption-certificate"
+  - "how-do-i-accept-a-resale-certificate-from-a-b2b-buyer"
+  - "what-is-a-blanket-exemption-certificate"
+  - "how-long-are-exemption-certificates-valid"
+  - "what-happens-if-i-accept-an-invalid-exemption-certificate"
+metaDescription: "Multi-state exemption certificate management requires matching each certificate to the correct state form, tracking expiration by state, and maintaining audit-ready records. The SST uniform certificate simplifies 24 states to one form."
+faqs:
+  - question: "Do I need a different exemption certificate for each state?"
+    answer: "In most cases, yes, states have their own certificate forms and requirements. However, the SST uniform exemption certificate is accepted in all 24 SST member states, reducing multi-state complexity significantly for purchases sourced to those states. The MTC uniform certificate is accepted by some non-SST states. For the remaining non-SST states, you typically need the state-specific form."
+  - question: "What is the SST uniform exemption certificate?"
+    answer: "The Streamlined Sales Tax uniform exemption certificate is a standardized form accepted in all 24 SST member states. For sellers or buyers operating across SST states, one form covers all of them rather than requiring 24 separate state certificates. The SST certificate is valid for 5 years and is the most efficient tool for multi-state exempt account management in SST jurisdictions."
+  - question: "What records do I need to keep for exemption certificates?"
+    answer: "For each exempt sale: the valid certificate covering that transaction, the date of the sale, the buyer's identity, and the goods sold. Retain certificates for at least 3–4 years after the filing period they cover (matching the statute of limitations). Digital storage is acceptable in most states. The records must be retrievable by customer and by transaction period for audit purposes."
+  - question: "What is the MTC uniform exemption certificate?"
+    answer: "The Multistate Tax Commission (MTC) uniform sales and use tax exemption certificate is a multi-state form accepted by many (but not all) non-SST states. It's an alternative to collecting state-specific forms from buyers who purchase across many states. Before relying on an MTC certificate for a specific state, confirm that state's acceptance, not all non-SST states accept it."
+---
+
+Multi-state exemption certificate management has two core challenges: getting the right form for each state, and maintaining records that hold up in audits across all of them. The SST uniform certificate solves the first problem for 24 states. The rest requires a systematic approach to form selection, collection, and retention.
+
+## Step 1: Map your exempt buyers by state
+
+For each buyer with exempt status, identify which states their purchases are sourced to. "Sourced to" means where the transaction is taxable, typically the ship-to address for shipped goods.
+
+A buyer with locations in Ohio, Texas, and California who ships from you to all three needs certificates for all three states. The same buyer's Ohio purchases and Texas purchases are independent compliance events requiring independent certificates.
+
+This mapping exercise is the foundation. Without knowing which state each transaction sources to, you can't know which certificate form you need.
+
+## Step 2: Determine which certificate form each state accepts
+
+**SST member states (24 states):** One form covers all of them. The [SST uniform exemption certificate](https://www.streamlinedsalestax.org/for-businesses/documents/uniform-exemption-certificate) is accepted by all 24 SST member states. For buyers purchasing across multiple SST states, collect one SST certificate rather than 24 separate state forms. Valid for 5 years.
+
+**Non-SST states that accept the MTC uniform certificate:** The Multistate Tax Commission's uniform sales and use tax exemption certificate is accepted by many non-SST states. Check the MTC's current acceptance list before relying on it for any specific state. States update their acceptance periodically.
+
+**Non-SST states with their own required form:** The remaining non-SST states require their own state-specific form. Common examples:
+- California: BOE-230 (resale) or CDTFA-230 series
+- New York: Form ST-120 (resale)
+- Florida: Form DR-13
+
+Each state's Department of Revenue website provides the current version of its required form. Using an outdated form version may not satisfy the requirement.
+
+## Step 3: Build a per-buyer, per-state certificate file
+
+The audit-ready record structure:
+
+| Customer | State | Form type | Issue date | Expiration date | Registration # verified | Notes |
+|---|---|---|---|---|---|---|
+| Acme Co. | PA (SST) | SST uniform | 2024-03-01 | 2029-03-01 | Yes | |
+| Acme Co. | TX | TX-specific | 2024-03-01 | 2027-03-01 | Yes | |
+| Acme Co. | CA | BOE-230 | 2024-03-01 | 2027-03-01 | Yes | |
+
+Maintain this index alongside the actual certificate files. Digital storage is fine, scan paper certificates and store them associated with the customer account record.
+
+## Step 4: Track expiration by state
+
+Validity periods differ by state. SST states are 5 years. Some non-SST states are shorter — 1 to 3 years is common. Within a single customer relationship, you may have certificates expiring on different schedules in different states.
+
+Set renewal reminders 60 to 90 days before each certificate's expiration. "One reminder per customer" doesn't work at multi-state scale: the reminder needs to be keyed to the state-specific expiration date.
+
+## Step 5: Verify registration numbers at setup and periodically
+
+When a buyer provides a certificate, verify their claimed registration number through the issuing state's DOR lookup tool before activating exempt treatment. Annual re-verification for high-volume accounts is a reasonable standard, registration permits can lapse without the buyer notifying you.
+
+## Step 6: Maintain audit-ready storage
+
+Auditors request certificates by transaction period and customer. The storage system needs to support:
+- "Show me all exempt sales to Buyer X in 2023" → retrieve all certificates that were valid during 2023 for that buyer by state
+- "Show me the certificate supporting this specific transaction" → trace from invoice to the certificate in effect on that date
+
+Certificates covering past periods should be retained for 3 to 4 years after the last filing they supported, even after they've expired for future transactions.
+
+## Software vs. manual
+
+For sellers with a handful of B2B customers across a few states, a well-maintained spreadsheet index plus a shared drive of certificate PDFs is workable. For sellers with large B2B volumes or many states, certificate management software (standalone or integrated with your tax platform) automates the form routing, expiration tracking, and storage. The audit risk of manual tracking scales with complexity.
+
+## Related questions
+
+- [What is an exemption certificate and when do I need one?](#)
+- [How do I accept a resale certificate from a B2B buyer?](#)
+- [What is a blanket exemption certificate?](#)
+- [How long are exemption certificates valid?](#)
+- [What happens if I accept an invalid exemption certificate?](#)

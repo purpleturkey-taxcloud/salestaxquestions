@@ -1,0 +1,78 @@
+---
+title: "Does Shopify capture sales tax at order placement or fulfillment?"
+slug: "how-does-shopify-capture-tax-at-order-or-fulfillment"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Deep Guide"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "when-does-sales-tax-liability-accrue-order-fulfillment-or-payment"
+  - "how-does-shopify-handle-sales-tax"
+  - "how-do-i-reconcile-amazon-1099k-data-with-my-sales-tax-filings"
+  - "do-i-owe-sales-tax-when-i-invoice-when-i-ship-or-when-i-get-paid"
+metaDescription: "Shopify calculates and locks in the sales tax rate at the time of order placement, not at fulfillment. The tax amount shown on the order confirmation is the tax amount that will be collected. If fulfillment happens later and the rate has changed in the interim, Shopify does not recalculate. For sales tax reporting purposes, the liability accrues at the time of shipment, but the Shopify tax amount is fixed at order creation."
+faqs:
+  - question: "Does Shopify recalculate sales tax when an order is fulfilled?"
+    answer: "No. Shopify calculates and locks in the tax amount at the time the order is placed. When the order is marked as fulfilled, Shopify does not run a new tax calculation. The tax amount on the fulfillment is the same as what was calculated at checkout. If rates change between order placement and fulfillment, Shopify's recorded tax amount reflects the rate at order time, not the current rate."
+  - question: "When does my sales tax liability actually accrue in Shopify?"
+    answer: "For sales tax reporting and filing purposes, liability generally accrues at the time of shipment (fulfillment), not at the time of payment or order placement. Shopify marks orders with tax at the time of checkout, but the sales tax liability that needs to be reported to the state accrues when the goods are shipped. For most Shopify sellers, orders are fulfilled quickly after placement, so the practical difference is minimal. Pre-orders, backorders, and long fulfillment windows are where the distinction matters."
+---
+
+Shopify locks in the tax rate at checkout. The fulfillment event doesn't trigger a new calculation, which creates specific edge cases sellers need to understand.
+
+## How Shopify's tax timing works
+
+When a customer completes checkout on Shopify, the platform calls the active tax engine (whether Shopify's native calculator or a connected third-party engine like TaxCloud or Avalara) and retrieves the applicable tax rate for the ship-to address and the products in the cart. That rate is applied to the order total, and the tax amount is stored on the order record.
+
+When the order is later fulfilled (marked as shipped in Shopify), the stored tax amount from checkout is what appears on the packing slip, in the order confirmation, and in the Shopify Sales Tax Report. **No new tax calculation happens at fulfillment.**
+
+## Why this matters: the order-to-fulfillment window
+
+For most sellers, orders are fulfilled within hours or a day of placement. In these cases, the checkout tax rate and the fulfillment-date tax rate are the same, so the distinction is academic.
+
+The gap matters when:
+
+**Pre-orders and backorders**
+A seller takes pre-orders in October for items shipping in February. Shopify calculates tax at the October rate. If a state changes its rate in January (rate changes do happen mid-quarter), the tax collected is at the old rate. The seller may have an obligation at the new rate. This isn't a Shopify bug, it's an inherent tension between collection timing and liability timing that most states resolve by looking at the shipment date.
+
+**Subscription orders**
+For subscription products managed through Shopify subscriptions or third-party subscription apps, each renewal is typically treated as a new order: a new checkout event with a fresh tax calculation at the current rate. This is correct behavior. However, the interaction between the subscription app and the tax engine varies by implementation; test to confirm your subscription renewals are hitting the tax engine with current rates, not reusing cached rates from the original subscription order.
+
+**Partial fulfillments**
+If an order is partially fulfilled (some items shipped today, some next month), Shopify typically allocates tax proportionally to what was fulfilled. The total tax on the order doesn't change, but the portion reported as collected depends on implementation. For tax reporting purposes, the safest approach is to report the full order tax in the period when the last item ships, or if the partial fulfillments are in different filing periods, allocate proportionally.
+
+**Refunds and cancellations before fulfillment**
+If an order is canceled after placement but before fulfillment, no tax was actually collected (the charge was either never processed or is refunded in full). Shopify handles this correctly in its Sales Tax Report, canceled orders don't appear as tax collected. If the order was charged and then canceled, the refund should include the full tax amount.
+
+## How this interacts with your tax engine
+
+When Shopify is connected to TaxCloud, Avalara, or TaxJar, the tax engine calculates the rate at checkout and records the transaction in the engine's system at that point. The transaction record in TaxCloud or Avalara is what's used for filing, it reflects the rate at order time, not fulfillment time.
+
+For almost all sellers, this produces correct results because:
+- Rates rarely change between order and fulfillment for standard fulfillment windows
+- The vast majority of states look at shipment date for liability accrual, which is close to order date for most fulfillments
+
+For sellers with unusual fulfillment patterns (long pre-order windows, significant backorder volume), it's worth consulting with a SALT advisor on whether any states you sell into have explicit payment-date or invoice-date rules that would require a different approach.
+
+## The Sales Tax Report implication
+
+Shopify's Sales Tax Report shows tax collected by the date of the order, not the date of fulfillment. When reconciling against your state filing, use the order date column, that's when Shopify considers the transaction to have occurred, and it's also when the tax engine recorded the transaction.
+
+If your filing frequency means some orders are in the next period (placed on the last day of the quarter, not yet filed), check whether your tax engine handles this by cutoff date or order date, and make sure it matches how you're filing.
+
+## Key takeaways
+
+- Shopify locks tax rate at checkout; no recalculation at fulfillment
+- For standard fulfillment windows, this produces correct results
+- Pre-orders, backorders, and long fulfillment delays create edge cases worth auditing
+- Subscription renewals should be generating fresh tax calculations, verify with your subscription app
+- Shopify's Sales Tax Report uses order date, not fulfillment date, for period allocation
+
+## Related questions
+
+- [When does sales tax liability accrue, order placement, fulfillment, or payment?](#)
+- [How does Shopify handle sales tax?](#)
+- [How do I reconcile Amazon 1099-K data with my sales tax filings?](#)
+- [Do I owe sales tax when I invoice, when I ship, or when I get paid?](#)

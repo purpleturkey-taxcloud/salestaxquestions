@@ -1,0 +1,38 @@
+---
+title: "How does BigCommerce handle sales tax natively?"
+slug: "how-does-bigcommerce-handle-sales-tax-natively"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-do-i-integrate-taxcloud-with-shopify-bigcommerce-woocommerce"
+  - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
+  - "how-does-shopify-handle-sales-tax"
+metaDescription: "BigCommerce offers built-in tax calculation through its native tax provider and also natively integrates with Avalara AvaTax (included at no extra charge on certain plans). The native provider calculates rates automatically using address-level data. BigCommerce does not file or remit tax on your behalf, filing remains the seller's responsibility."
+faqs:
+  - question: "Does BigCommerce calculate sales tax automatically?"
+    answer: "Yes. BigCommerce has a built-in tax engine that calculates rates at checkout using address-level data. On higher-tier plans, BigCommerce also includes a native Avalara AvaTax integration at no additional charge for the integration itself (Avalara's transaction fees still apply). Neither option adds filing or remittance, you still file returns yourself or through an AutoFile service."
+  - question: "Is Avalara included in BigCommerce for free?"
+    answer: "BigCommerce includes an Avalara AvaTax integration on certain plans (check current BigCommerce plan details). The integration itself is bundled, but Avalara's per-transaction calculation fees still apply. This makes BigCommerce a strong option for sellers who want Avalara's accuracy without paying separately for the integration layer."
+---
+
+BigCommerce includes reasonable native tax calculation, and on higher plans bundles an Avalara AvaTax integration, making it one of the more capable platforms out of the box.
+
+## Key takeaways
+
+- **Native tax engine:** BigCommerce's built-in provider calculates rates at checkout using the customer's ship-to address; no plugin required for basic automated rate lookup
+- **Avalara AvaTax bundled:** on higher-tier BigCommerce plans, Avalara AvaTax is included as an integrated provider; the integration is bundled but Avalara's per-transaction fees apply separately
+- **Product tax classes:** BigCommerce supports product tax codes and tax class assignments; sellers can map products to different tax classes (e.g., clothing, digital goods, reduced-rate items) to apply state-specific taxability rules
+- **Avalara vs. native engine:** Avalara provides deeper product taxability coverage and more frequently updated rates than the native BigCommerce engine; for sellers with complex product catalogs, the Avalara integration is the better choice
+- **No filing or remittance:** BigCommerce collects tax at checkout; it does not file state returns or remit collected tax to state revenue agencies; filing is the seller's responsibility
+- **TaxCloud integration:** TaxCloud can be connected to BigCommerce via API; third-party connector options exist; this is the path for sellers who want SST CSP certification and AutoFile in SST states
+- **Manual rate tables:** BigCommerce also supports manual tax rules for sellers who prefer to manage rates themselves; not recommended for multi-state compliance due to maintenance burden
+
+## Related questions
+
+- [How do I integrate TaxCloud with Shopify, BigCommerce, or WooCommerce?](#)
+- [Do I need a developer to set up a sales tax integration?](#)
+- [How does Shopify handle sales tax?](#)

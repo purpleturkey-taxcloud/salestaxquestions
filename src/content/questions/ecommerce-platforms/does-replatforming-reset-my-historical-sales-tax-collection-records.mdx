@@ -1,0 +1,51 @@
+---
+title: "Does replatforming reset my historical sales tax collection records?"
+slug: "does-replatforming-reset-my-historical-sales-tax-collection-records"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "what-sales-tax-configuration-breaks-when-migrating-from-magento-to-shopify"
+  - "how-do-i-audit-and-rebuild-my-sales-tax-setup-after-a-platform-migration"
+  - "how-long-do-i-need-to-keep-sales-tax-records"
+metaDescription: "Replatforming does not eliminate your historical sales tax obligations, it only changes where future transactions are recorded. Orders processed before the migration exist in your old platform's records and in your tax engine's transaction history. You are still obligated to file for those periods using the old data. Export and archive historical sales tax data from both sources before decommissioning the old platform."
+faqs:
+  - question: "Do I lose my sales tax history when I switch ecommerce platforms?"
+    answer: "Your filing obligations don't reset, you still owe tax for all periods prior to the migration. What you may lose is easy access to the historical data if you decommission the old platform without exporting it first. Export your Sales Tax Report (or equivalent) from the old platform and download historical transaction data from your tax engine account before switching. Your tax engine account (TaxCloud, Avalara, TaxJar) retains its own transaction records independent of the platform."
+  - question: "Does migrating to a new platform start a new sales tax period?"
+    answer: "No. The state's filing calendar doesn't know or care which platform you're using. If you file monthly in Texas, you file monthly in Texas whether you're on Magento, Shopify, or anything else. The migration doesn't start a new filing period, doesn't reset any nexus clock, and doesn't affect your filing history with state revenue agencies."
+---
+
+Replatforming changes where future orders are recorded, not what you owed before. Your compliance obligations carry forward unchanged.
+
+## Key takeaways
+
+- **Obligations don't reset:** all sales tax collected and owed before the migration date remains subject to the same filing obligations; switching platforms doesn't affect state filing calendars or any open periods
+- **Nexus doesn't reset:** economic nexus established in states before the migration remains in effect; replatforming is not a nexus reset event
+- **Historical data stays in the old platform:** your old platform's sales tax reports and order records don't transfer to the new platform automatically; they remain accessible only in the old platform until it's decommissioned
+- **Tax engine records are platform-independent:** if you were using TaxCloud, Avalara, or TaxJar, your historical transaction records in those accounts are retained in the engine's system regardless of which platform sent those transactions; you can still access historical data and reports from the tax engine account
+- **Export before decommissioning:** before turning off the old platform, export: (1) Sales Tax Report for all open periods, (2) full transaction-level data for the past 7 years (retention requirement), (3) exemption certificate data for B2B customers
+- **Reconciliation period:** in the filing period that spans the migration cutover date, you'll have tax collected on two different platforms; combine both sources to file correctly for that period
+- **Filing for the cutover period:** if your migration goes live mid-quarter and you file quarterly, you have pre-migration tax collected in the old platform and post-migration tax collected in the new platform; pull both data sources, combine by state, and file the combined total for that period
+
+## What to export before switching
+
+From the old platform:
+- Full Sales Tax Report by state (last 24 months at minimum; 7 years ideal)
+- Order-level CSV with order date, ship-to state, taxable amount, and tax collected
+- Exempt customer list with certificate information
+
+From the tax engine account:
+- Historical transaction reports (these typically pre-exist and remain accessible)
+- Exemption certificate records if managed in the engine
+
+Store both in a location that will be accessible for at least 7 years from the last transaction date.
+
+## Related questions
+
+- [What sales tax configuration breaks when migrating from Magento to Shopify?](#)
+- [How do I audit and rebuild my sales tax setup after a platform migration?](#)
+- [How long do I need to keep sales tax records?](#)

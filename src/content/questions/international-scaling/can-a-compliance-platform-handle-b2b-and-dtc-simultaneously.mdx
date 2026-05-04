@@ -1,0 +1,39 @@
+---
+title: "Can a compliance platform handle both B2B wholesale and D2C simultaneously?"
+slug: "can-a-compliance-platform-handle-b2b-and-dtc-simultaneously"
+topic: "International, Scaling & Advanced Scenarios"
+topicSlug: "international-scaling"
+type: "Quick Answer"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-do-i-manage-exemption-certificates-across-multiple-states"
+  - "what-if-i-sell-through-multiple-channels"
+  - "does-selling-wholesale-exempt-me-from-collecting-sales-tax"
+  - "how-do-i-manage-compliance-across-30-to-45-states"
+metaDescription: "Yes, modern sales tax compliance platforms handle both B2B wholesale (with exemption certificate management) and D2C simultaneously. The key requirement is that the platform can correctly apply exemptions when a valid certificate is on file and charge tax when it isn't, across all channels. The operational challenge is certificate management, not calculation."
+faqs:
+  - question: "Can one sales tax platform handle both my wholesale B2B and DTC sales?"
+    answer: "Yes. Platforms like TaxCloud, Avalara, and TaxJar handle both B2B and DTC within the same account. For D2C sales, the platform calculates and collects tax at checkout. For B2B sales, the platform applies exemption when a valid certificate is on file and charges tax when it isn't. The calculation engine doesn't care about the channel, it applies the applicable rules to every transaction."
+  - question: "What's the most common problem for brands running B2B and DTC on the same platform?"
+    answer: "Certificate management. The calculation engine correctly exempts transactions when told a customer has a valid certificate. The failure point is the process for collecting, validating, and loading certificates into the system so that exemption is applied automatically. Brands that have a strong D2C tax setup but weak B2B certificate processes end up either charging tax to exempt B2B customers (creating friction and refund requests) or exempting sales without certificates on file (creating audit exposure)."
+---
+
+Yes: a single platform handles both. The operational challenge isn't the software; it's the certificate management process.
+
+## Key takeaways
+
+- **Calculation engines handle both:** the same rate-and-rule engine applies to every transaction; for B2B customers with certificates on file, it applies exemption; for everyone else, it calculates and collects tax
+- **Certificate integration is the critical requirement:** the compliance platform must be connected to your customer data so that when an exempt B2B customer places an order, their exempt status is automatically applied: this requires the certificate to be loaded into the system, not just filed somewhere
+- **D2C is simpler:** every D2C order goes through the same taxability calculation; no certificate management required; the platform handles everything
+- **B2B adds complexity:** each exempt B2B customer requires (1) certificate collection, (2) certificate validation, (3) loading exempt status into the platform, (4) ongoing renewal tracking as certificates expire
+- **Separate systems for separate channels:** some brands run D2C on Shopify with a compliance plugin and wholesale on a separate B2B platform (NetSuite, Shopify B2B, Orderwave); the compliance platform needs to be connected to both and able to consolidate for filing
+- **Reporting for mixed sellers:** state returns for mixed B2B/D2C sellers should show total gross sales, a deduction for exempt sales with certificates on file, and net taxable sales; the reporting layer of the compliance platform handles this if transaction data is clean
+
+## Related questions
+
+- [How do I manage exemption certificates across multiple states?](#)
+- [What if I sell through multiple channels?](#)
+- [Does selling wholesale exempt me from collecting sales tax?](#)
+- [How do I manage compliance across 30–45 states?](#)

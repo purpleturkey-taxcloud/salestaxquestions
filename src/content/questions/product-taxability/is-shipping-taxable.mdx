@@ -1,0 +1,99 @@
+---
+title: "Is shipping taxable?"
+slug: "is-shipping-taxable"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "Deep Guide"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "is-sales-tax-charged-on-shipping-if-listed-separately-on-invoice"
+  - "is-my-product-taxable"
+  - "is-shipping-taxable-in-state"
+  - "how-do-i-set-correct-product-tax-code-in-shopify"
+  - "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+metaDescription: "About half of US states tax shipping charges. Whether yours does often depends on how you list it on the invoice. Here's the rule, the state breakdown, and how to configure it correctly."
+---
+
+It depends on the state, and in many states, it depends on how you present the charge on the invoice. Roughly half of US states tax shipping charges; the other half exempt them, often with the condition that shipping is listed as a separate line item. Getting this wrong in both directions creates problems: under-collecting creates tax liability, over-collecting creates customer refund exposure.
+
+## The core rule: separately stated vs. bundled
+
+The most important factor in most states is whether the shipping charge is **separately stated** on the invoice (listed as its own line item) or **bundled into the product price**.
+
+- **Bundled into the product price:** almost always taxable, in every state. If you charge $45 and that includes shipping, the entire $45 is subject to tax wherever the product itself is taxable.
+- **Separately stated:** varies by state. Many states exempt shipping when it's a clearly identified line item on the invoice. A few states tax it regardless.
+
+If you're in a state that exempts separately stated shipping, the practical fix is simple: always break out shipping as its own line on your checkout and invoice, never bury it in the product price.
+
+## The "handling" problem
+
+Many sellers charge "shipping and handling" as a combined fee. In states that exempt shipping but tax services, the "handling" component can make the entire combined charge taxable, because handling is a service, not transportation.
+
+The cleaner approach: if you're in a shipping-exempt state, call the charge "shipping" only, not "shipping and handling." If you genuinely have a separate handling cost, consult your tax advisor on how to treat it in your specific states.
+
+## States where shipping is always taxable
+
+In these states, shipping charges are taxable regardless of how they're presented on the invoice:
+
+- **Texas**: shipping is part of the sales price and always taxable
+- **Georgia**: taxable when shipped to a Georgia address
+- **New York**: taxable when the underlying goods are taxable
+- **New Jersey**: taxable
+- **Washington**: taxable
+- **Mississippi**: taxable
+- **Tennessee**: taxable
+- **Arkansas**: taxable
+- **Ohio**: taxable when the goods are taxable
+- **Pennsylvania**: taxable
+- **South Carolina**: taxable
+- **Iowa**: taxable
+- **Indiana**: taxable
+- **North Carolina**: taxable
+- **Michigan**: taxable
+- **Wisconsin**: taxable
+
+If you ship to any of these states and charge separately for shipping, collect tax on the shipping charge at the same rate as the product.
+
+## States where separately stated shipping is generally exempt
+
+In these states, shipping is not taxable when it's separately stated on the invoice and optional (i.e., the customer could pick up the item or choose another carrier):
+
+- **California**: exempt when separately stated and optional
+- **Florida**: exempt when separately stated and optional
+- **Illinois**: generally exempt
+- **Missouri**: exempt when separately stated
+- **Colorado**: exempt when separately stated
+- **Virginia**: exempt when separately stated
+- **Maryland**: exempt
+- **Massachusetts**: exempt
+- **Oklahoma**: exempt
+
+The "optional" condition in some states matters: if the shipping charge is mandatory (the customer has no choice but to pay it), some states that otherwise exempt shipping will tax it. For most ecommerce transactions where ground shipping has a fixed charge, this rarely applies, but it's worth knowing for mandated expedited shipping scenarios.
+
+## How to configure this correctly in your store
+
+**Shopify:** In your tax settings, Shopify has a "Charge taxes on shipping" toggle per shipping zone. Turn it on for states where shipping is taxable, off for states where it's exempt. Shopify applies this at checkout automatically.
+
+**WooCommerce:** Under WooCommerce → Settings → Tax, there's a "Shipping tax class" setting. Set it to match your products' tax class. You can also configure tax rates that include or exclude shipping at the state level.
+
+**Sales tax platform (TaxCloud, Avalara, TaxJar):** If you use an integrated sales tax platform, it should handle shipping taxability by state automatically based on your ship-to address and the state's rules. Verify that your platform's shipping settings are enabled, some require you to pass the shipping charge as a separate line item in the API call for it to be treated correctly.
+
+## The most common mistake
+
+Applying the same shipping tax treatment to all states. A seller who charges tax on shipping across all 45 states is over-collecting in California, Florida, and Illinois. A seller who exempts shipping in all states is under-collecting in Texas, Georgia, and New York.
+
+Both create exposure, over-collection has to be refunded to customers; under-collection is owed to the state.
+
+> **Need per-state shipping taxability for your specific states?** See [Is shipping taxable in [State]?](#) for individual state pages.
+
+> **TaxCloud applies the correct shipping taxability rules automatically by ship-to state, with no manual configuration required per state.** [See how it works →](#)
+
+## Related questions
+
+- [Is sales tax charged on shipping if I list it separately on the invoice?](#)
+- [Is my product taxable?](#)
+- [Is shipping taxable in [State]?](#)
+- [How do I set the correct product tax code in Shopify?](#)
+- [How do I determine whether my product is taxable in a given state?](#)

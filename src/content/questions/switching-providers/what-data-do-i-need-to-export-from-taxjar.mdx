@@ -1,0 +1,101 @@
+---
+title: "What data and records do I need to export from TaxJar before leaving?"
+slug: "what-data-do-i-need-to-export-from-taxjar"
+topic: "Switching Sales Tax Providers"
+topicSlug: "switching-providers"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "how-do-i-switch-from-taxjar"
+  - "will-there-be-a-compliance-gap-switching-providers"
+  - "how-do-i-transfer-sst-registration-between-csps"
+  - "what-data-do-i-need-to-export-from-avalara"
+  - "how-do-i-transfer-sst-registration-between-csps"
+metaDescription: "Before leaving TaxJar, export your AutoFile records, transaction history, nexus list, and product exemptions. TaxJar's data export options are more limited than Avalara's. Here's what's available and where to find it."
+faqs:
+  - question: "What happens to my TaxJar data when I cancel?"
+    answer: "When you cancel your TaxJar subscription, access to your account data ends. TaxJar does not offer a standard post-cancellation data retrieval period. Export all records you need, especially filed return documentation and transaction history, before canceling, not after."
+  - question: "Can I export my filed returns from TaxJar?"
+    answer: "TaxJar AutoFile records are accessible from the AutoFile History section of your account. You can download filing summaries and confirmation records for each AutoFile submission. These summaries document that filings were submitted, retain them as your compliance record for each period."
+  - question: "What is the most important data to export from TaxJar?"
+    answer: "AutoFile history (proof of filing for each period and state), transaction history (CSV export for audit defense and period reconstruction), and your nexus configuration (the states you're registered and filing in). TaxJar doesn't have a certificate management module, so exemption certificate records are typically stored elsewhere."
+  - question: "Does TaxJar store exemption certificates?"
+    answer: "TaxJar does not have a built-in exemption certificate management module comparable to Avalara's CertCapture. If you've been marking transactions as exempt in TaxJar, those records are in your transaction history, but the underlying certificates are likely stored outside TaxJar, in email, a shared drive, or a separate certificate management tool. Export your transaction history to identify exempt transactions and ensure the supporting certificates are on file in your own records."
+---
+
+TaxJar's data export capabilities are more limited than Avalara's, there's no equivalent of CertCapture, and some historical records require manual assembly. The core exports to pull before canceling are your AutoFile history, transaction records, and nexus configuration. Access ends at cancellation, so do this before closing the account.
+
+## What to export (and where to find it)
+
+### 1. AutoFile history, highest priority
+
+If you've been using TaxJar AutoFile, this is your primary documentation that returns were submitted for each state and period. In an audit, state agencies may ask for proof that a return was filed — AutoFile submission confirmations serve that purpose.
+
+**Where:** TaxJar dashboard → AutoFile → AutoFile History.
+
+**What to pull:** Confirmation records for every AutoFile submission, state, period, filing date, amount remitted. Download or screenshot these records for each state you've been filing in, going back through your full compliance history (at minimum 3 to 4 years).
+
+**Limitation:** TaxJar AutoFile history shows confirmation that a filing was submitted but doesn't always provide a full copy of the filed return itself. If the state retains the return, you may be able to request a copy from the state DOR directly, but pull what TaxJar has while you still have access.
+
+### 2. Transaction history
+
+Transaction-level records let you or a new provider reconstruct period calculations, respond to audit inquiries about specific transactions, and verify what was reported on each return.
+
+**Where:** TaxJar dashboard → Transactions or Reports → Export Transactions.
+
+**What to pull:** Full transaction export in CSV format, covering your entire history. The export includes date, order ID, ship-to jurisdiction, taxable amount, tax collected, and rate applied.
+
+**Segment by time period if needed:** Large accounts may need to export in annual or quarterly batches to avoid timeout issues.
+
+### 3. Nexus configuration
+
+Your nexus list in TaxJar controls which states you collect and file in. Before migrating, export or document this list to verify it matches your actual registration footprint and to configure your new platform identically.
+
+**Where:** TaxJar dashboard → Account → Nexus Addresses or State Settings.
+
+**What to document:** Every state where nexus is active, the nexus type (physical or economic), and the date it was added. Compare this against your actual state registrations to catch any mismatches.
+
+### 4. Product exemption configurations
+
+If you've set up product exemption rules in TaxJar, marking specific product categories as non-taxable or assigning product tax codes, export those configurations before leaving.
+
+**Where:** TaxJar dashboard → Products or Exemptions (depends on account tier and integration).
+
+**What to pull:** List of product categories or SKUs with custom tax treatment. Use this to configure identical treatment in your new platform.
+
+### 5. Customer exemptions
+
+TaxJar allows marking specific customers as tax-exempt. If you have B2B customers with exempt status configured in TaxJar, export that customer list with exemption status noted.
+
+**Where:** TaxJar dashboard → Customers or Exemptions.
+
+**What to pull:** Customer names, exemption status, and any state-specific exemption notes. Cross-reference against your actual certificate files to confirm each exempted customer has a valid certificate on file in your own records — TaxJar's customer exemption setting is a flag, not a certificate management system.
+
+### 6. Summary reports for each state
+
+TaxJar generates state-level summaries showing gross sales, taxable sales, and tax collected by period. These summaries are useful for reconciling returns and for audit prep.
+
+**Where:** TaxJar dashboard → Reports → Sales Tax Summary. Filter by state and date range.
+
+**What to pull:** Annual or quarterly summaries for each state you file in, covering the full statute of limitations window.
+
+## What TaxJar doesn't store
+
+**Exemption certificates:** TaxJar does not have a certificate management module. If you've been accepting exemption certificates from B2B buyers, those certificates are stored outside TaxJar, in email, a shared drive, or elsewhere. Before switching, audit your certificate file to ensure every active exempt customer has a valid, retained certificate on file.
+
+**Filed return copies:** TaxJar AutoFile submits returns on your behalf but doesn't retain full return copies in the same way a state filing system does. If you need the actual filed return for a specific period, contact the state DOR to request a copy.
+
+## Timing
+
+Export all records at least 30 days before canceling. TaxJar support can assist with data questions while your account is active, not after. If you encounter gaps in the AutoFile history or can't pull certain records, you have time to resolve them before access closes.
+
+> **Related:** [How do I switch from TaxJar to a different provider?](#) | [Will there be a compliance gap when switching providers?](#)
+
+## Related questions
+
+- [How do I switch from TaxJar to a different sales tax provider?](#)
+- [Will there be a compliance gap when switching providers?](#)
+- [How do I transfer my SST registration from one CSP to another?](#)
+- [What data do I need to export from Avalara before leaving?](#)

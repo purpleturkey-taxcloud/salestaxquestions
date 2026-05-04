@@ -1,0 +1,72 @@
+---
+title: "How do I reconcile Amazon 1099-K data with my state sales tax filings?"
+slug: "how-do-i-reconcile-amazon-1099k-data-with-my-sales-tax-filings"
+topic: "International, Scaling & Advanced Scenarios"
+topicSlug: "international-scaling"
+type: "Deep Guide"
+difficulty: "Advanced"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "what-if-i-sell-through-multiple-channels"
+  - "does-amazon-1099k-alert-states-to-sales-tax-exposure"
+  - "how-do-i-file-across-20-plus-states"
+  - "how-do-i-manage-compliance-across-30-to-45-states"
+metaDescription: "Amazon's 1099-K reports gross payment volume, which differs from what you should report on state sales tax returns. Amazon collects and remits state sales tax on marketplace-facilitated sales, so those gross proceeds shouldn't appear as taxable sales on your own state returns. Reconciling 1099-K data to state filings requires understanding what Amazon collected vs. what you collected directly."
+faqs:
+  - question: "Why does my Amazon 1099-K amount not match what I reported on state sales tax returns?"
+    answer: "Amazon's 1099-K reports all gross payments you received from Amazon, but Amazon also collected and remitted state sales tax on your behalf for marketplace-facilitated sales. Your state sales tax returns should only include sales where you collected tax directly (non-marketplace sales). The 1099-K gross figure includes sales tax Amazon collected on your behalf, marketplace sales you don't collect tax on, and FBA fees, none of which belong on your state returns as your taxable sales. The numbers won't match, and that's correct."
+  - question: "Does the IRS or state tax authority compare my 1099-K to my sales tax filings?"
+    answer: "Yes: this is a legitimate audit trigger. States increasingly receive 1099-K data from payment processors and compare it to reported sales tax. If your 1099-K shows $800,000 from Amazon but your state returns show $200,000 in gross sales, the discrepancy may trigger a nexus questionnaire or audit. Having a clear reconciliation document that explains the difference, marketplace deductions, sales tax collected by Amazon, non-taxable states, etc. — is essential."
+---
+
+The 1099-K total and your state sales tax filing totals will never match, and they shouldn't. The key is having a documented reconciliation that explains every difference.
+
+## Why the numbers differ
+
+Amazon's 1099-K reports total gross payment volume. Your state sales tax returns should include only the sales where you collected and remitted tax directly. The gaps:
+
+**Amazon-collected sales tax:** Amazon collects and remits state sales tax on marketplace-facilitated sales. That tax is included in the 1099-K gross but is not your tax liability — Amazon already paid it to the states. It should not appear on your state return as tax you collected.
+
+**Sales to no-tax states:** Shipments to MT, OR, NH, DE, AK (no state tax) aren't on any state return, but they're on the 1099-K.
+
+**Exempt sales:** Sales to exempt customers (resale, nonprofits) are on the 1099-K but are deducted on state returns as exempt sales.
+
+**Refunds and returns:** 1099-K reports gross; your state return offsets refunds.
+
+**FBA fees offset from payouts:** The 1099-K may reflect net payouts after Amazon fees in some periods, further complicating reconciliation.
+
+## Building the reconciliation
+
+A clean reconciliation document starts with the 1099-K total and works down to what's reported on state returns:
+
+```
+Amazon 1099-K Gross Proceeds:           $XXX,XXX
+Less: Sales tax collected by Amazon:    ($XX,XXX)
+Less: Sales to no-tax states:           ($XX,XXX)
+Less: Exempt sales (resale, etc.):      ($XX,XXX)
+Less: Refunds processed:                ($XX,XXX)
+= Gross taxable sales on state returns: $XXX,XXX
+```
+
+This reconciliation should be prepared annually (when the 1099-K arrives) and kept in your records, it's the first thing an auditor will ask for if a discrepancy is flagged.
+
+## Getting the data from Amazon
+
+Amazon Seller Central provides detailed transaction-level reports:
+- **Sales Tax Report:** shows tax collected by Amazon by state; this is what Amazon remitted on your behalf
+- **Payments Report / Settlement Report:** shows gross sales, refunds, fees, and net payouts
+- **By-state sales reports:** available in Seller Central under Reports > Tax Document Library
+
+Export these for the relevant year before attempting the reconciliation: the 1099-K alone doesn't have enough detail.
+
+## What to watch for
+
+If your 1099-K gross significantly exceeds your aggregate state return totals without a clear explanation, that's the discrepancy a state auditor would flag. Prepare the reconciliation before receiving a notice, not in response to one.
+
+## Related questions
+
+- [What if I sell through multiple channels?](#)
+- [Does Amazon's 1099-K alert states to my sales tax exposure?](#)
+- [How do I file across 20+ states?](#)
+- [How do I manage compliance across 30–45 states?](#)

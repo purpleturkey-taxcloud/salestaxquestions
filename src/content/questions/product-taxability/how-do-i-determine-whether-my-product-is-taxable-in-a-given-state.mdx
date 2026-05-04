@@ -1,0 +1,87 @@
+---
+title: "How do I determine whether my product is taxable in a given state?"
+slug: "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "Deep Guide"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "is-my-product-taxable"
+  - "does-taxability-change-by-state-for-the-same-product"
+  - "are-digital-products-and-saas-taxable"
+  - "are-food-items-taxable"
+  - "are-dietary-supplements-and-vitamins-taxable"
+metaDescription: "To determine product taxability in a specific state: identify the correct product tax code, look up the state's treatment for that category, and check for carve-outs or exemption definitions. For complex categories (food, supplements, digital products, SaaS), state-specific guidance is essential. A tax engine with current product tax codes handles this automatically."
+faqs:
+  - question: "How do I find out if my product is taxable in a specific state?"
+    answer: "Start with the product's category and look up how the destination state treats that category. For physical goods, most tangible personal property is taxable unless the state has a specific exemption. For categories with state-level variation (clothing, food, supplements, digital products, SaaS) you need to check the specific state's statutes or revenue guidance. The most reliable approach is to assign the correct product tax code in your tax software and let the engine apply state-specific rules automatically."
+  - question: "What is a product tax code (PTC) and how does it help with taxability?"
+    answer: "A product tax code (PTC) is a standardized identifier assigned to a product category. Tax software vendors maintain mapping tables that translate PTCs into state-specific taxability rules. When you assign the correct PTC to a product, your tax engine knows that a vitamin supplement is taxable in Texas, exempt in California (historically), and reduced-rate in Illinois, without you having to configure each state individually. Using generic or incorrect PTCs (e.g., tagging a supplement as 'food') will produce incorrect results."
+---
+
+Determining whether a specific product is taxable in a given state comes down to three things: the product's category, the destination state's treatment of that category, and whether any exemption conditions apply. For most physical goods, this is straightforward. For a subset of categories, it requires state-specific research.
+
+## Step 1: Identify the correct product category
+
+Start with what the product is, not what it's used for. Sales tax taxability is based on objective product characteristics (what the product is, how it's labeled, and how it's sold) not on buyer intent.
+
+Key questions to answer:
+- Is it tangible personal property, a digital product, or a service?
+- If food or food-adjacent: is it sold ready to eat, or for home preparation?
+- If digital: is it a downloaded file, a subscription SaaS product, or a streaming service?
+- If a supplement: does it have a Supplement Facts label or a Nutrition Facts label?
+- If clothing: is it a general garment or specialized protective/athletic gear?
+
+The answer to these questions determines the correct product tax code (PTC) and how states will treat it.
+
+## Step 2: Look up the state's treatment for that category
+
+Once you know the product category, check how the destination state treats it:
+
+**For general tangible personal property:** Taxable in virtually all states unless there's a specific exemption.
+
+**For categories with significant state variation:**
+
+| Category | Where to check |
+|---|---|
+| Clothing | State-specific clothing exemption statutes; exemption varies by price, garment type |
+| Grocery food | State's food exemption definition; check if product is classified as candy or soft drink |
+| Dietary supplements | State's DOR guidance on DSHEA-regulated supplements; check if food exemption covers them |
+| Digital products / SaaS | State's digital goods statute or administrative guidance |
+| Medical devices | State's prescription medication and medical device exemption definitions |
+| OTC medications | State's DOR guidance; check if prescription-only exemptions exclude OTC |
+
+**Primary sources for state taxability:**
+- State Department of Revenue (DOR) website, many publish taxability matrices or guidance documents by product category
+- State revenue code (statutes) — the authoritative but difficult-to-parse source
+- Private letter rulings and advisory opinions, useful if your product is genuinely unusual
+
+## Step 3: Check for exemption conditions
+
+Even when a state exempts a product category, conditions may apply:
+
+- **Price-based exemptions:** NY exempts clothing under $110/item; MA under $175/item; CT under $50/item. Items over the threshold are taxable.
+- **Label-based tests:** Some states distinguish between products with Supplement Facts labels vs. Nutrition Facts labels for food exemption purposes.
+- **Use-based conditions:** Some states exempt products used in manufacturing or agriculture even when the same product would be taxable for consumer use.
+- **Buyer-based conditions:** Some states exempt sales to qualifying nonprofits or government entities regardless of the product.
+
+## Step 4: Use product tax codes in your tax engine
+
+The most reliable path for multi-state sellers is to assign correct PTCs in your tax software and let the engine apply state rules automatically. TaxCloud, Avalara, TaxJar, and similar platforms maintain product tax code libraries that map each PTC to state-level taxability rules, including state-specific exemptions, reduced rates, and carve-outs.
+
+This approach fails when:
+- The PTC is too generic (a supplement tagged as "food" gets wrong results)
+- The PTC doesn't match the product's actual characteristics
+- The engine's state rules are stale (new legislation not yet reflected)
+
+For high-stakes or genuinely ambiguous products, get written confirmation from the state DOR or consult a sales tax advisor. Written guidance from the state provides audit protection even if it later turns out to be wrong.
+
+## Related questions
+
+- [Is my product taxable?](#)
+- [Does taxability change by state for the same product?](#)
+- [Are digital products and SaaS taxable?](#)
+- [Are food items taxable?](#)
+- [Are dietary supplements and vitamins taxable?](#)

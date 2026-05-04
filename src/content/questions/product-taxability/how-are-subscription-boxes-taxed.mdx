@@ -1,0 +1,84 @@
+---
+title: "How are subscription boxes taxed when they contain both taxable and non-taxable items?"
+slug: "how-are-subscription-boxes-taxed"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "Deep Guide"
+difficulty: "Advanced"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "how-are-bundled-products-taxed"
+  - "are-food-items-taxable"
+  - "are-dietary-supplements-and-vitamins-taxable"
+  - "does-taxability-change-by-state-for-the-same-product"
+metaDescription: "Subscription boxes containing both taxable and non-taxable items must allocate sales tax to the taxable portion. The exact allocation method and what qualifies as non-taxable depends on the destination state. Boxes containing food, supplements, or other state-variable products require per-state configuration, not a single national taxability setting."
+faqs:
+  - question: "How is sales tax calculated on a subscription box with mixed contents?"
+    answer: "Sales tax applies to the taxable items in the box, not the full subscription price. The seller must allocate the subscription price across the items in the box and collect tax only on the portion attributable to taxable items. For SST member states (24 states), the SST bundled transaction rules apply. For other states, allocation methods vary. The challenge is that the same item (a supplement, a food product, a candle) may be taxable in one destination state and non-taxable in another."
+  - question: "Does the subscription fee itself get taxed, or just the products inside?"
+    answer: "The subscription fee is not separately taxable, it's the vehicle for delivering physical goods. The goods delivered are what get taxed, and the subscription price is allocated across those goods for tax calculation purposes. If all items in the box are taxable, the full subscription fee is taxable. If some items are exempt, tax applies only to the allocated price of the taxable items."
+---
+
+Subscription boxes ship physical goods, so the general taxability rule applies: the physical goods delivered are subject to sales tax, and the subscription structure doesn't change that. The complexity is in the allocation, figuring out how much of the subscription price is attributable to taxable versus non-taxable items, and applying the right state rules to each item.
+
+## The basic framework
+
+A subscription box is effectively a bundled transaction delivered on a recurring schedule. For tax purposes:
+
+1. Each shipment is a separate taxable event
+2. Tax is calculated on the price attributable to taxable items in that shipment
+3. Items that are exempt in the destination state don't contribute to the taxable total
+4. The subscription fee itself is allocated proportionally (or based on actual product values)
+
+## What determines taxability in a given state
+
+The taxability of individual items in the box depends on the destination state's rules for each product category. Common subscription box contents and their state-variable taxability:
+
+| Item type | Taxability |
+|---|---|
+| General merchandise, novelty goods | Taxable in all sales tax states |
+| Food items (packaged, shelf-stable) | Exempt in most states; check candy/snack carve-outs |
+| Candy | Taxable in most states, including states that otherwise exempt food |
+| Dietary supplements / vitamins | Taxable in most states; CA and IL exempt or reduced-rate |
+| Clothing / apparel | Exempt in PA, NJ, MN, WI (no price cap); state-specific rules apply elsewhere |
+| Candles, home goods | Taxable in all sales tax states |
+| Beauty and personal care | Generally taxable; OTC products with medical claims may vary |
+| Books (physical) | Not universally exempt; some states specifically exempt books, most do not |
+
+A monthly "wellness box" with supplements, a snack, and a candle: the snack may be exempt in most states, the supplement taxable in most states, and the candle taxable everywhere. Three items, three different calculations across 45 states.
+
+## SST vs. non-SST states
+
+**SST member states (24 states):** Apply the SST bundled transaction rule. If the non-taxable portion is 10% or less of the total, the full subscription price for that shipment is taxable. If the non-taxable portion exceeds 10%, the seller may allocate based on actual cost or fair market value.
+
+**Non-SST states:** Use their own bundling and allocation rules. Most accept allocation based on the individual item prices. Some states require allocation based on cost rather than retail price. A few states tax the full bundle regardless.
+
+## Practical approach for subscription box sellers
+
+**Option 1: Allocate by item retail value (most common)**
+Price out each item in the shipment, apply each item's taxability to the destination state, and collect tax on the taxable items only. This requires per-item pricing and per-item PTCs.
+
+**Option 2: Allocate by cost**
+Some states prefer or require cost-based allocation. This is more defensible from an audit standpoint in those states but requires tracking cost data by item.
+
+**Option 3: Tax the full box (conservative)**
+Some subscription box sellers simply tax the full subscription fee in all states. This overcollects tax on exempt items but eliminates under-collection risk. Not appropriate if your box regularly includes significant exempt content.
+
+## System requirements
+
+Accurate subscription box tax compliance at scale requires:
+
+1. A product tax code assigned to each SKU in each box
+2. A tax engine that supports bundled transaction allocation
+3. Per-shipment (not per-subscription) tax calculation, box contents change monthly
+4. State-level taxability mapping for product categories that vary (food, supplements, clothing)
+
+Flat-rate or per-item calculation handled manually doesn't scale and produces errors as box contents change.
+
+## Related questions
+
+- [How are bundled products taxed?](#)
+- [Are food items taxable?](#)
+- [Are dietary supplements and vitamins taxable?](#)
+- [Does taxability change by state for the same product?](#)

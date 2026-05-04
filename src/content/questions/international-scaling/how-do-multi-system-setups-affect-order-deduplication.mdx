@@ -1,0 +1,38 @@
+---
+title: "How do multi-system setups (Shopify + ERP, Magento + Odoo) affect sales tax and order deduplication?"
+slug: "how-do-multi-system-setups-affect-order-deduplication"
+topic: "International, Scaling & Advanced Scenarios"
+topicSlug: "international-scaling"
+type: "Quick Answer"
+difficulty: "Advanced"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-do-i-reconcile-amazon-1099k-data-with-my-sales-tax-filings"
+  - "what-if-i-sell-through-multiple-channels"
+  - "how-do-i-manage-compliance-across-30-to-45-states"
+metaDescription: "Brands running orders through multiple systems (Shopify + Odoo, Magento + NetSuite) risk duplicate transaction reporting if both systems send order data to the compliance platform. Tax engines that receive the same order from two sources may double-count transactions, resulting in over-reporting and over-remittance. A clear data flow with a single system of record is essential."
+faqs:
+  - question: "What is order deduplication and why does it matter for sales tax?"
+    answer: "Order deduplication is the process of ensuring that each customer order is reported to your sales tax compliance platform exactly once. In multi-system setups (e.g., Shopify as the storefront and Odoo as the ERP, both syncing to a tax engine), the same order may arrive at the compliance platform twice, once from each system. If not deduplicated, the platform may record double the tax collected, leading to over-remittance to states and inaccurate gross sales reporting."
+  - question: "How do I prevent duplicate transactions in a multi-system compliance setup?"
+    answer: "Designate a single system of record for tax transaction reporting, typically either the ecommerce platform (Shopify) or the ERP (Odoo, NetSuite), not both. Only one system should send order data to the compliance platform. The other system can receive tax calculation results (the calculated rate and amount) but should not independently report transactions. Audit your integration periodically to confirm only one data stream is active."
+---
+
+Multi-system setups create deduplication risk when two systems send the same transaction to the compliance platform. The fix is a single designated system of record.
+
+## Key takeaways
+
+- **The deduplication problem:** when Shopify and an ERP both sync to a compliance platform, the same order may arrive twice: each system sends what it considers its version of the transaction; the compliance platform may record both, doubling the tax liability reported
+- **Symptoms of the problem:** state return gross sales significantly higher than actual revenue; tax remitted substantially exceeds tax collected from customers; reconciliation to P&L doesn't work
+- **The solution: single system of record:** designate one system as the authoritative source for transaction data to the compliance platform, typically the ecommerce platform (Shopify, WooCommerce) for DTC sellers; the ERP may receive tax calculation results for accounting purposes but should not independently push transactions to the tax engine
+- **Integration audit:** review every active integration between your systems and your compliance platform; confirm that each order type flows from only one source
+- **Refunds and adjustments:** deduplication applies to credits and refunds too, if both systems send a refund event, the compliance platform may double-credit the return, leading to under-reporting
+- **Multi-warehouse and multi-location setups:** if orders are split across fulfillment locations managed in different systems, ensure that the consolidation point sends the full order once, not each fulfillment leg separately
+- **Testing:** when setting up or changing integrations, run a sample period (one week) and compare transaction counts in the compliance platform to actual order counts in each source system; the numbers should match, not multiply
+
+## Related questions
+
+- [How do I reconcile Amazon 1099-K data with my sales tax filings?](#)
+- [What if I sell through multiple channels?](#)
+- [How do I manage compliance across 30–45 states?](#)

@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allQuestions = await getCollection('questions');
+
+const stateGuides = allQuestions
+  .filter(q => q.data.topicSlug === 'state-guides' && q.data.slug?.startsWith('sales-tax-in-'))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const otherStateContent = allQuestions
+  .filter(q => q.data.topicSlug === 'state-guides' && !q.data.slug?.startsWith('sales-tax-in-'))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout
+  title="Sales Tax by State"
+  description="State-by-state sales tax guides for ecommerce sellers — nexus thresholds, filing rules, key taxability notes, and what remote sellers need to know in each state."
+  canonical="/states"
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-gray-700">Home</a>
+      <span>›</span>
+      <span class="text-gray-700">States</span>
+    </nav>
+
+    <h1 class="text-2xl font-bold text-slate-900 mb-1" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">Sales Tax by State</h1>
+    <p class="text-gray-400 text-sm mb-8">Nexus thresholds, filing rules, and taxability notes for each state.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-10">
+      {stateGuides.map(q => {
+        const stateName = q.data.title.replace(/^Sales Tax in\s+/i, '').replace(/[\:\—\–].+$/, '').trim();
+        return (
+          <a href={`/${q.data.slug}`} class="flex items-center justify-between px-4 py-3 border border-gray-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-all group">
+            <span class="text-sm font-medium text-slate-800 group-hover:text-green-700 transition-colors">{stateName}</span>
+            <svg class="w-3.5 h-3.5 text-gray-300 group-hover:text-green-500 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        );
+      })}
+    </div>
+
+    {otherStateContent.length > 0 && (
+      <>
+        <h2 class="text-base font-semibold text-slate-900 mb-4" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">State-specific topics</h2>
+        <div class="border border-gray-200 rounded-xl overflow-hidden divide-y divide-gray-100">
+          {otherStateContent.map(q => (
+            <a href={`/${q.data.slug}`} class="flex items-start justify-between px-5 py-4 hover:bg-gray-50 transition-colors group">
+              <div class="min-w-0 pr-4">
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-green-700 transition-colors leading-snug">{q.data.title}</p>
+                {q.data.metaDescription && (
+                  <p class="text-xs text-gray-500 mt-1 leading-relaxed line-clamp-2">{q.data.metaDescription}</p>
+                )}
+              </div>
+              <svg class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-colors shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</BaseLayout>

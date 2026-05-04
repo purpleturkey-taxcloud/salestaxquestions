@@ -1,0 +1,99 @@
+---
+title: "How do I report marketplace transactions on my state sales tax return?"
+slug: "how-do-i-report-marketplace-transactions-on-state-sales-tax-return"
+topic: "Marketplace Facilitators & Multi-Channel"
+topicSlug: "marketplace-facilitators"
+type: "How-To"
+difficulty: "Deep Dive"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "if-amazon-collects-sales-tax-do-i-still-need-to-register"
+  - "how-do-i-reconcile-amazon-1099k-with-sales-tax-filings"
+  - "how-do-i-handle-sales-tax-selling-amazon-and-shopify"
+  - "how-do-i-aggregate-nexus-thresholds-across-channels"
+  - "what-is-the-risk-of-assuming-marketplace-is-handling-your-tax"
+metaDescription: "Marketplace sales don't get excluded from your return, they get reported and then deducted. Leaving Amazon off your return creates a 1099-K mismatch that triggers notices. Step-by-step guide."
+---
+
+**What you'll need:** Your Amazon (or Etsy/Walmart) sales report for the state · Your own-channel sales report · Your state return form or filing portal
+
+Marketplace-facilitated sales don't get excluded from your return, they get **reported and then deducted**. States want to see your total gross activity, then subtract out the portion the marketplace handled. Sellers who simply leave Amazon sales off their return create a mismatch that triggers notices.
+
+## Step 1: Understand the structure of a multi-channel return
+
+A state sales tax return for a seller with marketplace and direct sales typically looks like this:
+
+| Line | What it covers |
+|---|---|
+| **Gross sales** | All sales into the state — Amazon, Shopify, Etsy, everything |
+| **Deduction: marketplace-facilitated sales** | Sales where the marketplace collected and remitted |
+| **Deduction: other exempt sales** | Exempt products, resale, etc. |
+| **Net taxable sales** | What's left after deductions |
+| **Tax due** | Net taxable sales × applicable rate |
+
+The marketplace sales appear twice: once in gross sales, once as a deduction. The net result is zero tax liability on those transactions, but the gross activity is reported.
+
+## Step 2: Pull your marketplace sales report for the state
+
+**For Amazon:**
+1. Log in to Seller Central
+2. Go to **Reports → Tax Document Library**
+3. Select your **Sales Tax Report** for the relevant period
+4. Filter or export by state, you want total gross sales into the state that Amazon facilitated
+5. This figure goes on the "marketplace-facilitated sales" deduction line of your return
+
+**For Etsy:**
+1. Go to **Shop Manager → Finances → Payment Account**
+2. Download your **Monthly Statement** or use the **Download Data** tool
+3. Filter transactions by ship-to state
+4. Etsy also provides an annual sales summary by state in your tax documents
+
+**For Walmart Marketplace and others:** each platform has an equivalent sales report in its seller portal. Pull total facilitated sales by state for the period.
+
+## Step 3: Pull your own-channel sales for the state
+
+From Shopify, WooCommerce, or your ERP: pull all orders shipped to the state during the filing period. This is your direct (non-facilitated) gross sales figure.
+
+If you use a sales tax platform, it should have this broken out by channel already. If not, export your order data and filter by ship-to state.
+
+## Step 4: Combine into the return
+
+**Gross sales** = Amazon facilitated sales + your own channel sales (+ any other channels)
+
+**Marketplace deduction** = Amazon facilitated sales (what Amazon collected on your behalf)
+
+**Net taxable sales** = your own channel sales (adjusted for any product exemptions)
+
+**Tax due** = net taxable sales × state + local rate
+
+The filing portal in most states walks you through these lines explicitly. If your state has a specific line labeled "marketplace facilitator sales" or "sales by a marketplace facilitator on your behalf," use it. If the return doesn't have a dedicated line, use the "other deductions" or "non-taxable sales" line and note it as marketplace-facilitated.
+
+## Step 5: Reconcile your Amazon 1099-K against the return
+
+Amazon issues a 1099-K that shows your gross Amazon sales by state. States have access to 1099-K data and use it to cross-reference returns. If your 1099-K shows $180K in Ohio sales and your Ohio return shows $15K in gross sales because you left the Amazon amount off, you will get a notice.
+
+The gross sales figure on your return should roughly match or exceed the 1099-K figure for that state (exceed it if you also have direct channel sales in the state).
+
+If there's a discrepancy, document why. The most common legitimate discrepancy: the 1099-K is on a calendar-year basis but your return covers a different period.
+
+> **Related:** [How do I reconcile my Amazon 1099-K with my sales tax filings?](#)
+
+## The most common filing errors for multi-channel sellers
+
+| Error | What goes wrong |
+|---|---|
+| Excluding marketplace sales from gross entirely | Return doesn't reconcile with 1099-K; triggers notice |
+| Reporting marketplace sales as "exempt" without a deduction code | State may not recognize the deduction; treats the sales as taxable |
+| Using total Amazon revenue (including fees and refunds) instead of gross sales | Overstates or understates the deduction |
+| Not filing in states where you have FBA nexus but Amazon handles collection | Missing return obligation triggers delinquency |
+
+> **TaxCloud handles multi-channel return preparation automatically**: pulling your marketplace and direct channel sales, applying the correct deductions, and filing the return in every state. [See how it works →](#)
+
+## Related questions
+
+- [If Amazon already collects sales tax, do I still need to register in those states?](#)
+- [How do I reconcile my Amazon 1099-K with my sales tax filings?](#)
+- [How do I handle sales tax when I sell on Amazon AND my own Shopify store simultaneously?](#)
+- [How do I aggregate nexus thresholds across Amazon, Shopify, Etsy, and Walmart?](#)
+- [What is the risk of assuming your marketplace is handling all your tax?](#)

@@ -1,0 +1,55 @@
+---
+title: "How does Shopify handle sales tax — what does it actually do?"
+slug: "how-does-shopify-handle-sales-tax"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Deep Guide"
+difficulty: "Beginner"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "is-shopify-built-in-tax-enough-for-multi-state-compliance"
+  - "does-shopify-file-and-remit-sales-tax-on-my-behalf"
+  - "how-do-i-configure-nexus-states-in-shopify"
+  - "how-do-i-integrate-taxcloud-with-shopify"
+metaDescription: "Shopify calculates sales tax at checkout based on your nexus configuration and applies the correct rate for the customer's location. Shopify does not file returns or remit tax on your behalf, those remain your responsibility. Shopify Tax (its premium tax product) improves calculation accuracy but still doesn't handle filing."
+faqs:
+  - question: "What does Shopify do for sales tax?"
+    answer: "Shopify calculates and collects sales tax at checkout. When a customer places an order, Shopify looks up the applicable tax rate for the shipping address based on your nexus configuration and applies it to the taxable items in the cart. Shopify tracks tax collected and provides reports you can use for filing. Shopify does not file tax returns or remit tax to states, that remains the seller's responsibility."
+  - question: "Is Shopify's tax calculation accurate?"
+    answer: "Shopify's built-in tax uses a rate database maintained by Shopify that is updated periodically, but it is not a certified tax engine. Shopify Tax (the premium product, available on higher Shopify plans) offers more frequent updates and improved accuracy. For sellers with complex product taxability requirements or high volume in multiple states, connecting a certified tax engine (TaxCloud, Avalara, TaxJar) through the API produces more accurate results."
+---
+
+Shopify handles the collection side of sales tax at checkout. Filing and remittance are entirely separate — Shopify does neither.
+
+## What Shopify does
+
+**Rate calculation at checkout:** When a customer checks out, Shopify calculates the applicable sales tax rate for their delivery address. This uses Shopify's built-in rate database (or Shopify Tax if enabled, or a third-party tax engine if connected).
+
+**Application to taxable items:** Shopify applies the calculated rate to items you've designated as taxable. Items flagged as tax-exempt (or in tax-exempt product categories) are not taxed.
+
+**Collection from customer:** The calculated tax is added to the customer's order total and collected when payment is processed.
+
+**Reporting:** Shopify tracks tax collected by state (and in some cases by jurisdiction). Reports are accessible under Analytics > Reports > Sales Tax Report. This report provides the data you need to file returns, it doesn't prepare or submit returns.
+
+## What Shopify does NOT do
+
+- **File sales tax returns**: Shopify does not prepare or submit returns to any state
+- **Remit tax to states**: Shopify does not pay the tax it collects to state authorities on your behalf; you do this when you file your returns
+- **Monitor nexus**: Shopify will not alert you when you've crossed an economic nexus threshold; you must track this yourself or use a tool that monitors it
+- **Manage exemption certificates**: Shopify has limited B2B exemption handling; for proper certificate management, a dedicated tool is needed
+
+## Shopify Tax vs. Shopify's basic tax settings
+
+**Basic tax settings (all plans):** Uses Shopify's standard rate database; rate updates may lag; works for most simple configurations.
+
+**Shopify Tax (higher plans):** More frequent rate updates from a third-party data provider; improved accuracy for complex jurisdictions (Colorado, Louisiana, etc.); product categorization tools that help assign correct taxability to products.
+
+**Third-party tax engines (TaxCloud, Avalara, TaxJar):** Replace Shopify's rate calculation with a certified engine via API; provide the most accurate calculation including product-specific taxability rules; some also provide AutoFile for return submission.
+
+## Related questions
+
+- [Is Shopify's built-in tax enough for multi-state compliance?](#)
+- [Does Shopify file and remit sales tax on my behalf?](#)
+- [How do I configure nexus states in Shopify?](#)
+- [How do I integrate TaxCloud with Shopify?](#)

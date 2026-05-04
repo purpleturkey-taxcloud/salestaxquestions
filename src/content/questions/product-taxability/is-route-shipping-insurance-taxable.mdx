@@ -1,0 +1,58 @@
+---
+title: "Is Route shipping insurance (package protection) taxable?"
+slug: "is-route-shipping-insurance-taxable"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "Deep Guide"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "is-shipping-taxable"
+  - "does-taxability-change-by-state-for-the-same-product"
+  - "is-my-product-taxable"
+  - "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+metaDescription: "Route package protection fees are generally not taxable in most states, insurance premiums are commonly exempt from sales tax. However, how Route's fee is characterized (insurance vs. service vs. part of the sale) matters, and some states may treat it differently. Sellers using Route or similar tools should verify treatment in high-volume states."
+faqs:
+  - question: "Is Route shipping insurance taxable?"
+    answer: "In most states, no. Route's package protection fee is structured as an insurance premium, and insurance premiums are generally exempt from sales tax across most US states (though some states impose a separate insurance premium tax collected at the insurer level). However, taxability can depend on how the fee appears on the customer's invoice, how the state characterizes the service, and whether Route is acting as an insurer or as a non-insurance protection plan provider. Sellers should confirm treatment in their highest-volume states."
+  - question: "How does Route show up on customer invoices, and does that affect taxability?"
+    answer: "Route's fee appears as a separate line item on the customer's order, distinct from the product price and shipping charge. Separately stated fees are generally treated independently for taxability purposes, states apply their rules to the fee itself rather than treating it as part of the product price. Since most states exempt insurance and insurance-adjacent services, the separate line item presentation generally helps the fee qualify for non-taxable treatment."
+---
+
+Route's package protection fee is treated as an insurance product in most states, which means it's generally not subject to sales tax. Insurance premiums are commonly exempt from sales tax, though states may impose separate insurance premium taxes at the insurer level, those are not collected from or charged to the customer.
+
+## What Route is and how it's structured
+
+Route offers "package protection" that covers lost, stolen, or damaged packages. From a tax standpoint, the key question is whether Route's fee is:
+
+- An **insurance premium**: governed by insurance regulations, generally exempt from sales tax
+- A **non-insurance protection plan**: some states tax extended warranties and service contracts, which could pull Route into taxable territory
+- A **fee bundled with the sale**: which might make it taxable as part of the product price
+
+Route positions its product as insurance in most states where it operates, which generally places it in the exempt insurance premium category. However, the characterization can vary by state depending on how Route is licensed in that state.
+
+## General taxability position
+
+**In most states:** Route's fee is not subject to sales tax. This includes high-volume states like CA, TX, NY, FL, WA, and GA. Insurance premiums fall outside the sales tax base in the vast majority of states.
+
+**The exception to watch:** Some states tax extended warranties, service contracts, and similar non-insurance protection products. If a state's revenue agency characterizes Route's fee as a service contract rather than an insurance premium, it could be taxable. This is a state-by-state licensing and characterization issue, not a rule sellers can easily self-determine.
+
+**Washington state:** WA taxes extended warranties and service contracts, and has an active program reviewing how various protection products are categorized. Worth confirming current treatment with Route or a tax advisor if WA is a significant revenue state.
+
+## How to handle it in your tax engine
+
+Most ecommerce tax software excludes Route's fee from the taxable base automatically if Route passes the fee as a separate non-taxable line item through the integration. Check your platform's Route integration settings to confirm:
+
+1. Route's fee is appearing as a separate line item (not rolled into product price)
+2. Your tax engine is treating the Route line as non-taxable
+3. The product tax code applied to the Route line (if your platform requires one) is appropriate for insurance or exempt services
+
+If Route's fee is being added to the product price at the cart level rather than appearing as a separate line item, revisit the integration setup, bundled fees can take on the taxability of the product they're bundled with.
+
+## Related questions
+
+- [Is shipping taxable?](#)
+- [Does taxability change by state for the same product?](#)
+- [Is my product taxable?](#)
+- [How do I determine whether my product is taxable in a given state?](#)

@@ -1,0 +1,84 @@
+---
+title: "What sales tax configuration breaks when migrating from Magento to Shopify?"
+slug: "what-sales-tax-configuration-breaks-when-migrating-from-magento-to-shopify"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Deep Guide"
+difficulty: "Advanced"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-do-i-audit-and-rebuild-my-sales-tax-setup-after-a-platform-migration"
+  - "does-replatforming-reset-my-historical-sales-tax-collection-records"
+  - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
+  - "how-does-shopify-handle-sales-tax"
+metaDescription: "Migrating from Magento to Shopify breaks most sales tax configuration because the two platforms use fundamentally different tax models. Magento uses tax classes and rules stored in the platform database; Shopify uses nexus-based calculation with product tax codes. None of this transfers automatically, tax zones, product tax classes, customer exemptions, and engine integrations all need to be rebuilt from scratch."
+faqs:
+  - question: "Does my Magento sales tax configuration migrate to Shopify?"
+    answer: "No. Magento and Shopify use completely different tax architectures. Magento stores tax rules, tax classes, and rate tables in its own database. Shopify uses nexus-based calculation with its own tax provider system. Platform migration tools (Litextension, Cart2Cart) move product and order data, they do not transfer tax configuration. Everything must be rebuilt: nexus settings, product tax codes, exemption certificate workflows, and tax engine connections."
+  - question: "What is the biggest sales tax risk during a Magento-to-Shopify migration?"
+    answer: "The biggest risks are: (1) going live on Shopify without completing the tax configuration, resulting in a period where no tax is collected; (2) losing product tax code mappings so all products calculate as fully taxable, meaning exempt or reduced-rate items get overtaxed; and (3) losing customer exemption certificate records, so previously exempt B2B buyers get charged tax on their first Shopify order."
+---
+
+Migrating from Magento to Shopify is effectively a full tax rebuild, not a transfer. Every layer of configuration must be re-established on Shopify before go-live.
+
+## What doesn't transfer
+
+Standard platform migration tools move catalog data, order history, and customer records. Sales tax configuration does not transfer because:
+
+- **Different data models:** Magento tax zones, tax classes, and rate tables are Magento-specific database objects with no Shopify equivalent
+- **Different calculation architecture:** Magento calculates tax using rule sets defined in the admin; Shopify routes to a tax provider (native or third-party) based on nexus configuration
+- **Different product taxonomy:** Magento product tax class IDs don't map to Shopify product tax codes or to the product tax codes used by Avalara, TaxJar, or TaxCloud
+
+## What breaks and why
+
+**Tax engine connection**
+
+If Magento was connected to Avalara, TaxJar, or TaxCloud, those connections are platform-specific. The API keys may be reusable, but the integration itself must be reinstalled on Shopify. The Shopify-side app installation and the account-side nexus configuration are separate steps that both must be completed before Shopify processes live orders.
+
+**Product tax code mappings**
+
+Magento's product tax class system (e.g., "Taxable Goods," "Clothing," "Digital Download") is separate from the standardized product tax codes used by tax engines. If Magento was connected to Avalara or TaxCloud, each product may have had a mapped tax code in the engine's account, those mappings are in the engine's system, not Magento's, and may survive the migration if the same engine account is used. If Magento was using a custom rate table without an external engine, all product taxability information lives only in Magento and is lost.
+
+**Nexus states**
+
+Nexus configuration in Shopify must be done from scratch in Shopify's Settings > Taxes and duties > United States. If the tax engine is being used, nexus must also be confirmed in the engine's account. These are two separate layers that must both be correct.
+
+**Customer exemptions**
+
+If B2B customers had exemptions in Magento (zero-rated tax classes, manual exceptions), those don't carry over. Shopify doesn't have a built-in customer exemption tax class system equivalent to Magento's. Exemptions in Shopify typically require either:
+- A tax engine integration that supports exemption certificates (TaxCloud, Avalara) linked to a certificate management system
+- Manual per-customer tax overrides using Shopify's customer tax exemption feature (works for simpler B2B use cases)
+
+**Historical order data and collection records**
+
+Migrated historical orders in Shopify won't have Shopify-formatted tax data linked to them: the orders will appear in Shopify but tax information won't reconcile the same way as native Shopify orders. Sales tax reporting for pre-migration periods still requires pulling data from Magento (or wherever the original order data lives).
+
+## The configuration that must be rebuilt
+
+1. **Tax engine reconnection:** reinstall and configure the tax engine app on Shopify; provide API credentials; verify the account-side configuration matches
+2. **Nexus states:** add all nexus states in Shopify's tax settings; confirm they match what's configured in the tax engine
+3. **Product tax code mapping:** audit product catalog for any items with non-standard taxability; map them to correct product tax codes in the engine or set Shopify product-level overrides
+4. **Customer exemptions:** export exempt customer list from Magento; rebuild in Shopify using customer tax exemption settings or the engine's certificate management system; notify exempt customers that they may be charged tax on first Shopify orders until the migration is complete
+5. **Test before launch:** place test orders in each nexus state for taxable and exempt products; confirm rates and exemptions apply correctly before switching traffic to Shopify
+
+## What to preserve from Magento
+
+Before completing the migration, export from Magento:
+- Complete product tax class mappings (what each product was classified as)
+- Exempt customer list with associated exemption certificate numbers or certificate file copies
+- Historical tax collected by state for open periods that haven't been filed yet
+- Tax engine account credentials and account-level settings (PTC mappings survive if the engine account is kept)
+
+## Common mistakes
+
+- **Going live before tax configuration is complete:** traffic switches to Shopify; Shopify calculates at 0% or defaults to taxable on everything; the problem isn't discovered until the next filing cycle
+- **Assuming the old Avalara/TaxCloud account settings transfer automatically:** they don't; a new Shopify-side connection must be established even if the tax engine account is unchanged
+- **Not warning B2B customers:** exempt buyers who were zero-rated in Magento get charged tax on their first Shopify order; proactive communication prevents friction and refund requests
+
+## Related questions
+
+- [How do I audit and rebuild my sales tax setup after a platform migration?](#)
+- [Does replatforming reset my historical sales tax collection records?](#)
+- [Do I need a developer to set up a sales tax integration?](#)
+- [How does Shopify handle sales tax?](#)

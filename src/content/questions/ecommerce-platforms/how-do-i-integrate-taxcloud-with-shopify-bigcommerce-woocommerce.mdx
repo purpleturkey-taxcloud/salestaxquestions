@@ -1,0 +1,55 @@
+---
+title: "How do I integrate TaxCloud with Shopify, BigCommerce, or WooCommerce?"
+slug: "how-do-i-integrate-taxcloud-with-shopify-bigcommerce-woocommerce"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-does-shopify-handle-sales-tax"
+  - "which-sales-tax-plugins-work-best-with-woocommerce"
+  - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
+  - "what-is-shopify-tax-and-how-does-it-differ-from-basic-settings"
+metaDescription: "TaxCloud connects to Shopify via its native app in the Shopify App Store, to WooCommerce via a WordPress plugin or custom API integration, and to BigCommerce via API connector or third-party middleware. All three integrations route checkout calculations through TaxCloud's SST-certified engine, enabling AutoFile enrollment in SST member states."
+faqs:
+  - question: "Does TaxCloud have a Shopify app?"
+    answer: "Yes. TaxCloud has an app in the Shopify App Store. Installing the app and connecting your TaxCloud account routes checkout tax calculations through TaxCloud's SST-certified engine. Once connected, you can enroll in AutoFile for TaxCloud to handle filing and remittance in enrolled states."
+  - question: "How do I connect TaxCloud to WooCommerce?"
+    answer: "TaxCloud can be connected to WooCommerce via the official TaxCloud WooCommerce plugin, which is available from TaxCloud directly or the WordPress plugin repository. The plugin replaces WooCommerce's native tax calculation with TaxCloud's SST-certified engine. Configuration requires your TaxCloud API key, which you get from your TaxCloud account dashboard."
+---
+
+TaxCloud has native apps and plugins for major ecommerce platforms, plus API access for custom setups. The integration routes checkout calculations through TaxCloud's SST-certified engine.
+
+## Key takeaways
+
+**Shopify:**
+- Install the TaxCloud app from the Shopify App Store
+- Connect using your TaxCloud API key from your TaxCloud account dashboard
+- The app overrides Shopify's native tax calculation; Shopify Tax settings become inactive
+- After connecting, enroll in AutoFile in your TaxCloud account for automated filing and remittance
+- Ensure nexus states in TaxCloud match your registered states; TaxCloud calculates only for nexus states you've configured
+
+**WooCommerce:**
+- Install the TaxCloud WooCommerce plugin (available directly from TaxCloud or the WordPress plugin repository)
+- Enter your TaxCloud API key and API ID in the plugin settings
+- The plugin intercepts WooCommerce's checkout tax calculation and routes it to TaxCloud's engine
+- Disable WooCommerce's built-in tax settings after connecting to avoid conflicts
+- AutoFile enrollment is managed in your TaxCloud account, not in WooCommerce
+
+**BigCommerce:**
+- TaxCloud connects to BigCommerce via its API; a third-party connector or direct API integration is the standard approach
+- BigCommerce's platform allows custom tax provider connections through its API; this may require developer assistance for initial setup
+- Once connected, calculations and AutoFile enrollment work the same as other platforms
+
+**After any integration:**
+- Map your products to Product Tax Codes (PTCs) in TaxCloud; PTCs control state-specific taxability rules for your products
+- Verify the integration with a test order in each nexus state before going live
+- Confirm AutoFile enrollment state by state in your TaxCloud dashboard
+
+## Related questions
+
+- [How does Shopify handle sales tax?](#)
+- [Which sales tax plugins work best with WooCommerce?](#)
+- [Do I need a developer to set up a sales tax integration?](#)

@@ -1,0 +1,132 @@
+---
+title: "How do I reconcile Amazon 1099-K data with my state sales tax filings at scale?"
+slug: "how-do-i-reconcile-amazon-1099k-with-state-sales-tax-filings"
+topic: "Sales Tax for Mid-Market & Scaling Brands"
+topicSlug: "mid-market"
+type: "How-To"
+difficulty: "Deep Dive"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "how-do-i-handle-filing-where-marketplace-collects"
+  - "how-do-i-report-marketplace-transactions-on-state-sales-tax-return"
+  - "does-amazon-1099k-alert-states-to-sales-tax-exposure"
+  - "how-do-i-manage-sales-tax-compliance-across-30-45-states"
+metaDescription: "The Amazon 1099-K doesn't reconcile directly to state sales tax returns, it's a gross receipts document, not a jurisdiction-level report. Reconciliation requires pulling Amazon's transaction-level data by state and matching it against your state returns. Here's how."
+faqs:
+  - question: "Why doesn't the Amazon 1099-K match my state sales tax filings?"
+    answer: "The Amazon 1099-K is a federal tax document reporting gross proceeds Amazon processed on your behalf, it's a gross receipts total, not a jurisdiction-level breakdown. Your state sales tax filings are based on transaction-level data broken out by ship-to state, with marketplace-facilitated deductions applied. They measure different things. A gap between the 1099-K total and the sum of your state returns is expected and explainable, but you need the Amazon transaction data to explain it."
+  - question: "What Amazon reports should I use for state sales tax reconciliation?"
+    answer: "Use the Transaction-Level Sales Tax report from Amazon Seller Central (under Tax Document Library → Sales Tax Reports). This report shows each transaction with its ship-to state, taxable sale amount, tax collected, and whether Amazon collected and remitted. It reconciles to the state level. The 1099-K is not the right document for this purpose, use the transaction-level report."
+  - question: "What are the common reconciling differences between the 1099-K and state returns?"
+    answer: "Common differences: (1) refunds and returns: the 1099-K reflects gross proceeds before refunds; state returns may include refund adjustments; (2) marketplace-facilitated deductions — Amazon-collected amounts are deducted from your state returns but included in your 1099-K gross; (3) FBA fees and selling fees included in 1099-K but not in taxable sales; (4) timing differences: a 1099-K is a calendar-year document; state returns are filed on different period schedules. All of these are expected; the key is documenting them."
+  - question: "Do states use the Amazon 1099-K to identify under-reporting?"
+    answer: "States increasingly receive 1099-K data from the IRS and from payment processors, and some states use it to identify sellers whose reported sales tax receipts are inconsistent with their 1099-K gross proceeds. The 1099-K includes marketplace-facilitated sales (which Amazon collected and remitted), so a state comparing 1099-K gross to your reported taxable sales will see a difference even if you're fully compliant. Having the reconciliation documented means you can explain the difference immediately if asked."
+---
+
+The Amazon 1099-K creates confusion because it looks like a sales document but doesn't function like one for sales tax purposes. It reports gross proceeds (a federal tax concept) not jurisdictional taxable sales broken out by state. Using it to verify your state filings doesn't work and shouldn't be attempted.
+
+The right reconciliation uses Amazon's transaction-level tax reports. Here's the process.
+
+## Why the 1099-K and your state returns don't match, and shouldn't
+
+The 1099-K captures:
+- All gross proceeds Amazon processed for you across all states
+- Including Amazon-collected tax (which Amazon remits; you don't owe it)
+- Including FBA fulfillment fees Amazon collects from customers and passes through
+- Including sales in states where Amazon has marketplace facilitator collection obligations
+- Before refunds and returns
+
+Your state sales tax returns capture:
+- Transaction-level sales by ship-to state
+- Less: marketplace-facilitated amounts (Amazon collected and remitted, you deduct these)
+- Less: returns and refunds
+- Subject to: the state's specific taxability rules and your exemption certificate deductions
+- Adjusted for: the state's filing period (not necessarily calendar year)
+
+These will never match, and they shouldn't. The 1099-K sum across your state returns will be lower than your 1099-K gross by at least the amount Amazon collected and remitted on your behalf.
+
+## The right documents for sales tax reconciliation
+
+**Amazon reports to use:**
+
+**1. Transaction-Level Sales Tax report**
+Location: Seller Central → Reports → Tax Document Library → Sales Tax Reports → Transaction-Level Sales Tax Report
+
+This report shows every transaction with:
+- Order date and ship date
+- Ship-to state, county, city, and zip
+- Taxable sale amount
+- Tax collected
+- Whether Amazon collected and remitted (the "marketplace" flag)
+
+This is the source document for reconciling to your state returns. Pull it for each filing period.
+
+**2. Date Range Transaction report**
+Location: Seller Central → Reports → Payments → Transaction View
+
+This captures total proceeds including fees, refunds, and adjustments. Useful for confirming gross proceeds but not for state-level reconciliation.
+
+**3. Inventory by State report (for FBA nexus confirmation)**
+Location: Seller Central → Inventory → Manage Inventory → Inventory by State
+
+Not directly a reconciliation document, but relevant for confirming nexus in states where Amazon has placed your FBA inventory.
+
+## The reconciliation process
+
+### Step 1: Pull the Transaction-Level Sales Tax report for the period
+
+For monthly filers: pull monthly. For quarterly and annual filers: pull for the applicable period. Download as CSV.
+
+### Step 2: Aggregate by state
+
+Sum the transaction-level data by ship-to state:
+- Total gross sales by state
+- Total Amazon-collected tax by state (the marketplace-facilitated portion)
+- Total sales from which you need to file (gross less marketplace-facilitated)
+
+For most brands, Amazon collects tax on all Amazon transactions in all states post-marketplace-facilitator law. The "sales from which you need to file" may be $0 for Amazon-only nexus states.
+
+### Step 3: Match state-by-state to your returns
+
+For each state return you filed during the period:
+- Does the gross sales line match Amazon's transaction report gross for that state?
+- Does the marketplace deduction match Amazon's collected amount for that state?
+- Does the net taxable amount produce the correct liability?
+
+Differences should be explainable, refunds processed, timing differences between order date and ship date, non-Amazon channel sales included in the same return.
+
+### Step 4: Layer in non-Amazon channel data
+
+Your state returns include all channels — Amazon, Shopify, Etsy, wholesale, and any other. The Amazon transaction data is one component. Add your direct-channel transaction data to the reconciliation to cover the full return.
+
+A complete state-level reconciliation master file looks like:
+
+| State | Amazon gross | Amazon-collected | Direct channel gross | Direct-channel tax owed | Return filed | Difference |
+|---|---|---|---|---|---|---|
+| CA | $240,000 | $21,600 | $85,000 | $7,225 | $7,225 | $0 |
+| OH | $95,000 | $8,740 | $12,000 | $804 | $804 | $0 |
+
+### Step 5: Reconcile to the 1099-K at year-end
+
+Sum your annual transaction report data across all states. This total should match your 1099-K gross within rounding and timing differences. Document the bridge:
+
+- 1099-K gross proceeds: $X
+- Less: refunds and returns: ($X)
+- Less: FBA fees passed through: ($X) [if applicable]
+- Adjusted gross sales: $X → matches sum of transaction-level report gross
+
+If significant unexplained differences remain, investigate before the state asks. Knowing your own reconciling items protects you if a state's compliance division contacts you with questions about a 1099-K discrepancy.
+
+## Automation options at scale
+
+For brands with large Amazon volume across 30+ states, manual CSV reconciliation each period becomes significant work. AutoFile platforms that integrate directly with Amazon Seller Central pull the transaction-level data automatically and apply the marketplace deduction correctly by state. At mid-market scale, this integration is worth the setup time.
+
+Platforms without direct Amazon integration require either manual CSV import or a middleware tool that formats Amazon's export into the platform's expected input format.
+
+## Related questions
+
+- [How do I handle filing in states where a marketplace collects on my behalf?](#)
+- [How do I report marketplace transactions on my state sales tax return?](#)
+- [Does Amazon's 1099-K alert states to my sales tax exposure?](#)
+- [How do I manage sales tax compliance across 30–45 states as a mid-market brand?](#)

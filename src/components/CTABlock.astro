@@ -1,0 +1,24 @@
+---
+interface Props {
+  topicSlug?: string;
+  topicName?: string;
+}
+const { topicSlug, topicName } = Astro.props;
+---
+
+{topicSlug && (
+  <div class="my-10 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5 flex items-center justify-between gap-4">
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Looking for more answers on this topic?
+    </p>
+    <a
+      href={`/topics/${topicSlug}`}
+      class="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700 hover:text-green-800 transition-colors"
+    >
+      Browse {topicName ?? 'all questions'}
+      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+)}

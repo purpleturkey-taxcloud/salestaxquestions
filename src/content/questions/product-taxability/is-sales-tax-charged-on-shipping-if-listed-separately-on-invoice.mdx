@@ -1,0 +1,76 @@
+---
+title: "Is sales tax charged on shipping if I list it separately on the invoice?"
+slug: "is-sales-tax-charged-on-shipping-if-listed-separately-on-invoice"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "Quick Answer"
+difficulty: "Beginner"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "is-shipping-taxable"
+  - "is-my-product-taxable"
+  - "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+  - "does-taxability-change-by-state-for-the-same-product"
+  - "how-do-i-set-correct-product-tax-code-in-shopify"
+metaDescription: "In many states, separately listing shipping on an invoice exempts it from sales tax. But a meaningful list of states tax shipping regardless. Here's which rule applies where."
+---
+
+In many states, yes, listing shipping as a separate line item on the invoice exempts it from sales tax. But this only works in states that provide a separately-stated shipping exemption. A meaningful group of states tax shipping regardless of how it's labeled, and a few more follow nuanced rules that can override the separate-statement approach.
+
+## The separately-stated rule: how it works
+
+States that exempt separately-stated shipping are using the separate line as a proxy for a simple principle: if the charge is clearly for transportation (not bundled into the product price), it's more like a freight cost than a sale, and therefore exempt from tax.
+
+For this to apply in your favor:
+- The shipping charge must appear as its own distinct line item on the invoice or checkout screen
+- It must not be labeled "shipping and handling" — the handling component can void the exemption in some states
+- In some states, it must also be "optional" — meaning the customer could theoretically pick up the order or choose their own carrier
+
+If you bury shipping in the product price (charging $45 when $5 of that is shipping), the full $45 is taxable everywhere.
+
+## States where separate statement typically exempts shipping
+
+| State | Notes |
+|---|---|
+| California | Exempt when separately stated and optional |
+| Florida | Exempt when separately stated and optional |
+| Illinois | Generally exempt |
+| Colorado | Exempt when separately stated |
+| Missouri | Exempt when separately stated |
+| Virginia | Exempt when separately stated |
+| Maryland | Exempt |
+| Massachusetts | Exempt |
+| Oklahoma | Exempt |
+
+"Optional" in California and Florida: if you offer only one shipping method with a fixed charge, this rarely creates an issue in practice. The condition is more relevant if a seller mandates expedited shipping with no alternative.
+
+## States where shipping is taxable regardless
+
+In these states, listing shipping separately does not create an exemption. Collect tax on shipping charges at the same rate as the product:
+
+Texas, Georgia, New York, New Jersey, Washington, Mississippi, Tennessee, Arkansas, Ohio (when goods are taxable), Pennsylvania, South Carolina, Iowa, Indiana, North Carolina, Michigan, Wisconsin.
+
+For the full state breakdown with context on each state's rule, see [Is shipping taxable?](#).
+
+## The "handling" issue
+
+If your charge is labeled "shipping and handling" rather than "shipping" alone, states that otherwise exempt shipping may tax the entire amount, because handling is a service, not transportation. The simplest fix: if you're in shipping-exempt states, call the charge "shipping" only. If you have a real separate handling cost, talk to your tax advisor about how to structure it.
+
+## How to configure this in your store
+
+**Shopify:** In tax settings, there's a "Charge taxes on shipping" toggle per shipping zone. Enable it for taxable states, disable it for exempt states.
+
+**WooCommerce:** Under WooCommerce → Settings → Tax, set "Shipping tax class" to match your products. You can also configure tax rates at the state level to include or exclude shipping.
+
+**Sales tax platform:** If you use TaxCloud, Avalara, or TaxJar, the platform applies shipping taxability rules by ship-to state automatically, provided you pass the shipping charge as a separate line item in the transaction, not as part of the product price.
+
+> **TaxCloud handles shipping taxability by state automatically.** Pass shipping as a line item; TaxCloud applies the correct rule for each state. [See how it works →](#)
+
+## Related questions
+
+- [Is shipping taxable?](#)
+- [Is my product taxable?](#)
+- [How do I determine whether my product is taxable in a given state?](#)
+- [Does taxability change by state for the same product?](#)
+- [How do I set the correct product tax code in Shopify?](#)

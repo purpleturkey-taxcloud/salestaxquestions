@@ -1,0 +1,81 @@
+---
+title: "Does taxability change by state for the same product?"
+slug: "does-taxability-change-by-state-for-the-same-product"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "Deep Guide"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "is-my-product-taxable"
+  - "are-clothing-and-apparel-items-taxable"
+  - "are-food-items-taxable"
+  - "are-digital-products-and-saas-taxable"
+  - "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+metaDescription: "Yes: the same product can be taxable in one state and exempt in another. Clothing, food, dietary supplements, digital products, and SaaS all have state-specific taxability rules. A product tax code applied nationally won't handle this correctly without state-level configuration."
+faqs:
+  - question: "Can the same product be taxable in some states and exempt in others?"
+    answer: "Yes. US sales tax has no national taxability standard: each state defines what is and isn't taxable independently. A $200 wool sweater is exempt in Pennsylvania (clothing exemption, no price cap) but taxable in Ohio. A downloaded software file is taxable in Texas but not subject to sales tax in California. A protein supplement is taxable in most states but exempt or reduced-rate in a few. State-level taxability mapping is required for accurate compliance."
+  - question: "Which product categories vary most by state?"
+    answer: "Clothing, food and groceries, dietary supplements, digital products and SaaS, and prescription vs. OTC medications show the most state-to-state variation. Physical goods like electronics, furniture, and sporting goods are more uniformly taxable across states, though exemptions still exist in specific categories."
+---
+
+Yes, and this is one of the most common misconfiguration errors in ecommerce sales tax. Applying a single taxability determination to a product across all states ignores the state-specific rules that govern whether that product is taxable in the destination state.
+
+## Categories with the most state-to-state variation
+
+### Clothing and apparel
+- **Exempt (no price cap):** Pennsylvania, New Jersey, Minnesota, Wisconsin
+- **Exempt under $110/item:** New York
+- **Exempt under $175/item:** Massachusetts
+- **Exempt under $50/item:** Connecticut
+- **Taxable:** Most other states, including OH, TX, GA, FL, IL, NC
+
+A $150 fleece jacket: exempt in PA and NJ, exempt in NY and MA, taxable in OH and TX.
+
+### Food and groceries
+- **Exempt (state rate):** Most states that have a food exemption
+- **Reduced state rate:** TN (4%), UT (3%), VA (1%), AR (0.125%)
+- **Taxable (no exemption):** AL, OK, groceries taxed at full rate
+- **Candy/soft drinks:** taxable in nearly all states, regardless of broader food exemption
+
+### Digital products and SaaS
+- **Not taxable:** CA, AZ (generally), FL (downloaded software generally exempt)
+- **Taxable:** TX, NY, WA, PA (computer services), CT (SaaS), KY (since 2023), IN, WI, MN
+- **Varies by product type:** Most states tax downloaded software but not all tax streaming or SaaS
+
+### Dietary supplements
+- **Taxable:** Most states
+- **Exempt or reduced:** CA, IL (1% rate), a few others
+
+### Prescription medications
+- **Exempt:** Nearly all states
+- **OTC medications:** Vary, some states exempt (IL at 1%), others tax at full rate
+
+## Why this matters for ecommerce sellers
+
+A multi-state seller shipping the same product nationally needs per-state taxability configuration in their tax engine, not a single "taxable/exempt" toggle. Products with state-variable taxability require:
+
+1. Correct product tax codes (PTCs) that map to state-level taxability rules
+2. A calculation engine that applies those PTCs per destination state
+3. Regular review as state laws change — Kentucky's 2023 SaaS expansion is a recent example of a state-level shift that changed taxability without any change to the product itself
+
+## Practical example
+
+A seller of protein powder ships nationwide:
+- Texas: taxable (supplements taxed at full rate)
+- California: historically exempt (vitamins/supplements exemption)
+- Illinois: 1% reduced rate (dietary supplements)
+- New York: taxable
+- Pennsylvania: taxable
+
+The same product, the same SKU, five different tax treatments. A single product tax code designation without state-level mapping will get at least some of these wrong.
+
+## Related questions
+
+- [Is my product taxable?](#)
+- [Are clothing and apparel items taxable?](#)
+- [Are food items taxable?](#)
+- [Are digital products and SaaS taxable?](#)
+- [How do I determine whether my product is taxable in a given state?](#)

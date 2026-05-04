@@ -1,0 +1,125 @@
+---
+title: "What does the back-filing process actually look like, step by step?"
+slug: "what-does-the-back-filing-process-look-like"
+topic: "Audits, Penalties & Back Filing"
+topicSlug: "audits-penalties"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "i-havent-been-collecting-sales-tax-what-do-i-do-now"
+  - "how-far-back-do-i-owe-sales-tax"
+  - "can-a-vda-protect-me-from-penalties"
+  - "what-is-a-vda-and-when-should-i-use-one"
+  - "can-i-just-start-collecting-sales-tax-going-forward"
+metaDescription: "Back-filing sales tax means reconstructing taxable sales by state and period, registering, filing amended or late returns, and remitting the tax owed. Here's what that process actually involves."
+faqs:
+  - question: "What is back-filing for sales tax?"
+    answer: "Back-filing means filing sales tax returns for prior periods when you had nexus but weren't registered or collecting. It involves reconstructing your taxable sales for each state and period, calculating the tax owed, and submitting returns with payment, either directly or through a VDA process."
+  - question: "How do I reconstruct sales data for past periods I didn't track?"
+    answer: "Most ecommerce platforms retain order history for several years. Shopify, Amazon Seller Central, and similar platforms have transaction-level exports going back 2–7 years depending on the platform. Your payment processor (Stripe, PayPal, Square) also retains transaction records. Pull your order history by state, filter for taxable products, and apply the applicable tax rates for each period."
+  - question: "How long does back-filing take?"
+    answer: "For a single state covering 2–3 years with clean records, back-filing can take a few weeks. For a multi-state situation with 3–4 years of exposure across 10+ states, expect 2–4 months from start to close, longer if a VDA process is involved, since the state review and negotiation phase takes time."
+  - question: "Do I need a CPA or tax professional to back-file?"
+    answer: "For a single state with a small, clean exposure, a knowledgeable seller can often handle it directly. For multi-state exposure, significant dollar amounts, VDA processes, or any situation where a state has already contacted you, working with a sales tax professional or CPA is advisable. The cost of professional help is typically much less than the cost of mistakes."
+  - question: "What happens after I file back returns?"
+    answer: "Once your back returns are filed and payment is remitted, the state processes the payments. If you went through a VDA, the state issues a closing agreement that settles the prior-period liability. Your account moves into active compliance. Keep all documentation (filed returns, payment confirmations, VDA closing letters) for your records permanently."
+---
+
+Back-filing is the process of reconstructing and submitting sales tax returns for periods you missed. It's more involved than current-period filing because the data exists in the past, rates may have changed, and exemptions have to be verified retroactively. Here's what the process actually involves, in order.
+
+## Step 1: Determine your scope
+
+Before you file a single return, you need to know:
+
+- **Which states**: every state where you had nexus during the back-filing period
+- **When nexus began in each state**: the date physical presence started or the economic nexus threshold was first crossed
+- **The length of the back-filing window**: 3–4 years for VDA, longer for direct filing, or as negotiated
+- **Whether to use a VDA**: for significant exposure, a VDA should be arranged before you file. Filing returns independently first may close the VDA window in some states.
+
+Don't start pulling data until you've made the VDA decision. If you're going VDA, the VDA agreement determines the scope of what you file.
+
+## Step 2: Choose your resolution path and engage accordingly
+
+**If using a VDA (recommended for significant exposure):**
+- Contact the state or the MTC multi-state program
+- Submit an anonymous preliminary inquiry to understand the state's terms
+- Identify your business and finalize the lookback window and penalty waiver terms
+- Receive authorization from the state to proceed
+- Then file the returns per the agreed scope
+
+**If filing directly (appropriate for small, bounded exposure):**
+- Register for a sales tax permit in the state (if not already registered)
+- Determine the periods to file based on your nexus start date and the state's statute of limitations
+- Proceed with data reconstruction and filing
+
+## Step 3: Pull and organize your historical sales data
+
+This is the most labor-intensive step. For each state and each period you need to cover:
+
+**What you need:**
+- Transaction-level order data, sorted by ship-to state and order date
+- The taxability status of each product or SKU (most physical goods are taxable; specific exemptions by state require verification)
+- Applicable tax rates for each jurisdiction and period (rates change over time, you need the rate that applied when the sale occurred, not today's rate)
+- Any exemption certificates you have on file for exempt customers (these reduce your taxable base)
+
+**Where the data lives:**
+- Shopify: Orders export, filtered by state; available historically in most accounts
+- Amazon Seller Central: Tax document library; order history exports
+- Other platforms: WooCommerce, BigCommerce, and similar platforms have order history exports
+- Payment processors: Stripe, PayPal, and Square retain transaction records for several years
+
+**The output you're building:** For each state and each filing period (monthly, quarterly, or annual depending on the state), a number: total taxable sales × applicable tax rate = tax owed for that period.
+
+Historical tax rates are available from each state's Department of Revenue, or from services that archive rate history. Getting the rate wrong (applying today's rate to a 2021 transaction) will result in an incorrect return.
+
+## Step 4: Prepare and file the returns
+
+For each period, you're filing what's called a late return or, depending on the state's process, an amended return. The mechanics:
+
+- Log in to the state's taxpayer portal (or use your sales tax software's filing interface)
+- Select the return period
+- Enter gross sales, exempt sales, and taxable sales
+- The system calculates the tax due
+- Review for accuracy, misclassified exemptions or wrong rates here affect every subsequent step
+- Submit and note the confirmation number
+
+For multi-state back-filing, this is dozens to hundreds of individual return submissions. Software tools that support batch filing for back periods help significantly with volume.
+
+## Step 5: Remit payment
+
+Each filed period requires payment of:
+- The tax owed for that period
+- Interest accrued on the unpaid balance (calculated from the original due date to the payment date)
+- Penalties, unless waived under a VDA
+
+Most states accept ACH payment through the taxpayer portal. For large back-tax payments, confirm the state's payment options in advance, some states have caps on individual portal transactions.
+
+Keep payment confirmation records. For every period, you want: the return submission confirmation, the payment confirmation, and the date of payment.
+
+## Step 6: Obtain your closing documentation
+
+**If you went through a VDA:** The state issues a closing letter or closing agreement that documents the settled periods and confirms the penalty waiver. This is the most important document in the entire process, it's your proof that the prior liability is resolved. Store it permanently.
+
+**If you filed directly:** Your filed returns and payment confirmations serve as the record. Most states' portals show return history; download and archive all filed returns.
+
+## Common complications to plan for
+
+**Product taxability disputes.** If some of your products are exempt or partially exempt in specific states (clothing in Pennsylvania, food products, digital goods), you'll need to apply the correct exemption rules for each state and period, not just assume everything is taxable. Getting this wrong means either overpaying or underpaying, both of which create follow-up issues.
+
+**Missing exemption certificates.** If you had B2B customers who should have provided exemption certificates but didn't, you technically collected no tax on sales that may be taxable. Retroactively obtaining certificates is possible but difficult. The typical approach is to assume those sales are taxable and include them.
+
+**Nexus start date disputes.** If a state disagrees with your claimed nexus start date (arguing you had nexus earlier than you claimed) the back-filing scope expands. This is more common in audit contexts than VDA contexts; VDA terms typically accept your stated start date.
+
+**Rate changes.** Tax rates and local surcharges change. A return for January 2021 uses the rate that applied in January 2021, not today's rate. For multi-year back-filing, this requires researching historical rates for each jurisdiction, or using a service that maintains rate history.
+
+> **Back-filing across multiple states and years is operationally complex.** Sales tax professionals and platforms like TaxCloud can help manage the data reconstruction and filing process. [Talk to the team →](#)
+
+## Related questions
+
+- [I haven't been collecting sales tax, what do I do now?](#)
+- [How far back do I owe sales tax?](#)
+- [Can a VDA protect me from penalties and interest on past-due taxes?](#)
+- [Can I just start collecting sales tax going forward without addressing the past?](#)
+- [What are the penalties for not collecting or remitting sales tax?](#)

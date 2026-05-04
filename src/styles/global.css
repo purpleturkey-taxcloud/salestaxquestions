@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand: #16a34a;
+  --color-brand-dark: #14532d;
+  --color-brand-light: #f0fdf4;
+  --color-slate-ink: #0f172a;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+}

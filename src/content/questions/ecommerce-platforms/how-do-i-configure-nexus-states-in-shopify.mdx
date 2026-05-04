@@ -1,0 +1,41 @@
+---
+title: "How do I configure nexus states in Shopify?"
+slug: "how-do-i-configure-nexus-states-in-shopify"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-does-shopify-handle-sales-tax"
+  - "what-is-economic-nexus"
+  - "how-do-i-register-for-a-sales-tax-permit"
+  - "is-shopify-built-in-tax-enough-for-multi-state-compliance"
+metaDescription: "In Shopify, nexus states are configured in Settings > Taxes and duties > United States. You add each state where you have nexus, and Shopify begins calculating and collecting tax on orders shipping to those states. You should only add states where you are registered, adding a state without registration creates a collection obligation without a corresponding filing mechanism."
+faqs:
+  - question: "How do I add nexus states in Shopify?"
+    answer: "Go to Settings > Taxes and duties > United States in your Shopify admin. Under 'Tax regions,' click 'Add a region' or select a state from the existing list. Once added, Shopify calculates tax on orders shipping to that state. You should only add states where you have both nexus and a valid sales tax registration — Shopify doesn't verify registration status."
+  - question: "Should I add all 45 states to Shopify's tax settings?"
+    answer: "No, only add states where you have nexus and are registered. Adding a state activates tax collection for that state. If you collect tax in a state where you're not registered, you've collected funds you have no legal mechanism to remit. Configure nexus states in Shopify to match your registered states, and update the list as you register in new states."
+---
+
+Nexus configuration in Shopify tells the platform where to calculate and collect tax. Only configure states where you're actually registered.
+
+## Key takeaways
+
+- **Location:** Settings > Taxes and duties > United States > Tax regions
+- **Adding a state:** select the state from the list; Shopify begins calculating applicable state + local tax rates for orders shipping there
+- **Only add registered states:** Shopify will collect tax as soon as a state is added; if you're not registered, you have no way to legally remit what you collect; don't add states until you're registered
+- **Shopify uses your store address for home-state rates:** your primary store address determines which state's rules apply when you ship from your location; this affects nexus in your home state
+- **Overrides within a state:** for states with product-specific exemptions, Shopify allows per-product or per-collection tax overrides; use these for categories with state-variable taxability (clothing, food, etc.)
+- **Third-party engine replaces this:** if you connect a certified tax engine (TaxCloud, Avalara, TaxJar) via API, that engine handles all rate calculation; the Shopify nexus configuration becomes secondary or irrelevant depending on the integration
+- **Removing a state:** if you close a permit (e.g., nexus drops below threshold and you de-register), remove the state from your Shopify configuration so you stop collecting tax you can no longer remit
+- **Shopify doesn't alert on nexus threshold breach:** if your sales into a non-configured state cross the economic nexus threshold, Shopify won't tell you; nexus monitoring must be done separately
+
+## Related questions
+
+- [How does Shopify handle sales tax?](#)
+- [What is economic nexus?](#)
+- [How do I register for a sales tax permit?](#)
+- [Is Shopify's built-in tax enough for multi-state compliance?](#)

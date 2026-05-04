@@ -1,0 +1,164 @@
+---
+title: "How do I switch from TaxJar to a different sales tax provider?"
+slug: "how-do-i-switch-from-taxjar"
+topic: "Switching Providers"
+topicSlug: "switching-providers"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "will-there-be-a-compliance-gap-switching-providers"
+  - "how-do-i-cancel-my-avalara-contract"
+  - "what-is-the-streamlined-sales-tax-sst-program"
+  - "is-the-sst-program-free-to-use"
+  - "taxjar-vs-taxcloud"
+metaDescription: "TaxJar's cancellation process has specific steps for AutoFile, data export, and state portal access that must happen in order. Here's how to switch without creating a compliance gap."
+---
+
+Switching from TaxJar has a few non-obvious steps (mainly around AutoFile and data export) that can cause problems if you do them out of order. TaxJar's terms state that data "may be permanently deleted" upon cancellation with no retention guarantee. And if you cancel before dealing with AutoFile, you can end up with a former provider still filing your returns from a portal it still has credentials for.
+
+Here's how to do it cleanly.
+
+## Before anything: plan the timing
+
+**Contact your new provider 30–60 days before your planned cutover.** This gives them time to configure your account, map your product codes, and set up state filings before the handoff. Rushing this creates gaps.
+
+**If you're on an annual TaxJar plan**, leaving before the contract expires means paying for both providers simultaneously — TaxJar won't prorate refunds. In most cases it makes sense to time the switch to your contract expiration. That said, if TaxJar's pricing has increased significantly at renewal, the overlap cost may still be less than staying another year.
+
+**Notify your internal team**: accounting, ops, whoever touches finance, before the switch happens. Filing responsibilities shift during the transition and someone needs to know which provider is responsible for which period.
+
+## Before you cancel: the AutoFile problem
+
+TaxJar doesn't automatically stop filing when you cancel your subscription. If you have AutoFile enrolled in any states, those enrollments continue until you explicitly cancel them, and canceling your account doesn't cancel AutoFile.
+
+You must cancel AutoFile enrollments before or at the time you cancel your account. If you cancel the account first, you may lose access to the AutoFile management panel while TaxJar continues filing.
+
+**One more timing wrinkle:** AutoFile cancellation requests must be submitted by the **4th of the month** to take effect for the current period. TaxJar starts processing returns on the 1st. If you miss the 4th, you're getting one more month of TaxJar filings whether you want them or not, which can conflict with your new provider if they're also enrolled for that period.
+
+## Step 1: Export all your data before anything else
+
+TaxJar's terms allow them to delete all data immediately upon account termination. In practice, deletion isn't always instant, but don't rely on that. Export everything before you touch the cancellation flow.
+
+**What to export:**
+- **Transaction history:** Transactions tab > Actions > Export CSV. TaxJar limits exports to 12-month windows, so if you have more than a year of history, run multiple exports. Export links expire in 24 hours.
+- **State tax reports and filed returns:** Pull all state reports from the Reports section. Save PDFs of any filed returns you can access.
+- **Product tax code mappings:** Document which tax codes you've assigned to which products, your new provider will need this as a starting point for remapping.
+- **Nexus state list:** Every state where you're registered, your filing frequencies, and permit numbers.
+- **Exemption certificates:** If you're on Professional plan, download all customer exemption certificates.
+
+**How far back to go:** State audits can reach back up to seven years. Keep your transaction records and filed returns for that window, even if your new provider only needs 12–24 months of history for initial setup. Store backups in at least two places (local storage plus cloud) in standard formats (CSV or XLS) so they're accessible regardless of what software you're using in the future.
+
+Don't export too early. If you pull data weeks before your cutover, you'll miss the final weeks of transactions that accumulate before the switch. Time the export close to your cutover date, but before canceling.
+
+## Step 2: Cancel AutoFile enrollments
+
+1. Log in to TaxJar as Administrator
+2. Go to AutoFile > AutoFile Dashboard
+3. Under "My AutoFile," click **Manage State Enrollments**
+4. Select "I need to cancel AutoFile enrollment for a state"
+5. Work through each state individually
+6. Acknowledge the confirmation that TaxJar cannot mark returns as final
+7. Click "Cancel Eligible State(s)" and confirm
+
+When you do this, be explicit with TaxJar about which month is their last. Use specific language:
+
+> "I would like to cancel my account at the end of [Month]. The final filings you will complete for me will be the [Month X] returns filed during [Month Y]. After that, please remove me from your filing service and do not file any future returns."
+
+The period-vs-deadline distinction trips people up. Filing deadlines run one month behind the filing period — January's returns are due in February, February's in March. If you tell TaxJar "don't file in June," they may interpret that as skipping the June filing deadline, which is actually the May return. That means May sales go unremitted, and you get a penalty. Be explicit about both the period and the deadline month.
+
+**Example:** You're switching in June. TaxJar should file May returns in June, as normal. Your new provider files June returns in July. The handoff is clean. If instead you told TaxJar to stop at the end of May, May's returns might not get filed at all.
+
+## Step 3: Revoke state portal access
+
+This step is easy to forget and can cause problems months later.
+
+TaxJar may retain login credentials to your state tax portals after AutoFile is canceled and your account is closed. That means automated filings can technically continue post-cancellation. Log into each state portal directly and:
+
+- Remove TaxJar as an authorized third-party filer
+- Change your portal password
+
+The states where you have registrations (check your nexus list from Step 1) are the ones that need this treatment.
+
+## Step 4: Cancel your TaxJar subscription
+
+**Starter or Basic plan:**
+1. Log in to TaxJar
+2. Go to Plan and Billing
+3. Click the red "Please cancel my paid subscription" link under Current Plan
+4. Complete the confirmation prompts
+
+**Professional plan:**
+There's no self-serve cancel button for this tier. You need to contact TaxJar support through your account dashboard and request cancellation directly.
+
+**Integrated via Shopify or Square:** Cancel from within the Shopify app management or Square dashboard, not from within TaxJar itself.
+
+**Annual plan users:** TaxJar does not prorate refunds on annual plans. If you're mid-year, you'll forfeit the remaining months. Time your switch to near your renewal date if cost matters, but don't let the sunk cost keep you on a platform that isn't working.
+
+## Step 4b: Remap your product tax codes
+
+TaxJar uses its own tax code taxonomy. Most other platforms use different classification systems, they don't share a one-to-one mapping. This is one of the more underestimated steps in a migration.
+
+Before your new provider can calculate tax correctly, every product in your catalog needs to be mapped to their classification system. Products that aren't correctly mapped will calculate at the wrong rate or not calculate at all.
+
+Export your product catalog from TaxJar with current tax code assignments. Share this with your new provider early in the onboarding process (ideally at least two weeks before go-live) so they have time to complete the mapping before you switch over. Flag any products with special treatment: clothing exemptions, food, digital goods, reduced-rate items. These are where misclassification causes the most damage.
+
+## Step 4c: Test before disabling TaxJar
+
+Don't turn off TaxJar until your new provider is fully configured and tested. Shopify and WooCommerce only support one active tax engine at a time, disabling TaxJar before your new provider is live means orders process with no sales tax calculated at all.
+
+If your platform supports a sandbox or staging environment, use it. Run test transactions across product types, shipping destinations, and exemption scenarios. Compare results against what TaxJar calculated for similar transactions. Only disable TaxJar in your live store once you're confident the new configuration is accurate.
+
+## Step 5: Coordinate the final handoff with your new provider
+
+Share your exported data with your new provider: transaction history, product tax codes, exemption certificates, and your nexus state list. The more historical context they have upfront, the more accurately they can configure your account before go-live.
+
+If your new provider is an SST Certified Service Provider, there's an additional enrollment step that doesn't apply when leaving TaxJar: SST enrollment.
+
+TaxJar is not a CSP in the Streamlined Sales Tax program. This means:
+- There's no SST registration to transfer — TaxJar never enrolled you in one
+- Your new CSP will enroll you in SST from scratch as part of onboarding
+- Qualifying remote sellers get filing in 24 SST member states covered by the program, fees that TaxJar was charging you for every period
+
+The new provider handles the SST Central Registration during onboarding. You don't need to do anything at the SST portal directly.
+
+## The timeline
+
+Most migrations take 2–4 weeks: roughly one week for data export and planning, one to two weeks for your new provider to configure the account and map product codes, and one week for testing before go-live.
+
+| Step | When to do it |
+|---|---|
+| Contact new provider and align on cutover date | 30–60 days before planned switch |
+| Export all data (transactions, returns, codes, certs) | Close to cutover, before canceling, don't export too early |
+| Share data with new provider for configuration | As soon as exported |
+| Cancel AutoFile enrollments | Before the 4th of the target cutover month |
+| Test new provider in staging environment | Before disabling TaxJar in production |
+| Coordinate final filing period in writing | Before cutover, use the exact language above |
+| Revoke state portal access | Same day as AutoFile cancellation |
+| Cancel TaxJar subscription | After AutoFile is canceled and data is exported |
+| Disable TaxJar from your storefront | Only after new provider is tested and live |
+| New provider files first returns | After TaxJar's final filing period is complete |
+
+## Common mistakes to avoid
+
+**Canceling the account before canceling AutoFile.** You lose dashboard access and may not be able to stop filings already in process.
+
+**Ambiguous final filing instructions.** "I'm canceling" isn't specific enough. TaxJar needs to know exactly which period's returns they're filing last and which month they stop. Use the verbatim language in Step 2 above.
+
+**Disabling TaxJar before the new provider is live.** On Shopify and WooCommerce, only one tax engine runs at a time. Disable early and orders process with zero tax calculated.
+
+**Exporting too early, or not at all.** Export close to cutover to capture recent transactions, but before canceling. TaxJar may delete data immediately on termination.
+
+**Skipping product code remapping.** TaxJar's taxonomy doesn't match other platforms'. Products that aren't remapped correctly will calculate at the wrong rate from day one.
+
+**Forgetting state portal credentials.** If TaxJar still has portal access and your new provider enrolls the same states, you can end up with both filing the same period, or TaxJar continuing to file after you've already switched.
+
+> **If you're switching to a CSP platform:** TaxJar doesn't participate in the Streamlined Sales Tax program, which means every filing in every state costs you $50–55 regardless. A CSP platform like TaxCloud enrolls qualifying sellers in SST, filing in 24 SST states is covered by the program, not charged per return. Worth understanding the math on your specific state footprint before choosing your next provider. [taxcloud.com](#)
+
+## Related questions
+
+- [Will there be a compliance gap when switching sales tax providers?](#)
+- [How do I cancel my Avalara contract?](#)
+- [What is the Streamlined Sales Tax (SST) Program?](#)
+- [Is the SST program free to use?](#)
+- [TaxJar vs. TaxCloud: which is better for mid-market ecommerce?](#)

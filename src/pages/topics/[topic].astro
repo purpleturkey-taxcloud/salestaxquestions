@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DifficultyBadge from '../../components/DifficultyBadge.astro';
+
+export async function getStaticPaths() {
+  const questions = await getCollection('questions');
+  const topicSlugs = [...new Set(questions.map(q => q.data.topicSlug).filter(Boolean))];
+  return topicSlugs.map(slug => ({ params: { topic: slug } }));
+}
+
+const { topic } = Astro.params;
+const allQuestions = await getCollection('questions');
+const topicQuestions = allQuestions
+  .filter(q => q.data.topicSlug === topic)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const topicName = topicQuestions[0]?.data.topic ?? topic;
+---
+
+<BaseLayout
+  title={topicName ?? topic}
+  description={`Browse all sales tax questions about ${topicName}.`}
+  canonical={`/topics/${topic}`}
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-gray-700">Home</a>
+      <span>›</span>
+      <a href="/topics" class="hover:text-gray-700">Topics</a>
+      <span>›</span>
+      <span class="text-gray-700">{topicName}</span>
+    </nav>
+
+    <h1 class="text-2xl font-bold text-slate-900 mb-1" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">{topicName}</h1>
+    <p class="text-gray-400 text-sm mb-8">{topicQuestions.length} questions</p>
+
+    <ul class="divide-y divide-gray-100 border border-gray-200 rounded-xl overflow-hidden">
+      {topicQuestions.map(q => (
+        <li>
+          <a href={`/${q.data.slug}`} class="flex items-start justify-between px-5 py-4 hover:bg-gray-50 transition-colors group">
+            <div class="min-w-0 pr-4">
+              <p class="text-sm font-semibold text-slate-900 group-hover:text-green-700 transition-colors leading-snug">{q.data.title}</p>
+              {q.data.metaDescription && (
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed line-clamp-2">{q.data.metaDescription}</p>
+              )}
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0 mt-0.5">
+              {q.data.difficulty && <DifficultyBadge difficulty={q.data.difficulty} />}
+              <svg class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

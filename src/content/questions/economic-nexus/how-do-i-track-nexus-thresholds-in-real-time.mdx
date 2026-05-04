@@ -1,0 +1,119 @@
+---
+title: "How do I track economic nexus thresholds in real time across all my sales channels?"
+slug: "how-do-i-track-nexus-thresholds-in-real-time"
+topic: "Economic Nexus & the Wayfair Ruling"
+topicSlug: "economic-nexus"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "what-is-economic-nexus"
+  - "when-does-economic-nexus-begin"
+  - "what-to-do-when-you-cross-economic-nexus-threshold"
+  - "is-there-a-grace-period-between-crossing-threshold-and-registering"
+  - "how-do-i-aggregate-nexus-thresholds-across-channels"
+metaDescription: "Tracking economic nexus thresholds across multiple sales channels requires aggregating state-level data from each platform. Here's the manual approach and when software monitoring pays for itself."
+faqs:
+  - question: "How do I manually track sales by state for economic nexus?"
+    answer: "Pull state-level sales data from each platform — Shopify (Analytics → Sales by region), Amazon Seller Central (Reports → Fulfillment → Sales by Geography), Etsy (transaction export grouped by state), and aggregate into a spreadsheet by state. Update monthly. Compare each state's total against the applicable threshold and measurement window."
+  - question: "Why is real-time threshold monitoring important?"
+    answer: "Your collection obligation begins the first of the month following the crossing in most states. If you don't discover a crossing until weeks or months later, you've accumulated uncollected tax liability for the gap period. Catching a crossing when it happens gives you time to register and configure collection before your obligation start date."
+  - question: "What is the measurement window for economic nexus, calendar year or trailing 12 months?"
+    answer: "Most states use the current calendar year. Some use a trailing 12-month window. A few measure against both, either the current or prior calendar year. The measurement window affects when a crossing resets: calendar-year states reset January 1, so sellers below the threshold at year-end may have no nexus in those states going into the new year."
+  - question: "Does tax compliance software automatically track nexus thresholds?"
+    answer: "Yes, if it's integrated with your sales channels. Platforms like TaxCloud can connect to Shopify, Amazon, WooCommerce, and other channels, aggregate sales by state, and alert you when you're approaching or have crossed a threshold. Automated monitoring eliminates the manual aggregation work and reduces the risk of late discovery."
+---
+
+Discovering an economic nexus threshold crossing months after it happened is the most common way sellers end up with meaningful back-tax exposure. The gap between when the crossing happened and when collection started is uncollected liability. Monitoring thresholds in advance of the crossing (not after) is how you avoid that gap.
+
+## The monitoring challenge for multi-channel sellers
+
+If you sell on one platform in one state, threshold monitoring is straightforward: check your year-to-date revenue for that state monthly. The complexity compounds with more channels:
+
+- Each platform stores sales data differently
+- No single platform shows your total across all channels
+- Each state may have a different threshold amount and measurement window
+- Transaction counts may be relevant in some states
+
+The combination means a seller on Amazon + Shopify + Etsy needs to aggregate state-level data from three different platforms, apply different thresholds for each state, and track against the correct measurement window, all on a regular basis.
+
+## Where to pull state-level data by platform
+
+**Shopify**
+
+*Analytics → Reports → Sales by location* — built-in geographic breakdown. For complete data, export Orders (Orders → Export as CSV), add a column grouping by shipping state, and sum revenue by state for your measurement period.
+
+Transaction count by state: the order export includes one row per order with shipping state, so a COUNT on the state column gives you transaction counts.
+
+**Amazon Seller Central**
+
+*Reports → Fulfillment → Sales → By Geography* — shows customer ship-to location totals. This is the most useful report for nexus threshold tracking. Include both FBA and Merchant-Fulfilled orders; both count toward your thresholds.
+
+For transaction counts, the same report includes order counts by geography.
+
+**Etsy**
+
+No direct state-by-state revenue report in the Etsy seller dashboard. Download the transaction history from *Finance → Download Data*, import into a spreadsheet, and group by ship-to state. Etsy's CSV includes the buyer state on each transaction.
+
+**WooCommerce**
+
+The built-in WooCommerce analytics includes geographic sales data under *WooCommerce → Analytics → Revenue*. Filter by date range and export to CSV for state-level aggregation. For more granular control, a plugin like WooCommerce Advanced Reports gives direct state-level revenue views.
+
+**Walmart Marketplace, BigCommerce, other channels**
+
+Each platform has its own reporting structure. The consistent approach: find the order-level export with ship-to state, import to a spreadsheet or database, and aggregate by state.
+
+## The aggregated tracking spreadsheet
+
+The goal is a single view across all channels. A workable structure:
+
+| State | Amazon | Shopify | Etsy | Other | Total | Threshold | % of Threshold | Window | Note |
+|-------|--------|---------|------|-------|-------|-----------|----------------|--------|------|
+| TX | $210K | $95K | $8K | — | $313K | $500K | 63% | CY | Approaching |
+| PA | $78K | $34K | $4K | — | $116K | $100K | 116% | CY | **CROSSED** |
+
+Update this monthly at minimum. For higher-volume businesses, weekly or real-time monitoring reduces the risk of a late discovery.
+
+## Applying the correct measurement window
+
+**Calendar year (most states):** Sum sales from January 1 to present. Reset January 1 each year.
+
+**Trailing 12 months (some states):** Sum sales from 12 months prior to today. This window always moves forward, you never get a fresh-start reset the way calendar-year states do.
+
+**Prior or current calendar year (a few states):** Nexus applies if you exceeded the threshold in either the prior year or the current year. This means a threshold crossing in Q4 of Year 1 can create obligations starting in Year 2 even if you don't cross again, and you need to track year-over-year.
+
+Know each state's measurement window before relying on your tracking data to assess nexus status.
+
+## When to upgrade from manual to automated monitoring
+
+Manual tracking is viable for sellers on 1–2 channels in fewer than a dozen states. The cost-benefit shifts toward software monitoring when:
+
+- You're on 3+ sales channels with significant volume
+- You're approaching thresholds in multiple states simultaneously
+- Your business is growing fast enough that you might cross in a new state any month
+- You've had a gap-period liability situation before and don't want to repeat it
+
+Tax compliance platforms that integrate with your sales channels (Shopify, Amazon, WooCommerce, and others) can aggregate this data automatically and trigger alerts when you cross or approach a threshold. The monitoring replaces the manual aggregation work entirely.
+
+> **TaxCloud monitors your economic nexus thresholds across all connected channels in real time**, alerting you to crossings before your collection obligation starts. [See how it works →](#)
+
+## What to do when you catch a crossing
+
+Once monitoring identifies a threshold crossing:
+
+1. Confirm the crossing date from your aggregated data
+2. Determine the collection start date (first of following month in most states)
+3. Start registration immediately, processing takes 1–6 weeks
+4. Configure collection in each sales channel for the obligation start date
+5. Verify how marketplace sales appear on that state's return
+
+The earlier you catch a crossing, the more time you have between discovery and obligation start, and the smaller the gap if registration takes longer than expected.
+
+## Related questions
+
+- [What is economic nexus and how does it work?](#)
+- [How do I aggregate nexus thresholds across Amazon, Shopify, Etsy, and Walmart?](#)
+- [When does economic nexus begin: the day I cross or the next period?](#)
+- [What do I do the moment I cross an economic nexus threshold?](#)
+- [Is there a grace period between crossing and when I must register?](#)

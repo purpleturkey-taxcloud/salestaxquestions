@@ -1,0 +1,125 @@
+---
+title: "How do I set the correct product tax code in Shopify for different product categories?"
+slug: "how-do-i-set-correct-product-tax-code-in-shopify"
+topic: "Product Taxability"
+topicSlug: "product-taxability"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "is-my-product-taxable"
+  - "are-clothing-and-apparel-items-taxable"
+  - "are-digital-products-and-saas-taxable"
+  - "is-shipping-taxable"
+  - "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+metaDescription: "Shopify uses product tax codes to apply the correct taxability rules by state. Here's how to find the right code, where to set it, and what to do when Shopify's native options aren't enough."
+---
+
+**What you'll need:** Shopify admin access · Knowledge of your product category (food, clothing, digital goods, etc.) · A sales tax platform integration if you have complex tax codes (optional but recommended)
+
+Product tax codes tell your sales tax system what your product is, which determines whether it's taxable, exempt, or reduced-rate in each state. Shopify has a built-in tax code system, but it's limited. If your products fall into nuanced categories (food, clothing, digital goods, medical devices), you'll almost certainly need a sales tax platform integration to get state-level accuracy.
+
+## Step 1: Understand what a product tax code does
+
+A product tax code is a standardized identifier that tells the tax calculation engine: "this product is [category X]." The tax engine then looks up whether category X is taxable in the buyer's state and applies the correct rate, or exempts it.
+
+Without a code, most platforms default to treating products as standard taxable goods. This is correct for general merchandise but wrong for food, clothing, medicine, digital goods, or anything else with state-specific exemptions.
+
+## Step 2: Find your product's category
+
+Before you can assign a code, know what your product is:
+
+- **General tangible goods**: default treatment; taxable in all states with a sales tax
+- **Unprepared food / groceries**: exempt in most states; candy and soda typically excluded
+- **Clothing and apparel**: exempt in NY, PA, NJ, MN, VT (with carve-outs for accessories, athletic gear)
+- **Prescription drugs**: exempt in virtually all states
+- **OTC drugs and medical devices**: varies by state
+- **Digital goods / downloaded software**: patchwork; taxable in some states, exempt in others
+- **SaaS / cloud software**: taxable in TX, NY, WA, PA; exempt in CA, FL, IL
+- **Dietary supplements**: generally taxable; not treated as food in most states
+
+If you're unsure how your product is classified, check your state's department of revenue website under "product taxability" or "exemption categories."
+
+## Step 3: Set the tax code in Shopify
+
+**For individual products:**
+1. Go to **Shopify admin → Products**
+2. Open the product
+3. Scroll to the **Pricing** section
+4. Click the **Tax code** field (labeled "Tax code" or "Product type for taxes")
+5. Search for your category and select the matching code
+6. Save
+
+**For bulk updates:**
+1. Go to **Products → All products**
+2. Select the products you want to update
+3. Click **Actions → Edit products**
+4. Add the "Tax code" column if it's not visible
+5. Enter or select the code for each row
+6. Save
+
+**Via CSV import:**
+Export your product list, add or update the `tax_code` column, and reimport. This is the most efficient approach for large catalogs.
+
+## Step 4: Understand Shopify's native tax code limitations
+
+Shopify's built-in tax codes cover common categories but are not comprehensive. The native system works reasonably well for:
+- Standard taxable goods
+- Clothing (basic exemption states)
+- Basic food categories
+
+It does **not** handle well:
+- Per-item price thresholds (New York's $110/item clothing rule)
+- Digital goods with state-by-state patchwork rules
+- SaaS taxability across states
+- OTC drug and medical device nuance
+- Sales tax holidays
+
+For these cases, Shopify's native system will produce incorrect results in some states.
+
+## Step 5: Use a sales tax platform integration for complex categories
+
+If you sell in nuanced product categories, integrate a sales tax platform (TaxCloud, Avalara, TaxJar) with Shopify. The integration replaces Shopify's native tax calculation with the platform's engine, which maintains current, state-specific taxability rules for every product category.
+
+**How it works:**
+1. Install the sales tax platform's Shopify app
+2. Map your products to the platform's product tax codes (these are more granular than Shopify's native codes)
+3. The platform handles calculation at checkout based on the buyer's state and your product codes
+
+The key advantage: when rules change (a state updates its digital goods policy, a new sales tax holiday is added), the platform updates automatically. You don't need to reconfigure Shopify.
+
+**Selecting the right code in your platform:**
+
+Most platforms use either their own proprietary codes or Streamlined Sales Tax (SST) codes. TaxCloud uses SST-aligned codes. Avalara uses its own Avalara Tax Code (ATC) system. TaxJar uses TaxJar categories.
+
+Within any system, search for your product category, review the description, and confirm it matches your specific product before assigning. If you're unsure between two codes, contact your platform's support, assigning the wrong code is as problematic as assigning none.
+
+## Step 6: Verify with a test transaction
+
+After setting codes:
+1. Place a test order from a state where your product should be exempt (e.g., NY clothing purchase under $110)
+2. Confirm tax is not charged
+3. Place a test order from a state where your product is taxable at the standard rate
+4. Confirm tax is charged at the correct rate
+
+If results don't match expectations, recheck the code assignment and your platform's connection to Shopify.
+
+## Common mistakes
+
+| Mistake | Result |
+|---|---|
+| Leaving "tax code" blank | Platform defaults to standard taxable, over-collects on exempt products |
+| Using a generic "clothing" code in Shopify without an integrated platform | Misses the NY $110/item threshold; may over-collect or under-collect |
+| Assigning one code to an entire product line | Misses intra-catalog variation (e.g., vitamins taxable, prescription formulas exempt) |
+| Never reviewing codes after catalog changes | New products added without codes default to taxable regardless of category |
+
+> **TaxCloud integrates directly with Shopify and applies state-specific taxability rules by product code automatically.** One code assignment; TaxCloud handles the state variation. [See how it works →](#)
+
+## Related questions
+
+- [Is my product taxable?](#)
+- [Are clothing and apparel items taxable?](#)
+- [Are digital products and SaaS taxable?](#)
+- [Is shipping taxable?](#)
+- [How do I determine whether my product is taxable in a given state?](#)

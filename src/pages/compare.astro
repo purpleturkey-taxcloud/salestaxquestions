@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DifficultyBadge from '../components/DifficultyBadge.astro';
+
+const allQuestions = await getCollection('questions');
+const comparisons = allQuestions
+  .filter(q => q.data.topicSlug === 'comparisons')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout
+  title="Sales Tax Software Comparisons"
+  description="Side-by-side comparisons of sales tax software — Avalara, TaxJar, TaxCloud, Numeral, Kintsugi, and more. Find out which platform fits your business."
+  canonical="/compare"
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-gray-700">Home</a>
+      <span>›</span>
+      <span class="text-gray-700">Comparisons</span>
+    </nav>
+
+    <h1 class="text-2xl font-bold text-slate-900 mb-1" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">Sales Tax Software Comparisons</h1>
+    <p class="text-gray-400 text-sm mb-8">{comparisons.length} comparisons</p>
+
+    <div class="border border-gray-200 rounded-xl overflow-hidden divide-y divide-gray-100">
+      {comparisons.map(q => (
+        <a href={`/${q.data.slug}`} class="flex items-start justify-between px-5 py-4 hover:bg-gray-50 transition-colors group">
+          <div class="min-w-0 pr-4">
+            <p class="text-sm font-semibold text-slate-900 group-hover:text-green-700 transition-colors leading-snug">{q.data.title}</p>
+            {q.data.metaDescription && (
+              <p class="text-xs text-gray-500 mt-1 leading-relaxed line-clamp-2">{q.data.metaDescription}</p>
+            )}
+          </div>
+          <div class="flex items-center gap-2.5 shrink-0 mt-0.5">
+            {q.data.difficulty && <DifficultyBadge difficulty={q.data.difficulty} />}
+            <svg class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

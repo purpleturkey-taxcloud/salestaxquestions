@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allQuestions = await getCollection('questions');
+
+const topics = [
+  { slug: 'sales-tax-basics',         name: 'Sales Tax Basics',           description: 'Foundational concepts every online seller needs to understand.' },
+  { slug: 'economic-nexus',           name: 'Economic Nexus',             description: 'Wayfair thresholds, state-by-state rules, and what to do when you cross one.' },
+  { slug: 'physical-nexus',           name: 'Physical Nexus',             description: 'FBA inventory, 3PL warehouses, remote employees, and trade shows.' },
+  { slug: 'sst-program',              name: 'SST Program',                description: 'How the Streamlined Sales Tax program works and why CSP certification matters.' },
+  { slug: 'switching-providers',      name: 'Switching Providers',        description: 'How to leave Avalara, TaxJar, or Numeral without a compliance gap.' },
+  { slug: 'registration',             name: 'Registration & Permits',     description: 'How to register, what it costs, timelines, and late registration recovery.' },
+  { slug: 'filing-frequency',         name: 'Filing & Deadlines',         description: 'Filing frequencies, deadlines by state, zero returns, and multi-state filing.' },
+  { slug: 'product-taxability',       name: 'Product Taxability',         description: 'SaaS, digital goods, clothing, food, shipping, gift cards, and more.' },
+  { slug: 'marketplace-facilitators', name: 'Marketplace Facilitators',   description: "Amazon, Etsy, eBay, Walmart, TikTok Shop — what they handle and what they don't." },
+  { slug: 'exemption-certificates',   name: 'Exemption Certificates',     description: 'Resale certs, B2B exemptions, multi-state certificates, and validation.' },
+  { slug: 'audits-penalties',         name: 'Audits & Penalties',         description: 'VDA process, audit triggers, penalty rates, and how to get current.' },
+  { slug: 'state-guides',             name: 'State Guides',               description: 'Nexus thresholds, filing rules, and key taxability notes for all 50 states.' },
+  { slug: 'ecommerce-platforms',      name: 'Ecommerce Platforms',        description: 'Shopify, WooCommerce, BigCommerce — what they handle and how to integrate.' },
+  { slug: 'comparisons',              name: 'Comparisons',                description: 'TaxCloud vs. Avalara, TaxJar, Numeral, Kintsugi, and more.' },
+  { slug: 'mid-market',               name: 'Mid-Market & Scaling',       description: 'Managing compliance across 30+ states, M&A implications, and cost analysis.' },
+];
+
+const questionCount = (topicSlug: string) =>
+  allQuestions.filter(q => q.data.topicSlug === topicSlug).length;
+---
+
+<BaseLayout title="All Topics" description="Browse all sales tax topics for ecommerce businesses." canonical="/topics">
+  <div class="max-w-5xl mx-auto px-4 py-12">
+    <h1 class="text-2xl font-bold text-gray-900 mb-2">All topics</h1>
+    <p class="text-gray-500 mb-10">Browse every sales tax topic covered on this site.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {topics.map(topic => {
+        const count = questionCount(topic.slug);
+        return (
+          <a href={`/topics/${topic.slug}`} class="border border-gray-200 rounded-lg p-5 hover:border-blue-300 hover:shadow-sm transition-all group">
+            <p class="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors mb-1">{topic.name}</p>
+            <p class="text-sm text-gray-500 mb-3 leading-snug">{topic.description}</p>
+            {count > 0 && <p class="text-xs text-gray-400">{count} questions</p>}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

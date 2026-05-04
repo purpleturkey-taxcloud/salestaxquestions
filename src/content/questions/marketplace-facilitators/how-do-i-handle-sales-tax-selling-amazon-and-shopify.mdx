@@ -1,0 +1,95 @@
+---
+title: "How do I handle sales tax when I sell on Amazon AND my own Shopify store simultaneously?"
+slug: "how-do-i-handle-sales-tax-selling-amazon-and-shopify"
+topic: "Marketplace Facilitators & Multi-Channel"
+topicSlug: "marketplace-facilitators"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "if-amazon-collects-sales-tax-do-i-still-need-to-register"
+  - "what-is-a-marketplace-facilitator-law"
+  - "do-amazon-etsy-sales-count-toward-nexus-threshold"
+  - "does-amazon-fba-create-nexus"
+  - "how-do-i-track-nexus-thresholds-in-real-time"
+metaDescription: "Amazon handles tax on Amazon transactions. Your Shopify store is entirely your responsibility. Here's how to figure out where you need to collect on Shopify and how to set it up."
+faqs:
+  - question: "If Amazon collects sales tax, do I still need to collect on Shopify?"
+    answer: "Yes. Amazon's collection covers Amazon transactions only. Every sale through your Shopify store is your responsibility in every state where you have nexus. Amazon handling one channel doesn't affect your obligations on the other."
+  - question: "How do I know which states to collect in on Shopify?"
+    answer: "You need to collect in every state where you have nexus, from physical presence (including FBA inventory) or from crossing the economic nexus threshold. For Amazon+Shopify sellers, FBA states always require registration regardless of Amazon's collection on the Amazon side."
+  - question: "Do my Amazon sales count toward the Shopify nexus threshold?"
+    answer: "In most states, yes. Amazon sales count toward your economic nexus threshold in most states, even though Amazon collected the tax. If your combined Amazon + Shopify sales exceed $100K in a state, you have nexus there for Shopify sales, and you need to be collecting."
+  - question: "How do I configure Shopify to collect sales tax in the right states?"
+    answer: "In Shopify, go to Settings → Taxes and duties, then add each nexus state under your tax regions. Shopify will calculate and collect tax on orders shipping to customers in those states. You still need a sales tax permit in each state before collecting there."
+---
+
+Amazon and Shopify are two separate compliance relationships. Amazon handles the tax on Amazon transactions automatically. Your Shopify store has no connection to that, everything on the Shopify side is your responsibility in every state where you have nexus.
+
+The two-channel problem is one of the most common compliance gaps for growing ecommerce brands.
+
+## Step 1: Map your nexus across both channels
+
+Before you can configure Shopify correctly, you need to know where you have nexus. For a combined Amazon + Shopify seller, nexus comes from three sources:
+
+**FBA physical nexus.** Every state where Amazon stores your inventory is a nexus state, regardless of your sales volume there and regardless of Amazon's collection on your Amazon sales. Amazon currently operates fulfillment centers in roughly 30+ states. A seller with FBA in California, Texas, Pennsylvania, and Georgia has physical nexus in all four and must be registered there.
+
+Pull your FBA Inventory Placement report from Amazon Seller Central (under Inventory → Inventory Planning or FBA Reports) to see which states currently hold your inventory.
+
+**Economic nexus from combined sales.** In most states, your Amazon sales count toward your economic nexus threshold even though Amazon collected the tax. Add your Amazon sales and Shopify sales together for each state. If the combined total exceeds $100K in a state, you have economic nexus there, and a Shopify collection obligation.
+
+**Home state nexus.** You always have nexus in your business's home state (where it's registered/incorporated). Make sure Shopify is configured to collect there.
+
+## Step 2: Register in every nexus state before collecting on Shopify
+
+You need a sales tax permit in each state before you start collecting there. Collecting tax without a permit creates its own compliance issues, you're collecting money you have no authority to collect and no mechanism to remit.
+
+For states where you have FBA physical nexus: register immediately if you haven't already. You've had a collection obligation since the day Amazon moved inventory to each state.
+
+For states where you've crossed the economic nexus threshold via combined Amazon + Shopify sales: register before your collection obligation start date (first of the following month is the safe default; confirm each state's rule).
+
+Registration takes 1–6 weeks depending on the state. Don't wait to start the process.
+
+## Step 3: Configure Shopify tax collection
+
+In Shopify, navigate to **Settings → Taxes and duties**. Under tax regions, add each state where you have nexus.
+
+For each state you add:
+- Shopify will apply the state's base rate automatically
+- For states with county/city-level rates, Shopify calculates based on the ship-to address (rooftop-level calculation is available with Shopify Tax)
+- Review product tax overrides for any items that might be exempt or taxed at a different rate in specific states (clothing in Pennsylvania, food items, etc.)
+
+Shopify Tax (a separate product from basic Shopify tax settings) provides more accurate rooftop-level calculation and is worth evaluating if you're shipping to states with complex local rate structures.
+
+## Step 4: File and remit for your Shopify sales
+
+Shopify calculates and collects tax from your customers at checkout, but it doesn't file or remit to states. That step is separate and is your responsibility (or your tax software's responsibility).
+
+You need to file sales tax returns in each state where you collected on Shopify and remit the tax collected. Filing frequency (monthly, quarterly, annual) is assigned by each state based on your revenue. Most mid-market Shopify sellers file monthly or quarterly in high-volume states.
+
+A sales tax platform (like TaxCloud) handles filing and remittance automatically, pulling your Shopify transaction data and filing in each nexus state at the correct frequency.
+
+## The Amazon reporting side
+
+Amazon provides sellers with a sales tax report in Seller Central (under Reports → Tax Document Library). This shows what Amazon collected on your behalf by state and period. You don't file returns for Amazon-collected amounts (Amazon handles that) but you may need this data for certain state return formats that require you to report gross sales including marketplace-facilitated sales alongside your own-channel sales.
+
+> **Related:** [How do I report marketplace transactions on my state sales tax return?](#)
+
+## The most common mistakes
+
+**Not registering in FBA states.** Amazon collecting on Amazon sales doesn't remove the physical nexus registration requirement. Many sellers skip FBA-state registration and don't realize they're non-compliant on their Shopify sales in those states.
+
+**Not aggregating thresholds.** Sellers monitor their Shopify sales for threshold crossing but forget that Amazon sales in the same state count too. The combined threshold can catch you in states where your direct channel alone wouldn't have triggered nexus.
+
+**Collecting on Shopify without a permit.** Starting collection before registration is set up. The correct order is: register → wait for permit → then enable collection.
+
+> **TaxCloud monitors your combined Amazon + Shopify nexus**, handles registration in new nexus states, and files your Shopify returns automatically. [See how multi-channel works →](#)
+
+## Related questions
+
+- [If Amazon already collects sales tax, do I still need to register?](#)
+- [Does Amazon FBA inventory create nexus?](#)
+- [Do Amazon and Etsy sales count toward my state nexus threshold?](#)
+- [What is a marketplace facilitator law, and does it apply to me?](#)
+- [How do I report marketplace transactions on my state sales tax return?](#)

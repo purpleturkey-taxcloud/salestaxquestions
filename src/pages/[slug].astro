@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DifficultyBadge from '../components/DifficultyBadge.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+export async function getStaticPaths() {
+  const questions = await getCollection('questions');
+  return questions
+    .filter(q => q.data.slug && q.data.slug !== 'homepage')
+    .map(q => ({
+      params: { slug: q.data.slug },
+      props: { question: q },
+    }));
+}
+
+const { question } = Astro.props;
+const { data } = question;
+const { Content } = await render(question);
+
+const allQuestions = await getCollection('questions');
+const relatedQuestions = (data.related ?? [])
+  .map(slug => allQuestions.find(q => q.data.slug === slug))
+  .filter(Boolean)
+  .slice(0, 5);
+
+const faqSchema = data.faqs?.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: data.faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+} : undefined;
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.metaDescription}
+  canonical={`/${data.slug}`}
+  schema={faqSchema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-gray-700">Home</a>
+      <span>›</span>
+      {data.topicSlug && data.topic && (
+        <>
+          <a href={`/topics/${data.topicSlug}`} class="hover:text-gray-700">{data.topic}</a>
+          <span>›</span>
+        </>
+      )}
+      <span class="text-gray-700 truncate max-w-xs">{data.title}</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        {data.difficulty && <DifficultyBadge difficulty={data.difficulty} />}
+        {data.type && (
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+            {data.type}
+          </span>
+        )}
+      </div>
+      <h1 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.01em;">{data.title}</h1>
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-slate max-w-none
+      prose-headings:font-semibold prose-headings:text-slate-900
+      prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
+      prose-h3:text-base prose-h3:mt-6 prose-h3:mb-2
+      prose-p:text-gray-700 prose-p:leading-relaxed
+      prose-li:text-gray-700
+      prose-strong:text-slate-900 prose-strong:font-semibold
+      prose-a:text-green-700 prose-a:no-underline hover:prose-a:underline
+      prose-blockquote:border-green-300 prose-blockquote:bg-green-50 prose-blockquote:rounded-r-lg prose-blockquote:py-1
+      prose-table:text-sm prose-th:text-left prose-th:font-semibold prose-th:text-slate-700
+      prose-td:text-gray-600 prose-tr:border-gray-200
+      prose-code:text-green-700 prose-code:bg-green-50 prose-code:px-1 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none">
+      <Content />
+    </div>
+
+    <!-- CTA -->
+    <CTABlock topicSlug={data.topicSlug} topicName={data.topic} />
+
+    <!-- Related questions -->
+    {relatedQuestions.length > 0 && (
+      <div class="mt-10">
+        <h2 class="text-base font-semibold text-gray-900 mb-3">Related questions</h2>
+        <ul class="divide-y divide-gray-100 border border-gray-200 rounded-lg overflow-hidden">
+          {relatedQuestions.map(q => q && (
+            <li>
+              <a href={`/${q.data.slug}`} class="flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors group">
+                <span class="text-sm text-gray-700 group-hover:text-green-700 transition-colors">{q.data.title}</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-green-500 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</BaseLayout>

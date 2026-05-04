@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allQuestions = await getCollection('questions');
+
+const topics = [
+  { slug: 'sales-tax-basics',         name: 'Sales Tax Basics',           description: 'Foundational concepts every online seller needs to understand.', accent: 'emerald' },
+  { slug: 'economic-nexus',           name: 'Economic Nexus',             description: 'Wayfair thresholds, state-by-state rules, and what to do when you cross one.', accent: 'emerald' },
+  { slug: 'physical-nexus',           name: 'Physical Nexus',             description: 'FBA inventory, 3PL warehouses, remote employees, and trade shows.', accent: 'emerald' },
+  { slug: 'sst-program',              name: 'SST Program',                description: 'How the Streamlined Sales Tax program works and why CSP certification matters.', accent: 'teal' },
+  { slug: 'switching-providers',      name: 'Switching Providers',        description: 'How to leave Avalara, TaxJar, or Numeral without a compliance gap.', accent: 'teal' },
+  { slug: 'registration',             name: 'Registration & Permits',     description: 'How to register, what it costs, timelines, and late registration recovery.', accent: 'teal' },
+  { slug: 'filing-frequency',         name: 'Filing & Deadlines',         description: 'Filing frequencies, deadlines by state, zero returns, and multi-state filing.', accent: 'amber' },
+  { slug: 'product-taxability',       name: 'Product Taxability',         description: 'SaaS, digital goods, clothing, food, shipping, gift cards, and more.', accent: 'amber' },
+  { slug: 'marketplace-facilitators', name: 'Marketplace Facilitators',   description: "Amazon, Etsy, eBay, Walmart, TikTok Shop — what they handle and what they don't.", accent: 'amber' },
+  { slug: 'exemption-certificates',   name: 'Exemption Certificates',     description: 'Resale certs, B2B exemptions, multi-state certificates, and validation.', accent: 'violet' },
+  { slug: 'audits-penalties',         name: 'Audits & Penalties',         description: 'VDA process, audit triggers, penalty rates, and how to get current.', accent: 'rose' },
+  { slug: 'state-guides',             name: 'State Guides',               description: 'Nexus thresholds, filing rules, and key taxability notes for all 50 states.', accent: 'sky' },
+  { slug: 'ecommerce-platforms',      name: 'Ecommerce Platforms',        description: 'Shopify, WooCommerce, BigCommerce — what they handle and how to integrate.', accent: 'violet' },
+  { slug: 'comparisons',              name: 'Comparisons',                description: 'TaxCloud vs. Avalara, TaxJar, Numeral, Kintsugi, and more.', accent: 'sky' },
+  { slug: 'mid-market',               name: 'Mid-Market & Scaling',       description: 'Managing compliance across 30+ states, M&A implications, and cost analysis.', accent: 'rose' },
+];
+
+const accentClasses: Record<string, { bar: string; text: string; bg: string; badge: string }> = {
+  emerald: { bar: 'bg-emerald-500', text: 'text-emerald-700', bg: 'hover:bg-emerald-50', badge: 'bg-emerald-50 text-emerald-700' },
+  teal:    { bar: 'bg-teal-500',    text: 'text-teal-700',    bg: 'hover:bg-teal-50',    badge: 'bg-teal-50 text-teal-700' },
+  amber:   { bar: 'bg-amber-400',   text: 'text-amber-700',   bg: 'hover:bg-amber-50',   badge: 'bg-amber-50 text-amber-700' },
+  violet:  { bar: 'bg-violet-500',  text: 'text-violet-700',  bg: 'hover:bg-violet-50',  badge: 'bg-violet-50 text-violet-700' },
+  rose:    { bar: 'bg-rose-500',    text: 'text-rose-700',    bg: 'hover:bg-rose-50',    badge: 'bg-rose-50 text-rose-700' },
+  sky:     { bar: 'bg-sky-500',     text: 'text-sky-700',     bg: 'hover:bg-sky-50',     badge: 'bg-sky-50 text-sky-700' },
+};
+
+const questionCount = (topicSlug: string) =>
+  allQuestions.filter(q => q.data.topicSlug === topicSlug).length;
+
+const featuredSlugs = [
+  'when-do-i-have-to-start-collecting-sales-tax-in-another-state',
+  'does-amazon-fba-create-nexus',
+  'what-is-the-streamlined-sales-tax-sst-program',
+  'how-do-i-cancel-my-avalara-contract',
+  'i-havent-been-collecting-sales-tax-what-do-i-do-now',
+  'which-sales-tax-plugins-work-best-with-woocommerce',
+];
+
+const featuredQuestions = featuredSlugs
+  .map(slug => allQuestions.find(q => q.data.slug === slug))
+  .filter(Boolean);
+
+const totalQuestions = allQuestions.filter(q => q.data.slug && q.data.slug !== 'homepage').length;
+---
+
+<BaseLayout
+  title="Sales tax answers for ecommerce businesses"
+  description="Plain-language answers to the sales tax questions ecommerce operators actually run into — nexus thresholds, product taxability, exemption certificates, filing deadlines, audits, and more."
+  canonical="/"
+>
+  <!-- Hero -->
+  <section class="relative py-20 px-4 overflow-hidden" style="background-color: #0f172a;">
+    <div class="absolute inset-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 28px 28px; opacity: 0.4;"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(22,163,74,0.12) 0%, transparent 70%);"></div>
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 border" style="background: rgba(22,163,74,0.08); border-color: rgba(22,163,74,0.25);">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+        <span class="text-green-400 text-xs font-medium tracking-wide">{totalQuestions} questions answered</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.02em;">
+        Sales tax answers for<br class="hidden md:block" /> ecommerce businesses.
+      </h1>
+      <p class="text-slate-400 text-lg mb-3 max-w-2xl mx-auto leading-relaxed">
+        Plain-language answers to the questions ecommerce operators actually run into — nexus thresholds, product taxability, exemption certificates, filing deadlines, audits, and more.
+      </p>
+      <p class="text-slate-500 text-sm">No vendor pitch. No hedging. Direct answers for founders, controllers, and finance teams.</p>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <div class="flex items-baseline justify-between mb-6">
+      <h2 class="text-lg font-semibold text-slate-900" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">Browse by topic</h2>
+      <a href="/topics" class="text-sm text-green-700 hover:text-green-800 font-medium transition-colors">View all →</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {topics.map(topic => {
+        const count = questionCount(topic.slug);
+        const ac = accentClasses[topic.accent];
+        return (
+          <a href={`/topics/${topic.slug}`} class={`relative border border-gray-200 rounded-xl p-5 transition-all duration-150 hover:shadow-md hover:-translate-y-0.5 ${ac.bg} group overflow-hidden`}>
+            <div class={`absolute left-0 top-0 bottom-0 w-1 rounded-l-xl ${ac.bar}`}></div>
+            <p class={`font-semibold text-slate-900 mb-1.5 text-sm ${ac.text} group-hover:opacity-100`} style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">{topic.name}</p>
+            <p class="text-xs text-gray-500 mb-3 leading-snug">{topic.description}</p>
+            {count > 0 && (
+              <span class={`inline-block text-xs font-medium px-2 py-0.5 rounded-full ${ac.badge}`}>{count} questions</span>
+            )}
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Featured questions -->
+  {featuredQuestions.length > 0 && (
+    <section class="max-w-5xl mx-auto px-4 pb-20">
+      <div class="flex items-baseline justify-between mb-5">
+        <h2 class="text-lg font-semibold text-slate-900" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">Featured questions</h2>
+      </div>
+      <div class="border border-gray-200 rounded-xl overflow-hidden divide-y divide-gray-100">
+        {featuredQuestions.map(q => q && (
+          <a href={`/${q.data.slug}`} class="flex items-start justify-between px-5 py-4 hover:bg-gray-50 transition-colors group">
+            <div class="min-w-0 pr-4">
+              <p class="text-sm font-semibold text-slate-900 group-hover:text-green-700 transition-colors leading-snug">{q.data.title}</p>
+              {q.data.metaDescription && (
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed line-clamp-2">{q.data.metaDescription}</p>
+              )}
+            </div>
+            <svg class="w-4 h-4 text-gray-300 group-hover:text-green-500 shrink-0 transition-colors mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+</BaseLayout>

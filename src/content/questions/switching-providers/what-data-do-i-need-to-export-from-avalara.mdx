@@ -1,0 +1,109 @@
+---
+title: "What data and records do I need to export from Avalara before leaving?"
+slug: "what-data-do-i-need-to-export-from-avalara"
+topic: "Switching Sales Tax Providers"
+topicSlug: "switching-providers"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "how-do-i-cancel-my-avalara-contract"
+  - "what-is-the-avalara-separation-process"
+  - "will-there-be-a-compliance-gap-switching-providers"
+  - "how-do-i-transfer-sst-registration-between-csps"
+  - "what-data-do-i-need-to-export-from-taxjar"
+metaDescription: "Before leaving Avalara, export your filed returns, transaction history, exemption certificate library, nexus configuration, and tax codes. Access terminates at contract end. Here's what to pull and where to find it."
+faqs:
+  - question: "What happens to my Avalara data when I cancel?"
+    answer: "When your Avalara contract ends, your access to the AvaTax and Returns portals terminates. Data retention policies vary by contract, in some cases Avalara retains data for a period after termination, but your ability to access or export it ends. Export everything you need before your contract end date, not after."
+  - question: "What is the most important data to export from Avalara?"
+    answer: "Filed return records and transaction history are the most critical: these are your primary documentation for prior-period compliance and audit defense. Exemption certificates stored in CertCapture are also critical if you have a B2B business. Export these well before your contract ends, not the day before."
+  - question: "How do I export filed returns from Avalara?"
+    answer: "In the Avalara Returns portal, navigate to your filing history and download return PDFs or summary reports for each state and period. Do this for every state and every open period within your statute of limitations window, typically 3 to 4 years back. The filing history view lets you filter by jurisdiction and date range."
+  - question: "Can I export exemption certificates from CertCapture?"
+    answer: "Yes. CertCapture has bulk export functionality under the Reports section. Export a full certificate library including certificate images, customer records, and validity dates. This export is especially important if you're moving to a new provider that also handles certificate management, you'll need to import your existing certificates to avoid gaps."
+---
+
+Avalara stores your transaction history, filed returns, exemption certificates, and nexus configuration in its portal. When your contract ends, access terminates. Export everything you need before that date, there's no reliable path to retrieve records after access closes.
+
+## What to export (and where to find it)
+
+### 1. Filed returns, highest priority
+
+Your filed returns are the primary documentation proving you met your compliance obligations for each period. In an audit, these are the first records a state will request.
+
+**Where:** Avalara Returns portal → Filing History. Filter by jurisdiction and date range.
+
+**What to pull:** PDF copies of filed returns for every state and every period within your statute of limitations window, typically the current year plus 3 to 4 years back. If you're in a state with a longer SOL, go back further.
+
+**Format:** Download PDFs rather than relying on summary exports. The PDF return is what an auditor wants to see: a summary report isn't a substitute.
+
+### 2. Transaction-level history
+
+Transaction records support return-level audit defense and let your new provider or accountant reconstruct period-by-period calculations if needed.
+
+**Where:** AvaTax portal → Reports → Transaction Reports. Run by date range and jurisdiction.
+
+**What to pull:** Full transaction export covering your entire history in Avalara, date, transaction ID, ship-to jurisdiction, taxable amount, tax calculated, rate applied, product tax code used. CSV format works well for this.
+
+**Note on volume:** Large transaction histories may need to be pulled in segments (quarterly or annual batches) to avoid export timeouts.
+
+### 3. Exemption certificate library (CertCapture)
+
+If you use CertCapture for B2B exemption certificate management, your certificate library is stored in Avalara separately from transaction data. It doesn't automatically export when you pull transaction history.
+
+**Where:** CertCapture → Reports → Certificate Export or Bulk Download.
+
+**What to pull:**
+- Certificate images (PDF) for every active customer
+- Certificate metadata: customer name, state, form type, issue date, expiration date
+- Validation status and registration numbers
+
+**Why this matters:** If your new provider also handles certificate management, importing your existing certificates prevents you from having to re-request them from all your customers. Missing certificates on file after a transition creates an audit gap.
+
+### 4. Nexus configuration
+
+Your registered nexus states are configured in Avalara and affect which transactions get taxed. Export this list to verify it's complete before migrating and to ensure your new platform is configured identically.
+
+**Where:** AvaTax Admin Console → Company → Nexus.
+
+**What to pull:** Full nexus list with state, effective date, and nexus type (physical, economic). Compare this against your actual registration list to catch any discrepancies.
+
+### 5. Product tax code mappings
+
+If you've customized product tax codes in AvaTax (mapping specific SKUs or product categories to specific tax treatment), export those mappings before leaving. Rebuilding them from scratch in a new platform risks miscoding products and introducing new taxability errors.
+
+**Where:** AvaTax Admin Console → Items or Product Catalog.
+
+**What to pull:** Full item/product export with SKUs and assigned tax codes. Cross-reference against your current product catalog to identify any gaps.
+
+### 6. Rate override and custom rule configurations
+
+If your account includes any custom rate overrides or jurisdiction-specific configurations, document these. They're often set up and forgotten, but they affect calculation accuracy in your new platform.
+
+**Where:** AvaTax Admin Console → Advanced Settings or Custom Rules (if applicable to your account tier).
+
+## Timing: when to do this
+
+Start exports at least 30 days before your contract end date, not the week before. Reasons:
+
+- Large exports (multi-year transaction history, large certificate libraries) can take time to generate and download
+- If you discover gaps or issues in the exports, you still have time to open a support ticket with Avalara before access ends
+- Filed return exports sometimes require account rep assistance for older periods
+
+Your Avalara account rep can assist with data export requests if self-service export doesn't surface everything you need. Request this assistance early.
+
+## What Avalara retains after contract end
+
+Avalara's data retention policies are contract-specific. Some enterprise contracts include a post-termination access period. Most do not. Assume your access ends at contract termination and plan accordingly, do not leave record retrieval to the post-termination period.
+
+> **Related:** [What is the Avalara separation process?](#) | [Will there be a compliance gap when switching providers?](#)
+
+## Related questions
+
+- [How do I cancel my Avalara contract?](#)
+- [What is the Avalara separation process?](#)
+- [Will there be a compliance gap when switching providers?](#)
+- [How do I transfer my SST registration from one CSP to another?](#)
+- [What data do I need to export from TaxJar before leaving?](#)

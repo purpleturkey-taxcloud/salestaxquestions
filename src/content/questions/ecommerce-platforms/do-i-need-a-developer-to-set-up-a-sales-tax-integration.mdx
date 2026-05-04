@@ -1,0 +1,38 @@
+---
+title: "Do I need a developer to set up a sales tax integration?"
+slug: "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Beginner"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-do-i-integrate-taxcloud-with-shopify-bigcommerce-woocommerce"
+  - "how-does-shopify-handle-sales-tax"
+  - "which-sales-tax-plugins-work-best-with-woocommerce"
+metaDescription: "For Shopify, most sales tax integrations (TaxCloud, Avalara, TaxJar) are no-code app installs that a non-developer can complete. WooCommerce plugin installations are no-code but require WordPress familiarity. BigCommerce API integrations and custom headless setups typically require a developer. The complexity threshold depends on the platform, not the tax engine."
+faqs:
+  - question: "Can I set up a sales tax integration without a developer?"
+    answer: "For Shopify: yes, in most cases. TaxCloud, Avalara, and TaxJar all offer Shopify App Store integrations that install like any other app, no code required. For WooCommerce: usually yes, if you're comfortable with WordPress plugin management. For BigCommerce: depends on the integration method, bundled Avalara is no-code, but API-based integrations may require developer help. For custom or headless ecommerce setups: almost always requires developer involvement."
+  - question: "When does a sales tax integration require a developer?"
+    answer: "Developer involvement is typically needed when: (1) you're on BigCommerce or a custom platform with no native plugin, (2) your store uses a headless or custom-built frontend that doesn't have a standard app connector, (3) you need custom logic like split shipments, multi-warehouse routing, or complex exemption certificate workflows at checkout, or (4) you're migrating from one platform to another and need to rebuild the integration from scratch."
+---
+
+Platform determines the complexity more than the tax engine does. Shopify integrations are typically no-code. Custom setups almost always need a developer.
+
+## Key takeaways
+
+- **Shopify (no-code):** TaxCloud, Avalara AvaTax, and TaxJar all have Shopify App Store apps; install like any app; connect with an API key; technically comfortable non-developers can complete this in under an hour
+- **WooCommerce (low-code):** tax plugins install and configure like standard WordPress plugins; if you've added a WooCommerce plugin before, you can handle a tax plugin; requires comfort with WordPress admin, not coding
+- **BigCommerce (varies):** bundled Avalara integration is no-code configuration; third-party or API-based TaxCloud connections may require developer involvement for initial setup
+- **Headless or custom ecommerce (developer required):** if your storefront is custom-built or uses a headless architecture, you're connecting to the tax engine via API; requires developer work to implement the API calls at checkout
+- **Middleware platforms:** some sellers route through middleware (MuleSoft, Zapier, custom scripts) to connect their platform to a tax engine; this is developer territory
+- **Post-integration configuration (no-code):** once connected, configuring nexus states, product tax codes, and AutoFile enrollment in the tax engine dashboard is almost always a no-code admin task
+- **When to hire a developer:** if your platform isn't Shopify or WooCommerce, if you have custom checkout logic, or if you're rebuilding after a platform migration, budget for developer time upfront rather than troubleshooting a broken integration later
+
+## Related questions
+
+- [How do I integrate TaxCloud with Shopify, BigCommerce, or WooCommerce?](#)
+- [How does Shopify handle sales tax?](#)
+- [Which sales tax plugins work best with WooCommerce?](#)

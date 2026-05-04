@@ -1,0 +1,102 @@
+---
+title: "How do I aggregate sales across Amazon, Shopify, Etsy, and Walmart to determine nexus?"
+slug: "how-do-i-aggregate-nexus-thresholds-across-channels"
+topic: "Marketplace Facilitators & Multi-Channel Selling"
+topicSlug: "marketplace-facilitators"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "does-amazon-collect-sales-tax-for-sellers"
+  - "what-is-economic-nexus"
+  - "economic-nexus-thresholds-by-state"
+  - "when-does-economic-nexus-begin"
+  - "why-doesnt-marketplace-facilitation-eliminate-compliance-obligations"
+metaDescription: "Most states measure economic nexus against total in-state sales from all channels combined. Amazon, Shopify, Etsy, and Walmart all count toward the same threshold. Here's how to aggregate correctly."
+faqs:
+  - question: "Do Amazon sales count toward economic nexus thresholds even if Amazon collects the tax?"
+    answer: "Yes. In most states, Amazon-facilitated sales count toward your economic nexus threshold even though Amazon collects and remits the tax. The marketplace's tax collection is separate from whether the sales count toward your registration threshold. A few states have passed laws excluding marketplace-facilitated sales from threshold calculations, but the majority include them."
+  - question: "Do I need to add my Amazon and Shopify sales together to determine nexus?"
+    answer: "Yes, in states that measure economic nexus against total in-state sales. If you sold $60,000 into Texas from your Shopify store and $60,000 from Amazon, your combined Texas sales are $120,000, crossing the $100,000 threshold even though no single channel did. You track and aggregate by state across all channels."
+  - question: "How do I pull sales data by state from each platform?"
+    answer: "Shopify: Analytics → Sales by region, or Orders export filtered by shipping state. Amazon Seller Central: Reports → Business Reports → Detail Page Sales by geography. Etsy: Finance tab, download transactions and group by state. Walmart Marketplace: Seller Center, Sales Reports filtered by shipping state. Each platform reports differently, building a consolidated tracking sheet or using tax software to aggregate is the most reliable approach."
+  - question: "What measurement period do states use for threshold calculations?"
+    answer: "Most states use the current calendar year. Some use trailing 12 months. A few have both, you trigger nexus when you exceed the threshold in either the current or previous calendar year. Check the specific state's measurement window when evaluating whether you've crossed."
+---
+
+In most states, economic nexus is measured against total in-state sales from all channels combined, not per-platform. If you sell on Amazon, have a Shopify store, and list on Etsy, all three count toward the same state threshold. Here's how to aggregate correctly.
+
+## Why all channels count together
+
+Economic nexus laws look at your sales into a state, not at how those sales were made. Whether a customer bought from your website, your Amazon listing, or your Etsy shop, the economic activity happened, you received money in exchange for goods delivered into that state.
+
+The marketplace's role in collecting tax is a separate question from whether the sale counts toward your threshold. Most states confirm this explicitly: marketplace-facilitated sales count toward your threshold even though the marketplace handles the tax collection.
+
+**Practical implication:** A seller with $60,000 in Amazon sales and $60,000 in Shopify sales into California has $120,000 in California sales. The threshold is $500,000, not crossed yet. But a seller with $60,000 in Amazon sales and $55,000 in Shopify sales into Pennsylvania has $115,000 in Pennsylvania sales, crossing Pennsylvania's $100,000 threshold. Single-channel view would miss the crossing.
+
+## How to pull state-level data from each platform
+
+**Shopify**
+
+Shopify's native analytics include a geographic breakdown. Go to **Analytics → Reports → Sales by location** and filter to the state and date range you're measuring. For a full data pull, export your orders CSV (Orders → Export) and sort by shipping state in a spreadsheet.
+
+**Amazon Seller Central**
+
+Under **Reports → Business Reports → Sales & Traffic** you can filter by geography. The more reliable approach for nexus tracking is the **Fulfillment → Sales → By Geography** report, which shows customer ship-to locations. Include both FBA and Merchant-Fulfilled orders.
+
+**Etsy**
+
+Etsy doesn't have a direct state-by-state revenue report in the seller dashboard. Download your transaction history under Finance → Download Data and group by ship-to state. The CSV includes buyer state on every transaction.
+
+**Walmart Marketplace**
+
+In Seller Center, navigate to **Analytics → Reports** and download a Sales Report. Filter to your measurement period and group by ship-to state. Walmart's reporting is less granular than Amazon's, if you have significant Walmart volume, verify the data covers all order types.
+
+**Other channels**
+
+WooCommerce, BigCommerce, and direct Stripe/PayPal transactions need to be pulled from their own dashboards or exports. For manual reconciliation, you need each order's ship-to state and order total.
+
+## Building an aggregated threshold tracker
+
+For sellers on multiple channels, a consolidated spreadsheet (or tax software) is the only reliable way to see your combined state exposure.
+
+A basic tracking structure:
+
+| State | Amazon | Shopify | Etsy | Walmart | Total | Threshold | Crossed? |
+|-------|--------|---------|------|---------|-------|-----------|----------|
+| PA | $60,000 | $45,000 | $3,000 | $2,000 | $110,000 | $100,000 | Yes |
+| OH | $25,000 | $18,000 | — | — | $43,000 | $100,000 | No |
+
+Update this monthly at minimum, quarterly if your volumes are modest. For faster-growing businesses, monthly or real-time monitoring is the only reliable way to catch crossings before the obligation window closes.
+
+## Which states include marketplace sales in the threshold calculation
+
+The majority of states include marketplace-facilitated sales in threshold calculations. A small number have passed legislation explicitly excluding marketplace sales, typically states that enacted these laws later and built exclusions in from the start.
+
+Because this detail changes state-by-state and is periodically updated through legislation, verify directly with the state's Department of Revenue or use tax compliance software that tracks this at the state level. A state including Amazon sales in your threshold is not the same as a state requiring you to report or remit on those sales: the two questions are independent.
+
+## The measurement period question
+
+Most states measure nexus against the current calendar year. Some use a trailing 12-month window. A few measure against either the current or prior calendar year, meaning a crossing in November can create obligations that carry into the following year even if you don't cross again.
+
+When you're tracking across channels, make sure you're applying the correct measurement window for each state. A state using trailing 12 months requires you to look back from the current date rather than from January 1.
+
+## What to do once you identify a crossing
+
+Once your combined totals show a threshold crossing in a state:
+
+1. Determine the exact crossing date from your aggregated data
+2. Confirm that state's collection-start rule (first of following month is most common)
+3. Begin the registration process immediately, processing typically takes 1–6 weeks
+4. Configure each of your sales channels to collect tax in that state from your obligation start date
+
+> **TaxCloud's nexus monitoring tracks your threshold exposure across all channels in real time**: pulling sales data from connected platforms and alerting you to crossings before your collection obligation starts. [See how it works →](#)
+
+## Related questions
+
+- [Does Amazon collecting sales tax affect my nexus threshold calculations?](#)
+- [What is economic nexus and how does it work?](#)
+- [When does economic nexus begin: the day I cross or the next period?](#)
+- [Why doesn't marketplace facilitation eliminate my compliance obligations?](#)
+- [How do I track nexus thresholds in real time across all my sales channels?](#)

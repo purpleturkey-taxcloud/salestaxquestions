@@ -1,0 +1,40 @@
+---
+title: "How do I set product tax overrides in Shopify for exempt items?"
+slug: "how-do-i-set-product-tax-overrides-in-shopify"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Intermediate"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "how-does-shopify-handle-sales-tax"
+  - "how-do-i-determine-whether-my-product-is-taxable-in-a-given-state"
+  - "are-clothing-and-apparel-items-taxable"
+  - "are-food-items-taxable"
+metaDescription: "Shopify allows product-level tax overrides at the product and collection level, and state-level tax overrides for specific product categories. Use product tax overrides to handle state-specific exemptions like clothing in Pennsylvania or food in most states. Overrides apply a zero rate or a reduced rate to specific products in specific states."
+faqs:
+  - question: "How do I make a product tax-exempt in specific states in Shopify?"
+    answer: "In Shopify, go to the product page and uncheck 'Charge taxes on this product' to make it tax-exempt everywhere, or use Settings > Taxes and duties > Tax overrides to create state-specific overrides that apply a 0% rate to a product or collection in particular states. The override approach is better for products that are taxable in most states but exempt in specific ones."
+  - question: "Can I set different tax rates for the same product in different states?"
+    answer: "Yes, using Shopify's tax override feature. You can assign a product to a collection, then create a tax override that applies a specific rate (including 0%) to that collection in specific states. This is how sellers handle, for example, clothing that is exempt in Pennsylvania and New Jersey but taxable elsewhere."
+---
+
+Product overrides are the mechanism for handling state-specific exemptions in Shopify when you're not using a third-party engine.
+
+## Key takeaways
+
+- **Per-product toggle:** each product has a "Charge taxes on this product" checkbox in the product details; unchecking it makes the item tax-exempt in all states, use only for universally non-taxable items
+- **State-specific overrides:** for products taxable in most states but exempt in some (clothing, food), use Settings > Taxes and duties > Tax overrides; create an override for the state + product collection combination
+- **Collection-based overrides:** Shopify overrides work at the product collection level; put exempt products in a dedicated collection (e.g., "Exempt Clothing PA") and apply the override to that collection
+- **Rate override vs. 0%:** overrides can set a specific rate (e.g., Illinois 1% for food) or a 0% exempt rate; use the appropriate rate for the state's treatment
+- **Override limitations:** Shopify's native override system is manageable for a handful of states with simple exemptions; for sellers with complex product catalogs across many states, the override system becomes unwieldy: this is a key reason to connect a third-party tax engine that applies product tax codes automatically
+- **Third-party engine replaces overrides:** when TaxCloud, Avalara, or TaxJar is connected, their product tax codes handle state-specific taxability automatically; Shopify overrides become redundant and should be removed to avoid conflicts
+- **Testing overrides:** after setting an override, place a test order shipping to the exempt state and confirm $0 tax is applied; a 5-minute test prevents months of overcollection
+
+## Related questions
+
+- [How does Shopify handle sales tax?](#)
+- [How do I determine whether my product is taxable in a given state?](#)
+- [Are clothing and apparel items taxable?](#)
+- [Are food items taxable?](#)

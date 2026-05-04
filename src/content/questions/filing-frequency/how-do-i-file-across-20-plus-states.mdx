@@ -1,0 +1,87 @@
+---
+title: "How do I file sales tax returns across 20+ states without missing deadlines?"
+slug: "how-do-i-file-across-20-plus-states"
+topic: "Filing, Frequency & Deadlines"
+topicSlug: "filing-frequency"
+type: "How-To"
+difficulty: "Intermediate"
+publishedAt: "2026-05-03"
+updatedAt: "2026-05-03"
+related:
+  - "how-often-do-i-need-to-file-sales-tax-returns"
+  - "what-happens-if-i-miss-a-sales-tax-filing-deadline"
+  - "can-i-choose-my-own-filing-frequency"
+  - "how-do-i-handle-filing-where-marketplace-collects"
+  - "is-the-sst-program-free-to-use"
+metaDescription: "Filing across 20+ states manually is untenable at scale. AutoFile software handles multi-state deadline management and submission. SST states are covered through CSP AutoFile at no charge. Here's how to set it up correctly."
+faqs:
+  - question: "How do multi-state sellers manage sales tax filing across many states?"
+    answer: "Sales tax AutoFile software handles multi-state filing by aggregating transaction data, calculating liability by state, and submitting returns with payment on each state's schedule. Platforms like TaxCloud handle the filing calendar, ACH setup, and submission for both SST and non-SST states. Manual filing across 20+ states is impractical: the per-state deadline variation, zero-return requirements, and format differences make it a full-time operational task without software."
+  - question: "Do I need different software for SST vs. non-SST states?"
+    answer: "No. A full-service AutoFile platform handles both. SST states are filed through the CSP's connection to the SST program: these are included in the CSP's service at no charge to the seller (compensated by the state). Non-SST states are filed directly, typically via each state's electronic filing portal. The seller needs one platform that covers both."
+  - question: "What data does AutoFile software need from me?"
+    answer: "AutoFile needs transaction-level data, date, jurisdiction (ship-to address), sale amount, tax collected, product category, and whether the sale was through a marketplace facilitator. The platform calculates the state-level liability, prepares the return, and submits it. The higher-quality the transaction data coming in, the more accurate the returns going out. Misclassified jurisdictions and missing marketplace flags are the most common data quality issues."
+  - question: "What happens in states where I have zero sales for a period?"
+    answer: "Most states require a zero return even when you have no taxable sales. AutoFile platforms typically file zero returns automatically on your behalf for all active-permit states, so you remain compliant even in periods with no activity. Check your platform's settings to confirm zero-return filing is enabled for all jurisdictions."
+---
+
+Manual filing across 20+ states is not a scalable operation. The combination of different due dates, different frequency assignments per state, zero-return requirements, and varying format rules makes it a full-time task at that volume. The practical answer is AutoFile software, and for SST states, there's no charge for the filing itself.
+
+## Step 1: Get your nexus list current before setting up filing
+
+AutoFile software files where you tell it you have nexus. If your nexus list is wrong, your filing is wrong.
+
+Before configuring filing, audit your active registrations:
+- Pull your list of active permits from each state DOR (most have online account portals)
+- Compare against your economic nexus tracker, states where you crossed the threshold but haven't registered yet need registration before filing can start
+- Remove states where you've closed permits or where nexus has lapsed
+
+The filing system is only as accurate as the nexus configuration driving it.
+
+## Step 2: Establish ACH debit authorization in each state
+
+Most states require ACH debit authorization to accept automated tax payments. This is set up once at the state level, either during initial registration or when configuring your AutoFile account. Without ACH authorization, the filing may submit but payment won't process.
+
+For SST states, the CSP handles payment remittance directly, you authorize ACH to the CSP, which remits to each state. For non-SST states, you typically authorize ACH per state.
+
+## Step 3: Configure your transaction data feed
+
+AutoFile platforms need clean transaction data to produce accurate returns. The data requirements:
+- **Ship-to jurisdiction** at the city/county/zip level (not just state)
+- **Sale amount** and **tax collected** per transaction
+- **Product category** or tax code, to apply correct taxability rules
+- **Marketplace flag**: whether the transaction was through a marketplace facilitator (Amazon, Etsy, etc.) that collected on your behalf
+
+Data typically flows from your eCommerce platform (Shopify, BigCommerce, WooCommerce) or your ERP through a direct integration, or via CSV export if integration isn't available. Platform integrations reduce manual data handling error.
+
+## Step 4: Configure filing frequency per state
+
+Your filing frequency is assigned by each state and may differ, you might file monthly in California, quarterly in Ohio, and annually in Wyoming. AutoFile software typically imports frequency settings per state and manages the calendar automatically.
+
+Verify the assigned frequency in each state matches what the state actually assigned you. Frequency mismatches (filing quarterly when the state expects monthly) result in missed periods.
+
+## Step 5: Enable zero-return filing
+
+Most states require a return even for periods with no taxable sales. AutoFile platforms should file zero returns automatically for all active-permit states. Confirm this is enabled: the alternative is manually tracking which periods had zero activity and filing those by hand.
+
+## SST states: no additional charge
+
+For SST member states, filing through a CSP is part of the SST program. The CSP is compensated by the participating states, so sellers pay no per-filing fee for SST state returns. A seller with nexus in 18 SST states who uses TaxCloud as their CSP has all 18 filed automatically at no additional cost per return.
+
+## What AutoFile doesn't eliminate
+
+AutoFile software handles the mechanics. The seller is still responsible for:
+- Keeping the nexus list current when business activity changes
+- Ensuring transaction data flowing into the platform is accurate and complete
+- Responding to notices from state DORs (amended returns, audit notices, rate change confirmations)
+- Monitoring for new nexus — AutoFile doesn't watch your thresholds; nexus tracking is separate
+
+The combination of nexus monitoring and AutoFile covers the full compliance cycle. Each addresses a different part: monitoring identifies where you owe; AutoFile handles the return submission once you're registered.
+
+## Related questions
+
+- [How often do I need to file sales tax returns?](#)
+- [What happens if I miss a sales tax filing deadline?](#)
+- [Can I choose my own filing frequency, or does the state assign it?](#)
+- [How do I handle filing in states where a marketplace collects on my behalf?](#)
+- [Is the SST program free to use?](#)

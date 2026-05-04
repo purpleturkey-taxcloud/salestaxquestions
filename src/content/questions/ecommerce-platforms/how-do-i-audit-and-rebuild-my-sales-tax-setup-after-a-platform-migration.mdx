@@ -1,0 +1,75 @@
+---
+title: "How do I audit and rebuild my sales tax setup after a platform migration?"
+slug: "how-do-i-audit-and-rebuild-my-sales-tax-setup-after-a-platform-migration"
+topic: "Ecommerce Platform Integrations"
+topicSlug: "ecommerce-platforms"
+type: "Quick Answer"
+difficulty: "Advanced"
+publishedAt: "2026-05-04"
+updatedAt: "2026-05-04"
+related:
+  - "what-sales-tax-configuration-breaks-when-migrating-from-magento-to-shopify"
+  - "does-replatforming-reset-my-historical-sales-tax-collection-records"
+  - "how-do-i-integrate-taxcloud-with-shopify-bigcommerce-woocommerce"
+  - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
+metaDescription: "After a platform migration, a sales tax audit covers five areas: (1) nexus configuration in both the platform and tax engine, (2) product tax code mappings for non-standard items, (3) customer exemption certificate records, (4) AutoFile enrollment continuity, and (5) historical period data for open filing periods. Rebuild in this order before processing live orders."
+faqs:
+  - question: "What should I check after migrating ecommerce platforms?"
+    answer: "After a platform migration, verify: (1) nexus states are configured in the new platform's tax settings; (2) the tax engine integration is connected and live, not just installed; (3) product tax codes are mapped for any items with special taxability (clothing, digital goods, food, etc.); (4) exempt customer records are carried over and active in the new platform; (5) AutoFile enrollment is still active in your tax engine account and pulling data from the new platform."
+  - question: "How do I know if my sales tax is calculating correctly after migration?"
+    answer: "Place test orders in each nexus state for (a) a standard taxable product and (b) any products with special taxability treatments. Confirm the tax amount in the order matches the expected rate. Also test an order for an exempt customer, confirm $0 tax applies. If you can't complete a live test before launch, set up a sandbox order that you immediately cancel but which lets you see the tax calculation."
+---
+
+A platform migration creates a compliance gap if the tax setup isn't explicitly rebuilt. Assume nothing transferred, audit and verify every layer before processing live orders.
+
+## The five-layer audit
+
+**1. Nexus configuration**
+- Check: does the new platform have all your nexus states enabled in its tax settings?
+- Check: does the tax engine (TaxCloud, Avalara, TaxJar) also have those same nexus states configured?
+- These are two separate systems; both must match your registered states
+- Nexus states don't autopopulate from the old platform
+
+**2. Product tax code mappings**
+- Identify every product category in your catalog with non-standard taxability: clothing, food, digital goods, SaaS, medical devices, reduced-rate items
+- Verify those products are mapped to the correct Product Tax Codes in the tax engine
+- Run a spot-check: calculate tax on a test order for each category; confirm the rate matches what it should be for that state
+
+**3. Customer exemption records**
+- Export your exempt customer list from the old platform before decommissioning it
+- Recreate exempt status in the new platform for each customer, either in the platform's customer tax exempt settings or in the tax engine's certificate management system
+- If certificates are managed by a certificate management tool (Avalara CertCapture, EXEMPTAX), verify the integration between that tool and the new platform is live
+- Notify B2B exempt customers proactively if there's any gap; they'll get charged tax on their first order otherwise
+
+**4. Tax engine connection**
+- Verify the connection is active and processing live calculations, not just installed
+- A connected-but-not-active integration is a common post-migration failure mode; place a test order and look at the tax engine's transaction log to confirm the order appears
+- Check that the API key is valid and matches a production account, not a test/sandbox account
+
+**5. AutoFile enrollment**
+- If you were enrolled in AutoFile on the old platform, verify the enrollment is still pulling data from the new platform
+- Check the first filing period after migration: did it pull the correct order data?
+- Some tax engine accounts tie AutoFile data to a specific platform integration; if the integration ID changed (new app install), the AutoFile data feed may need to be reconfigured
+
+## Historical period data
+
+Platform migration doesn't erase your filing obligations for open periods on the old platform. Before migrating:
+- Export sales tax collected by state for any periods not yet filed
+- Store the data in a format accessible without the old platform (CSV, spreadsheet, or your tax engine's historical reports)
+- File open periods using the old platform's data even if you're now on the new platform
+
+## Rebuild sequence
+
+1. Configure nexus states in the new platform's settings
+2. Connect the tax engine integration; verify with transaction log
+3. Map product tax codes for non-standard items
+4. Restore exempt customer records
+5. Test: taxable order in each nexus state, exempt order for an exempt customer
+6. Confirm AutoFile data feed is pulling from the new platform
+7. File any open periods from the old platform data
+
+## Related questions
+
+- [What sales tax configuration breaks when migrating from Magento to Shopify?](#)
+- [Does replatforming reset my historical sales tax collection records?](#)
+- [How do I integrate TaxCloud with Shopify, BigCommerce, or WooCommerce?](#)
