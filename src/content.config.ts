@@ -14,6 +14,7 @@ const questions = defineCollection({
     updatedAt: z.string().optional(),
     related: z.array(z.string()).optional(),
     metaDescription: z.string().optional(),
+    tldr: z.string().optional(),
     faqs: z.array(z.object({
       question: z.string(),
       answer: z.string(),
