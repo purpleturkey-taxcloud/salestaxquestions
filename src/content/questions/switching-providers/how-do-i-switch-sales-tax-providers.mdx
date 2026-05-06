@@ -1,0 +1,147 @@
+---
+title: "How do I switch sales tax providers? A step-by-step migration guide"
+slug: "how-do-i-switch-sales-tax-providers"
+topic: "Switching Sales Tax Providers"
+topicSlug: "switching-providers"
+type: "Guide"
+difficulty: "Intermediate"
+publishedAt: "2026-05-05"
+updatedAt: "2026-05-05"
+related:
+  - "will-there-be-a-compliance-gap-switching-providers"
+  - "how-do-i-transfer-sst-registration-between-csps"
+  - "what-data-do-i-need-to-export-from-avalara"
+  - "what-data-do-i-need-to-export-from-taxjar"
+  - "is-switching-sales-tax-software-worth-it"
+  - "what-questions-should-i-ask-a-new-sales-tax-provider"
+metaDescription: "Step-by-step guide to switching sales tax providers: what to export, how to transfer SST registrations, how to configure your new platform, and how to avoid a compliance gap at cutover."
+tldr: "Switching sales tax providers takes 4–8 weeks when done in a planned way. The main tasks: export your filing history and registration data, transfer SST registrations through the SST program, reconfigure your ecommerce integration, set up ACH authorization for non-SST states, and establish a clean cutover date. The most common mistakes — going live mid-quarter or not confirming SST registration transfer before canceling the old platform — are easy to avoid with the right sequencing."
+faqs:
+  - question: "How long does it take to switch sales tax providers?"
+    answer: "For a mid-market brand with 10–30 states of nexus, a planned migration takes 4–8 weeks. The main time drivers are SST registration transfer (which requires processing time through the SST program), ACH authorization setup for non-SST states, and parallel-run testing to confirm the new platform calculates correctly before you stop using the old one. A provider with a dedicated onboarding manager compresses this timeline significantly."
+  - question: "How do I transfer SST registrations when switching providers?"
+    answer: "SST registrations transfer through the SST Central Registration system. Your new CSP provider handles this — they submit the registration transfer on your behalf, and the SST program updates your assigned CSP. You do not need to re-register in individual SST states. The transfer typically takes 1–2 weeks to process. Do not cancel your old provider until you confirm the transfer is complete and your new CSP enrollment is active."
+  - question: "Can I switch sales tax providers mid-year without a compliance gap?"
+    answer: "Yes, but the cutover date matters. The cleanest switch point is the first day of a new filing period — typically the first of a month or quarter. This way, your old provider files the last full period and your new provider picks up from a clean start. Switching mid-period creates a split-period scenario where two providers are each responsible for part of a filing period, which requires extra reconciliation and increases the risk of a missed filing."
+  - question: "What data do I need to export before switching providers?"
+    answer: "At a minimum: your full filing history (state, period, amount remitted), your registration list with state permit numbers, your exemption certificate records, and your nexus configuration. Some providers allow export to CSV; others require you to screenshot portal records manually. Export everything before canceling — once your account is closed, historical data may be inaccessible. Avalara and TaxJar both have export functionality, but the completeness varies."
+  - question: "Do I need to cancel my old provider before setting up the new one?"
+    answer: "No — and you shouldn't. Run both platforms simultaneously during migration. Set up and configure your new provider fully, run parallel-run testing to confirm calculations match, confirm SST transfers are complete, and then set your live cutover date. Only after the new platform is live and filing correctly should you initiate cancellation with the old provider."
+---
+
+Switching sales tax platforms is operationally real but manageable. The brands that get it wrong usually rush the cutover, forget to export filing history, or cancel the old provider before confirming the new one is working. The brands that get it right follow a sequenced process and give themselves 6–8 weeks.
+
+Here's the full process.
+
+## Before you start: confirm the business case
+
+Before spending a single hour on migration, verify the savings justify the switching effort. The most common scenario: a brand on Avalara paying $20,000–$40,000/year when a CSP-based platform would cost $5,000–$10,000/year. At that delta, a 6-week migration pays back in the first month of the new contract.
+
+Key variables to model:
+- Current annual cost (base platform + all per-state filing fees)
+- New platform annual cost, using your actual state count and filing frequency
+- SST state overlap: if your nexus includes SST member states and the new platform is a CSP, those filings drop to $0
+
+> **See:** [Is switching sales tax software worth it?](/is-switching-sales-tax-software-worth-it) for the cost modeling framework.
+
+## Step 1: Export your data from the current provider
+
+Before touching anything else, export everything. Once you cancel your account, data access may be limited or lost entirely.
+
+**What to export:**
+- Full filing history: state, period, amount remitted, date filed — going back at least 3–5 years
+- Registration list: every state where you're currently registered, with permit numbers
+- Exemption certificate records: all collected exemption certificates and their details
+- Nexus configuration: the states flagged as nexus, and the basis (economic, physical, or both)
+- Transaction-level data if available: useful for backfiling, audits, or reconciliation
+
+Most platforms have export functions, but the completeness varies.
+
+> **See:** [What data do I need to export from Avalara?](/what-data-do-i-need-to-export-from-avalara) and [What data do I need to export from TaxJar?](/what-data-do-i-need-to-export-from-taxjar) for provider-specific instructions.
+
+Store everything in a local folder before proceeding. Do not skip this step.
+
+## Step 2: Set up and configure the new platform
+
+Before going live, configure the new platform completely — do not rush to a live cutover before setup is finished.
+
+**Configuration checklist:**
+- **Nexus states**: mirror your current nexus configuration exactly. Don't add or remove states unless you've explicitly decided to change your nexus footprint.
+- **Platform integration**: connect your ecommerce platform (Shopify, BigCommerce, WooCommerce, or API) and confirm the integration is passing transaction data correctly
+- **Product mapping**: verify that your product tax codes are mapped correctly in the new system — particularly for any items with special taxability rules (clothing, food, digital goods, SaaS)
+- **Exemption certificates**: upload your existing exemption certificates so the new platform honors them from day one
+- **State credentials and ACH**: for non-SST states, the new platform typically needs to be authorized to file and remit on your behalf. This requires ACH authorization and may require setting up new state portal credentials. Allow 1–2 weeks for ACH authorization to process.
+
+## Step 3: Transfer SST registrations (if applicable)
+
+If you're moving between two Certified Service Providers, your SST registrations transfer through the SST program — you don't re-register. Your new CSP handles the transfer request.
+
+**What the transfer covers**: all 24 SST member states where you're currently enrolled. The SST program updates your assigned CSP, and the new provider takes over filing and remittance responsibility for those states.
+
+**Timeline**: SST registration transfers typically take 1–2 weeks to process through the SST Central Registration system.
+
+**Important**: do not cancel your old provider until you confirm from your new CSP that the SST transfer is complete and your enrollment is active. If you cancel first, there can be a window where neither provider is actively remitting — which creates a compliance gap in up to 24 states simultaneously.
+
+> **See:** [How do I transfer SST registration between CSPs?](/how-do-i-transfer-sst-registration-between-csps)
+
+## Step 4: Run a parallel period before cutover
+
+Before cutting over fully, run at least one filing period with both platforms active. This catches configuration errors before they become missed or incorrect filings.
+
+**What to verify during the parallel run:**
+- Transaction data is flowing correctly from your ecommerce platform to the new provider
+- Tax calculation on test orders matches expected rates for your key states
+- Exemptions are being honored correctly
+- The new provider's filing dashboard shows the correct registered states
+
+This step catches the most common migration errors: product tax codes that didn't transfer cleanly, nexus states that weren't configured, or integration edge cases that only show up with real transaction volume.
+
+## Step 5: Choose your cutover date carefully
+
+The cutover date determines which provider files which periods. Getting this wrong creates split-period returns — the most common source of compliance gaps during migrations.
+
+**The right cutover date:**
+- The **first day of a new filing period** — for monthly filers, that's the 1st of a month; for quarterly filers, it's the first day of a new quarter
+- This means your old provider files the last full period through the end of the month/quarter, and your new provider picks up the next full period from day one
+
+**The wrong cutover date:**
+- Mid-period: you'll have one provider responsible for half a period and another responsible for the second half. Each will expect the other to file. Neither will. This is how compliance gaps happen.
+- Before SST transfers are confirmed: even if everything else is set up, going live before SST enrollment is active means your first SST-state filings may not be covered by the CSP program.
+
+## Step 6: Cancel your old provider
+
+Only initiate cancellation after:
+- Your new platform has completed at least one successful filing period
+- SST registration transfer is confirmed complete
+- You have your full data export saved and verified
+- Your old provider's current billing period is at a natural break point (to avoid mid-period charges)
+
+**Check cancellation terms before you start the process.** Avalara requires 60 days' notice and has a 12-month initial term — if you're mid-contract, you may still owe the remaining term or face an early termination fee. TaxJar is month-to-month and can be canceled at any time. Know the terms before you assume you can cancel cleanly.
+
+> **See:** [How do I cancel my Avalara contract?](/how-do-i-cancel-my-avalara-contract) and [How do I switch from TaxJar?](/how-do-i-switch-from-taxjar) for provider-specific cancellation guidance.
+
+## The full migration timeline
+
+| Week | Activity |
+|---|---|
+| **Week 1** | Export all data from current provider. Evaluate new platform and contract. |
+| **Week 2** | Configure new platform: nexus states, integration, product mapping, exemption certificates. |
+| **Weeks 2–3** | Initiate SST registration transfer (if applicable). Set up ACH for non-SST states. |
+| **Week 4** | Parallel-run testing: verify calculation, integration data flow, exemption handling. |
+| **Week 5** | Confirm SST transfer complete. Set cutover date to first of next filing period. |
+| **Week 6+** | New platform files first period. Confirm successful. Initiate old provider cancellation. |
+
+## What a good onboarding team handles for you
+
+If your new provider offers a dedicated onboarding manager, most of the steps above are handled by them rather than by your ops or finance team. What that typically covers:
+
+- SST registration transfer initiation and tracking
+- Integration setup and configuration for your ecommerce platform
+- Parallel-run testing and sign-off
+- ACH setup for non-SST states
+- Historical data import for filing records
+- Cutover date coordination
+
+The difference between a self-directed migration and one with a dedicated onboarding manager is roughly 40–60 hours of internal team time. For a lean finance or ops team, that's often the deciding factor in provider selection.
+
+TaxCloud provides a dedicated onboarding manager for mid-market migrations from Avalara, TaxJar, or any other platform. The migration process is handled end-to-end, including SST transfer, integration setup, and parallel-run testing.
