@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchBar from '../components/SearchBar.astro';
 import { getCollection } from 'astro:content';
 
 const allQuestions = await getCollection('questions');
@@ -48,6 +49,15 @@ const featuredQuestions = featuredSlugs
   .filter(Boolean);
 
 const totalQuestions = allQuestions.filter(q => q.data.slug && q.data.slug !== 'homepage').length;
+
+const searchQuestions = allQuestions
+  .filter(q => q.data.slug && q.data.slug !== 'homepage')
+  .map(q => ({
+    slug: q.data.slug,
+    title: q.data.title,
+    topic: q.data.topic ?? '',
+    topicSlug: q.data.topicSlug ?? '',
+  }));
 ---
 
 <BaseLayout
@@ -71,6 +81,7 @@ const totalQuestions = allQuestions.filter(q => q.data.slug && q.data.slug !== '
         Plain-language answers to the questions ecommerce operators actually run into — nexus thresholds, product taxability, exemption certificates, filing deadlines, audits, and more.
       </p>
       <p class="text-slate-500 text-sm">No vendor pitch. No hedging. Direct answers for founders, controllers, and finance teams.</p>
+      <SearchBar questions={searchQuestions} />
     </div>
   </section>
 

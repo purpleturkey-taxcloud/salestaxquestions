@@ -1,0 +1,85 @@
+---
+interface Question {
+  slug: string;
+  title: string;
+  topic: string;
+  topicSlug: string;
+}
+interface Props {
+  questions: Question[];
+}
+const { questions } = Astro.props;
+const questionsJson = JSON.stringify(questions);
+---
+
+<div class="relative w-full max-w-xl mx-auto mt-8" id="search-wrapper">
+  <div class="relative">
+    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+    </svg>
+    <input
+      id="search-input"
+      type="text"
+      placeholder="Search 292 questions…"
+      autocomplete="off"
+      class="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-green-400/60 focus:border-green-400/60 transition-all"
+    />
+  </div>
+  <div
+    id="search-results"
+    class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-xl border border-gray-200 shadow-xl overflow-hidden z-50 max-h-80 overflow-y-auto"
+  ></div>
+</div>
+
+<script define:vars={{ questionsJson }}>
+  const questions = JSON.parse(questionsJson);
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+
+  function highlight(text, query) {
+    if (!query) return text;
+    const re = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(re, '<mark class="bg-green-100 text-green-800 rounded px-0.5">$1</mark>');
+  }
+
+  function search(query) {
+    if (!query || query.length < 2) {
+      results.classList.add('hidden');
+      results.innerHTML = '';
+      return;
+    }
+    const q = query.toLowerCase();
+    const matches = questions
+      .filter(item => item.title.toLowerCase().includes(q) || item.topic.toLowerCase().includes(q))
+      .slice(0, 8);
+
+    if (!matches.length) {
+      results.innerHTML = '<p class="px-4 py-3 text-sm text-gray-400">No results found.</p>';
+      results.classList.remove('hidden');
+      return;
+    }
+
+    results.innerHTML = matches.map(item => `
+      <a href="/${item.slug}" class="flex flex-col px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors group">
+        <span class="text-sm font-medium text-slate-800 group-hover:text-green-700 leading-snug">${highlight(item.title, query)}</span>
+        <span class="text-xs text-gray-400 mt-0.5">${item.topic}</span>
+      </a>
+    `).join('');
+    results.classList.remove('hidden');
+  }
+
+  input.addEventListener('input', e => search(e.target.value.trim()));
+
+  document.addEventListener('click', e => {
+    if (!document.getElementById('search-wrapper').contains(e.target)) {
+      results.classList.add('hidden');
+    }
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      results.classList.add('hidden');
+      input.blur();
+    }
+  });
+</script>
