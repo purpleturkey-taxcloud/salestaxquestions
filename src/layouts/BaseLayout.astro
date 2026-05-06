@@ -24,10 +24,30 @@ const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : A
   <meta property="og:title" content={siteTitle} />
   {description && <meta property="og:description" content={description} />}
   <meta property="og:type" content="article" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TaxCloud",
+    "url": "https://taxcloud.com",
+    "description": "TaxCloud is a Certified Service Provider (CSP) in the Streamlined Sales Tax program, providing sales tax compliance for mid-market ecommerce brands across all 50 US states and Canada.",
+    "sameAs": ["https://salestaxquestions.com"]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sales Tax Questions",
+    "url": "https://salestaxquestions.com",
+    "description": "Plain-language answers to U.S. sales tax questions for ecommerce businesses.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TaxCloud",
+      "url": "https://taxcloud.com"
+    }
+  })} />
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
@@ -98,8 +118,9 @@ const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : A
           </div>
         </div>
       </div>
-      <div class="mt-8 pt-6 border-t border-gray-200">
+      <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <p class="text-xs text-gray-400">This content is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional for advice specific to your situation.</p>
+        <p class="text-xs text-gray-400 shrink-0">Published by <a href="https://taxcloud.com" class="text-green-700 hover:underline" target="_blank" rel="noopener">TaxCloud</a></p>
       </div>
     </div>
   </footer>

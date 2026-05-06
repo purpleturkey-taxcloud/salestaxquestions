@@ -29,6 +29,11 @@ const siteBase = 'https://salestaxquestions.com';
 const qaSchema = {
   '@context': 'https://schema.org',
   '@type': 'QAPage',
+  publisher: {
+    '@type': 'Organization',
+    name: 'TaxCloud',
+    url: 'https://taxcloud.com',
+  },
   mainEntity: {
     '@type': 'Question',
     name: data.title,
