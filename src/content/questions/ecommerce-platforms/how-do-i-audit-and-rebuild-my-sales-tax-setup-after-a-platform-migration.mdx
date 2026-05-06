@@ -13,6 +13,7 @@ related:
   - "how-do-i-integrate-taxcloud-with-shopify-bigcommerce-woocommerce"
   - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
 metaDescription: "After a platform migration, a sales tax audit covers five areas: (1) nexus configuration in both the platform and tax engine, (2) product tax code mappings for non-standard items, (3) customer exemption certificate records, (4) AutoFile enrollment continuity, and (5) historical period data for open filing periods. Rebuild in this order before processing live orders."
+tldr: "After a platform migration, nothing transfers automatically — nexus states, product tax codes, exempt customer records, tax engine connections, and AutoFile enrollment all require explicit rebuilding. Verify the tax engine is actively processing by checking its transaction log after a test order. File open periods from old-platform data before switching traffic."
 faqs:
   - question: "What should I check after migrating ecommerce platforms?"
     answer: "After a platform migration, verify: (1) nexus states are configured in the new platform's tax settings; (2) the tax engine integration is connected and live, not just installed; (3) product tax codes are mapped for any items with special taxability (clothing, digital goods, food, etc.); (4) exempt customer records are carried over and active in the new platform; (5) AutoFile enrollment is still active in your tax engine account and pulling data from the new platform."

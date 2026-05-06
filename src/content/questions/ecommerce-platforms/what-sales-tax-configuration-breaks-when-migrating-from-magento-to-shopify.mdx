@@ -13,6 +13,7 @@ related:
   - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
   - "how-does-shopify-handle-sales-tax"
 metaDescription: "Migrating from Magento to Shopify breaks most sales tax configuration because the two platforms use fundamentally different tax models. Magento uses tax classes and rules stored in the platform database; Shopify uses nexus-based calculation with product tax codes. None of this transfers automatically, tax zones, product tax classes, customer exemptions, and engine integrations all need to be rebuilt from scratch."
+tldr: "Magento and Shopify use completely different tax architectures — tax classes, rate tables, engine connections, product tax codes, and customer exemptions all break on migration and must be rebuilt from scratch. Going live before the rebuild is complete is the most common cause of a zero-tax or all-taxable period. Export exempt customer lists before decommissioning Magento."
 faqs:
   - question: "Does my Magento sales tax configuration migrate to Shopify?"
     answer: "No. Magento and Shopify use completely different tax architectures. Magento stores tax rules, tax classes, and rate tables in its own database. Shopify uses nexus-based calculation with its own tax provider system. Platform migration tools (Litextension, Cart2Cart) move product and order data, they do not transfer tax configuration. Everything must be rebuilt: nexus settings, product tax codes, exemption certificate workflows, and tax engine connections."

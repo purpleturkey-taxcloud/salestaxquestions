@@ -12,6 +12,7 @@ related:
   - "how-does-shopify-handle-sales-tax"
   - "do-i-need-a-developer-to-set-up-a-sales-tax-integration"
 metaDescription: "WooCommerce does not calculate sales tax automatically, you must configure a tax rate table manually or connect a tax plugin (TaxJar, Avalara, TaxCloud) that provides automated rate lookup. Manual tax tables cannot handle the complexity of multi-state compliance; a plugin or API integration is essential for sellers with nexus in multiple states."
+tldr: "WooCommerce's built-in tax requires manually entering rates for every jurisdiction — impractical for more than one nexus state. Connect a certified plugin (TaxJar, Avalara, or TaxCloud via API) to replace manual tables with real-time rate lookup. The plugin intercepts checkout, calls the tax engine, and applies the correct rate automatically."
 faqs:
   - question: "Does WooCommerce calculate sales tax automatically?"
     answer: "WooCommerce has a built-in tax module, but it requires you to manually enter tax rates for each state and jurisdiction, it does not automatically look up rates. For multi-state compliance, this is not practical. Most WooCommerce sellers use a tax plugin (TaxJar's WooCommerce plugin, Avalara's AvaTax integration, or TaxCloud via the WooCommerce API) to automate rate lookup and calculation."

@@ -13,6 +13,7 @@ related:
   - "how-do-i-reconcile-amazon-1099k-data-with-my-sales-tax-filings"
   - "do-i-owe-sales-tax-when-i-invoice-when-i-ship-or-when-i-get-paid"
 metaDescription: "Shopify calculates and locks in the sales tax rate at the time of order placement, not at fulfillment. The tax amount shown on the order confirmation is the tax amount that will be collected. If fulfillment happens later and the rate has changed in the interim, Shopify does not recalculate. For sales tax reporting purposes, the liability accrues at the time of shipment, but the Shopify tax amount is fixed at order creation."
+tldr: "Shopify locks the tax rate at checkout and does not recalculate at fulfillment. For standard fulfillment windows this produces correct results, but pre-orders, backorders, and long fulfillment delays create edge cases where the collected rate may differ from the current rate. Shopify's Sales Tax Report allocates by order date, not fulfillment date."
 faqs:
   - question: "Does Shopify recalculate sales tax when an order is fulfilled?"
     answer: "No. Shopify calculates and locks in the tax amount at the time the order is placed. When the order is marked as fulfilled, Shopify does not run a new tax calculation. The tax amount on the fulfillment is the same as what was calculated at checkout. If rates change between order placement and fulfillment, Shopify's recorded tax amount reflects the rate at order time, not the current rate."

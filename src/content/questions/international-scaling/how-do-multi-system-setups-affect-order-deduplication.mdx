@@ -12,6 +12,7 @@ related:
   - "what-if-i-sell-through-multiple-channels"
   - "how-do-i-manage-compliance-across-30-to-45-states"
 metaDescription: "Brands running orders through multiple systems (Shopify + Odoo, Magento + NetSuite) risk duplicate transaction reporting if both systems send order data to the compliance platform. Tax engines that receive the same order from two sources may double-count transactions, resulting in over-reporting and over-remittance. A clear data flow with a single system of record is essential."
+tldr: "When two systems (like Shopify and an ERP) both send order data to your compliance platform, the same transaction can be recorded twice — doubling reported gross sales and over-remitting tax to states. The fix is designating one system as the single source of record for transaction data; the other receives calculation results but never pushes transactions independently."
 faqs:
   - question: "What is order deduplication and why does it matter for sales tax?"
     answer: "Order deduplication is the process of ensuring that each customer order is reported to your sales tax compliance platform exactly once. In multi-system setups (e.g., Shopify as the storefront and Odoo as the ERP, both syncing to a tax engine), the same order may arrive at the compliance platform twice, once from each system. If not deduplicated, the platform may record double the tax collected, leading to over-remittance to states and inaccurate gross sales reporting."
