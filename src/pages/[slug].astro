@@ -139,6 +139,28 @@ const faqSchema = data.faqs?.length ? {
       <Content />
     </div>
 
+    <!-- FAQ accordion -->
+    {data.faqs?.length > 0 && (
+      <div class="mt-10">
+        <h2 class="text-base font-semibold text-gray-900 mb-3">Frequently asked questions</h2>
+        <div class="divide-y divide-gray-100 border border-gray-200 rounded-lg overflow-hidden">
+          {data.faqs.map((faq, i) => (
+            <details class="group" name="faq">
+              <summary class="flex items-center justify-between px-4 py-4 cursor-pointer list-none hover:bg-gray-50 transition-colors gap-3">
+                <span class="text-sm font-medium text-slate-800">{faq.question}</span>
+                <svg class="w-4 h-4 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-4 pb-4 pt-1 text-sm text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    )}
+
     <!-- CTA -->
     <CTABlock topicSlug={data.topicSlug} topicName={data.topic} />
 
